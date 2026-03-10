@@ -4,6 +4,7 @@ import PasswordStrengthChecker from "@/components/tools/PasswordStrengthChecker"
 
 export const metadata: Metadata = {
   title: "Password Strength Checker",
+<<<<<<< HEAD
   description:
     "Check how strong your password is. Analyzes length, character variety, and common patterns. Runs 100% in your browser.",
 };
@@ -20,6 +21,14 @@ export default function PasswordStrengthPage() {
         { step: "Read the suggestions", detail: "Improvement tips are shown below the meter to help you strengthen it." },
       ]}
     >
+=======
+  description: "Check how strong your password is with instant analysis.",
+};
+
+export default function Page() {
+  return (
+    <ToolLayout toolId="password-strength" title="Password Strength Checker" description="Check how strong your password is with instant analysis.">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
       <PasswordStrengthChecker />
     </ToolLayout>
   );

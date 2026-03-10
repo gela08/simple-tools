@@ -19,13 +19,21 @@ export default function CapitalizeSentences() {
         <label className="mb-1.5 block text-sm font-medium text-ink">Input text</label>
         <textarea value={input} onChange={(e) => setInput(e.target.value)}
           placeholder="paste your text here. it doesn't matter if it's all lowercase. every sentence will be capitalized automatically."
+<<<<<<< HEAD
           className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" rows={5} />
+=======
+          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder:text-ink-subtle focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20" rows={5} />
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
       </div>
       {output && input && (
         <div>
           <div className="mb-1.5 flex items-center justify-between">
             <label className="text-sm font-medium text-ink">Result</label>
+<<<<<<< HEAD
             <button onClick={handleCopy} className={`text-xs font-medium border rounded-lg px-3 py-1.5 transition-all ${copied ? "border-green-400 bg-green-50 text-green-700" : "border-border text-ink-muted hover:border-brand/40"}`}>
+=======
+            <button onClick={handleCopy} className={`text-xs font-medium border rounded-lg px-3 py-1.5 transition-all ${copied ? "border-green-400 bg-green-50 text-green-700" : "border-border text-ink-muted hover:border-brand-orange/40"}`}>
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
               {copied ? "✓ Copied" : "Copy"}
             </button>
           </div>

@@ -4,6 +4,7 @@ import WeddingHashtagGenerator from "@/components/tools/WeddingHashtagGenerator"
 
 export const metadata: Metadata = {
   title: "Wedding Hashtag Generator",
+<<<<<<< HEAD
   description:
     "Generate creative, witty, and memorable wedding hashtags for couples. Supports English and Filipino-style hashtag generation. Free and instant.",
 };
@@ -23,6 +24,14 @@ export default function WeddingHashtagPage() {
         { step: "Copy your favorites", detail: "Click any hashtag to copy it, or use Copy All to grab the full list." },
       ]}
     >
+=======
+  description: "Generate cute and creative wedding hashtags for couples.",
+};
+
+export default function Page() {
+  return (
+    <ToolLayout toolId="wedding-hashtag" title="Wedding Hashtag Generator" description="Generate cute and creative wedding hashtags for couples.">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
       <WeddingHashtagGenerator />
     </ToolLayout>
   );

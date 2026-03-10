@@ -104,7 +104,11 @@ export default function SpinTheWheel() {
           <label className="mb-1.5 block text-sm font-medium text-ink">Options — one per line</label>
           <textarea value={inputText}
             onChange={(e) => { setInputText(e.target.value); setWinner(null); if (canvasRef.current) drawWheel(canvasRef.current, e.target.value.split("\n").map(s=>s.trim()).filter(Boolean), rotation); }}
+<<<<<<< HEAD
             className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20"
+=======
+            className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
             rows={8} />
           <p className="mt-1 text-xs text-ink-subtle">{items.length} option{items.length !== 1 ? "s" : ""}</p>
         </div>
@@ -112,19 +116,31 @@ export default function SpinTheWheel() {
         <div className="flex flex-col items-center gap-4">
           <div className="relative">
             {/* Pointer */}
+<<<<<<< HEAD
             <div className="absolute left-1/2 -top-3 -translate-x-1/2 z-10 text-brand text-2xl">▼</div>
+=======
+            <div className="absolute left-1/2 -top-3 -translate-x-1/2 z-10 text-brand-orange text-2xl">▼</div>
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
             <canvas ref={canvasReady} width={240} height={240} className="rounded-full shadow-md" />
           </div>
 
           <button onClick={spin} disabled={spinning || items.length < 2}
+<<<<<<< HEAD
             className="flex items-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-dark active:scale-95 disabled:opacity-60">
+=======
+            className="flex items-center gap-2 rounded-xl bg-brand-orange px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-orange-dark active:scale-95 disabled:opacity-60">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
             {spinning ? "Spinning…" : "🎡 Spin!"}
           </button>
         </div>
       </div>
 
       {winner && !spinning && (
+<<<<<<< HEAD
         <div className="rounded-2xl border-2 border-brand/30 bg-brand/5 p-5 text-center">
+=======
+        <div className="rounded-2xl border-2 border-brand-orange/30 bg-brand-orange/5 p-5 text-center">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
           <p className="text-xs font-medium text-ink-subtle uppercase tracking-wider">🎉 Result</p>
           <p className="mt-1 text-2xl font-extrabold font-display text-ink">{winner}</p>
         </div>

@@ -5,11 +5,16 @@ import CharacterCounter from "@/components/tools/CharacterCounter";
 export const metadata: Metadata = {
   title: "Character Counter",
   description:
+<<<<<<< HEAD
     "Count characters with and without spaces instantly. Ideal for Twitter/X posts, SMS, and meta descriptions.",
+=======
+    "Count characters with and without spaces. Check against Twitter, Instagram, and SMS character limits instantly.",
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
 };
 
 export default function CharacterCounterPage() {
   return (
+<<<<<<< HEAD
     <ToolLayout
       toolId="character-counter"
       title="Character Counter"
@@ -22,5 +27,16 @@ export default function CharacterCounterPage() {
     >
       <CharacterCounter />
     </ToolLayout>
+=======
+    <div className="select-none">
+      <ToolLayout
+        toolId="character-counter"
+        title="Character Counter"
+        description="Count characters with and without spaces. Check against platform limits in real time."
+      >
+        <CharacterCounter />
+      </ToolLayout>
+    </div>
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
   );
 }

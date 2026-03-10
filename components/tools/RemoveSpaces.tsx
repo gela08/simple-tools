@@ -21,7 +21,11 @@ export default function RemoveSpaces() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Paste text with extra spaces, tabs, or blank lines..."
+<<<<<<< HEAD
           className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder-ink-subtle transition-colors focus:border-brand focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand/20"
+=======
+          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder-ink-subtle transition-colors focus:border-brand-orange focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
           rows={6}
         />
       </div>

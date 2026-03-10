@@ -29,19 +29,32 @@ export default function LoremIpsumGenerator() {
     <div className="space-y-5">
       <div>
         <label className="mb-2 block text-sm font-medium text-ink">
+<<<<<<< HEAD
           Paragraphs: <span className="font-bold text-brand">{paras}</span>
         </label>
         <input type="range" min={1} max={10} value={paras} onChange={(e) => setParas(+e.target.value)} className="w-full accent-brand" />
         <div className="mt-1 flex justify-between text-xs text-ink-subtle"><span>1</span><span>10</span></div>
       </div>
       <button onClick={generate} className="flex items-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-dark active:scale-95">
+=======
+          Paragraphs: <span className="font-bold text-brand-orange">{paras}</span>
+        </label>
+        <input type="range" min={1} max={10} value={paras} onChange={(e) => setParas(+e.target.value)} className="w-full accent-brand-orange" />
+        <div className="mt-1 flex justify-between text-xs text-ink-subtle"><span>1</span><span>10</span></div>
+      </div>
+      <button onClick={generate} className="flex items-center gap-2 rounded-xl bg-brand-orange px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-orange-dark active:scale-95">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
         📄 Generate Lorem Ipsum
       </button>
       {output && (
         <div>
           <div className="mb-1.5 flex items-center justify-between">
             <label className="text-sm font-medium text-ink">Output</label>
+<<<<<<< HEAD
             <button onClick={handleCopy} className={`text-xs font-medium border rounded-lg px-3 py-1.5 transition-all ${copied ? "border-green-400 bg-green-50 text-green-700" : "border-border text-ink-muted hover:border-brand/40"}`}>
+=======
+            <button onClick={handleCopy} className={`text-xs font-medium border rounded-lg px-3 py-1.5 transition-all ${copied ? "border-green-400 bg-green-50 text-green-700" : "border-border text-ink-muted hover:border-brand-orange/40"}`}>
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
               {copied ? "✓ Copied" : "Copy"}
             </button>
           </div>

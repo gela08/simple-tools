@@ -16,6 +16,7 @@ export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
 
   return (
+<<<<<<< HEAD
     <header className="sticky top-0 z-50 border-b border-border bg-surface-bg/95 backdrop-blur-sm select-none">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-4 sm:h-16 sm:px-6">
 
@@ -54,6 +55,44 @@ export default function Header() {
           >
             {/* Search icon SVG */}
             <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+=======
+    <header className="sticky top-0 z-50 border-b border-border bg-surface-bg/90 backdrop-blur-sm select-none">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+
+{/* Logo */}
+<Link
+  href="/"
+  className="flex shrink-0 items-center gap-2 font-display text-xl font-extrabold text-ink transition-opacity hover:opacity-80"
+>
+  <span className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg bg-brand-orange">
+    <Image 
+      src="/icon.png" 
+      alt="Simple Tools Hub Logo" 
+      width={31} 
+      height={31} 
+      className="object-contain"
+    />
+  </span>
+  <span>
+    Simple<span className="text-brand-orange">Tools</span>
+  </span>
+</Link>
+
+        {/* Search bar — hidden on small, shown on md+ */}
+        <div className="hidden w-full max-w-xs md:block">
+          <SearchBar placeholder="Search 30+ tools…" />
+        </div>
+
+        {/* Nav + search toggle */}
+        <nav className="flex items-center gap-1">
+          {/* Mobile search button */}
+          <button
+            onClick={() => setSearchOpen((s) => !s)}
+            className="flex h-9 w-9 items-center justify-center rounded-lg text-ink-muted transition-colors hover:bg-surface-muted hover:text-ink md:hidden"
+            aria-label="Search"
+          >
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </button>
@@ -67,7 +106,11 @@ export default function Header() {
                 href={link.href}
                 className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                   isActive
+<<<<<<< HEAD
                     ? "bg-brand/10 text-brand"
+=======
+                    ? "bg-brand-orange/10 text-brand-orange"
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
                     : "text-ink-muted hover:bg-surface-muted hover:text-ink"
                 }`}
               >
@@ -81,7 +124,11 @@ export default function Header() {
       {/* Mobile search dropdown */}
       {searchOpen && (
         <div className="border-t border-border px-4 py-3 md:hidden">
+<<<<<<< HEAD
           <SearchBar autoFocus onClose={() => setSearchOpen(false)} placeholder="Search tools..." />
+=======
+          <SearchBar autoFocus onClose={() => setSearchOpen(false)} placeholder="Search 30+ tools…" />
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
         </div>
       )}
     </header>

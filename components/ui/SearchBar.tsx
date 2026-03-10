@@ -62,7 +62,11 @@ export default function SearchBar({ onClose, autoFocus, placeholder = "Search to
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={handleKey}
           placeholder={placeholder}
+<<<<<<< HEAD
           className="w-full rounded-xl border border-border bg-surface-muted py-2.5 pl-9 pr-4 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20"
+=======
+          className="w-full rounded-xl border border-border bg-surface-muted py-2.5 pl-9 pr-4 text-sm text-ink placeholder:text-ink-subtle focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
         />
         {query && (
           <button onClick={() => { setQuery(""); setResults([]); }} className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-subtle hover:text-ink">
@@ -80,7 +84,11 @@ export default function SearchBar({ onClose, autoFocus, placeholder = "Search to
               key={t.id}
               onClick={() => go(t.slug)}
               className={`flex w-full items-center gap-3 px-4 py-3 text-left transition-colors ${
+<<<<<<< HEAD
                 i === active ? "bg-brand/10" : "hover:bg-surface-muted"
+=======
+                i === active ? "bg-brand-orange/10" : "hover:bg-surface-muted"
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
               } ${i !== results.length - 1 ? "border-b border-border" : ""}`}
             >
               <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm ${t.color}`}>{t.emoji}</span>

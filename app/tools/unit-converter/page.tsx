@@ -4,6 +4,7 @@ import UnitConverter from "@/components/tools/UnitConverter";
 
 export const metadata: Metadata = {
   title: "Unit Converter",
+<<<<<<< HEAD
   description:
     "Convert between common length, weight, and temperature units instantly. Free online unit converter — no signup needed.",
 };
@@ -21,6 +22,14 @@ export default function UnitConverterPage() {
         { step: "See the result", detail: "The converted value appears instantly." },
       ]}
     >
+=======
+  description: "Convert between length, weight, temperature, and speed units.",
+};
+
+export default function Page() {
+  return (
+    <ToolLayout toolId="unit-converter" title="Unit Converter" description="Convert between length, weight, temperature, and speed units.">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
       <UnitConverter />
     </ToolLayout>
   );

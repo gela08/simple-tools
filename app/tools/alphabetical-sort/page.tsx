@@ -4,6 +4,7 @@ import AlphabeticalSort from "@/components/tools/AlphabeticalSort";
 
 export const metadata: Metadata = {
   title: "Alphabetical Sort",
+<<<<<<< HEAD
   description: "Sort any list of words or items from A to Z or Z to A instantly.",
 };
 
@@ -14,6 +15,14 @@ export default function AlphabeticalSortPage() {
       title="Alphabetical Sort"
       description="Sort any list of words or items from A to Z or Z to A instantly."
     >
+=======
+  description: "Sort any list of items from A to Z or Z to A.",
+};
+
+export default function Page() {
+  return (
+    <ToolLayout toolId="alphabetical-sort" title="Alphabetical Sort" description="Sort any list of items from A to Z or Z to A.">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
       <AlphabeticalSort />
     </ToolLayout>
   );

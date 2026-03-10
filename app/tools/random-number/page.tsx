@@ -4,6 +4,7 @@ import RandomNumberGenerator from "@/components/tools/RandomNumberGenerator";
 
 export const metadata: Metadata = {
   title: "Random Number Generator",
+<<<<<<< HEAD
   description:
     "Generate random numbers in any custom range. Set min, max, and quantity for truly random results.",
 };
@@ -21,6 +22,14 @@ export default function RandomNumberPage() {
         { step: "Click Generate", detail: "Your random numbers appear immediately." },
       ]}
     >
+=======
+  description: "Generate random numbers in any custom range.",
+};
+
+export default function Page() {
+  return (
+    <ToolLayout toolId="random-number" title="Random Number Generator" description="Generate random numbers in any custom range.">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
       <RandomNumberGenerator />
     </ToolLayout>
   );

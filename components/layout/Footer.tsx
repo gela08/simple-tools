@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { tools, categoryLabels, type ToolCategory } from "@/data/tools";
 
+<<<<<<< HEAD
 // Categories to show in footer tool columns
 const FOOTER_CATS: ToolCategory[] = ["text", "formatter", "generator", "sorter", "fun", "utility"];
 
@@ -16,10 +17,14 @@ const OTHER_WORKS: { title: string; description: string; url: string }[] = [
   // { title: "My Portfolio", description: "Personal projects and work", url: "https://yourportfolio.com" },
   // { title: "Another Project", description: "A brief description", url: "https://project.com" },
 ];
+=======
+const CATEGORIES: ToolCategory[] = ["text", "formatter", "generator", "sorter", "fun", "utility"];
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
 
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-surface-muted">
+<<<<<<< HEAD
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12">
 
         {/* Main grid */}
@@ -35,10 +40,20 @@ export default function Footer() {
                 </svg>
               </span>
               Simple<span className="text-brand">Tools</span>
+=======
+      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Brand */}
+          <div className="lg:col-span-1">
+            <Link href="/" className="flex items-center gap-2 font-display text-lg font-extrabold text-ink">
+              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand-orange text-xs text-white">⚡</span>
+              Simple<span className="text-brand-orange">Tools</span>
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-ink-muted">
               {tools.length} free, fast, and privacy-friendly tools. No account, no tracking, no ads.
             </p>
+<<<<<<< HEAD
             <p className="mt-4 text-xs text-ink-subtle">
               © {new Date().getFullYear()} Simple Tools Hub
             </p>
@@ -64,10 +79,28 @@ export default function Footer() {
                       </Link>
                     </li>
                   ))}
+=======
+            <p className="mt-4 text-xs text-ink-subtle">© {new Date().getFullYear()} Simple Tools Hub </p>
+          </div>
+
+          {/* Tool categories */}
+          {CATEGORIES.slice(0, 2).map((cat) => (
+            <div key={cat}>
+              <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-ink-subtle">{categoryLabels[cat]}</h3>
+              <ul className="space-y-2">
+                {tools.filter((t) => t.category === cat).slice(0, 5).map((t) => (
+                  <li key={t.id}>
+                    <Link href={t.slug} className="text-sm text-ink-muted transition-colors hover:text-ink">
+                      {t.name}
+                    </Link>
+                  </li>
+                ))}
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
               </ul>
             </div>
           ))}
 
+<<<<<<< HEAD
           {/* Site links column */}
           <div>
             <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-ink-subtle">
@@ -75,6 +108,13 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2">
               {FOOTER_CATS.slice(2).map((cat) => (
+=======
+          {/* Links */}
+          <div>
+            <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-ink-subtle">More Tools</h3>
+            <ul className="space-y-2">
+              {CATEGORIES.slice(2).map((cat) => (
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
                 <li key={cat}>
                   <Link href="/tools" className="text-sm text-ink-muted transition-colors hover:text-ink">
                     {categoryLabels[cat]}
@@ -82,10 +122,14 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+<<<<<<< HEAD
 
             <h3 className="mb-3 mt-6 text-xs font-semibold uppercase tracking-wider text-ink-subtle">
               Site
             </h3>
+=======
+            <h3 className="mb-3 mt-6 text-xs font-semibold uppercase tracking-wider text-ink-subtle">Site</h3>
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
             <ul className="space-y-2">
               {[
                 { href: "/tools", label: "All Tools" },
@@ -93,10 +137,14 @@ export default function Footer() {
                 { href: "/privacy", label: "Privacy Policy" },
               ].map((link) => (
                 <li key={link.href}>
+<<<<<<< HEAD
                   <Link
                     href={link.href}
                     className="text-sm text-ink-muted transition-colors hover:text-ink"
                   >
+=======
+                  <Link href={link.href} className="text-sm text-ink-muted transition-colors hover:text-ink">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
                     {link.label}
                   </Link>
                 </li>
@@ -105,6 +153,7 @@ export default function Footer() {
           </div>
         </div>
 
+<<<<<<< HEAD
         {/* ── "More from the developer" showcase ──
             Uncomment and populate OTHER_WORKS array above to activate.
             Lightweight manual display — no heavy slider library. */}
@@ -164,6 +213,12 @@ export default function Footer() {
               </a>
             )}
           </p>
+=======
+        {/* Bottom bar — ad-ready slot */}
+        {/* AD_SLOT: footer-bottom — 728x90 leaderboard can go here in future */}
+        <div className="mt-10 border-t border-border pt-6 text-center text-xs text-ink-subtle">
+          Made with ♥ · All tools run in your browser · No data is collected or stored
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
         </div>
       </div>
     </footer>

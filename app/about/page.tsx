@@ -70,7 +70,11 @@ export default function AboutPage() {
       </section>
 
       {/* Philosophy */}
+<<<<<<< HEAD
       <section className="mt-12 rounded-2xl bg-brand/5 p-6 ring-1 ring-brand/15">
+=======
+      <section className="mt-12 rounded-2xl bg-brand-orange/5 p-6 ring-1 ring-brand-orange/15">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
         <h2 className="mb-2 font-display text-lg font-bold text-ink">
           Our Philosophy
         </h2>
@@ -83,7 +87,11 @@ export default function AboutPage() {
             "Accessible to everyone.",
           ].map((item) => (
             <li key={item} className="flex items-start gap-2">
+<<<<<<< HEAD
               <span className="mt-0.5 text-brand">✓</span>
+=======
+              <span className="mt-0.5 text-brand-orange">✓</span>
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
               {item}
             </li>
           ))}

@@ -2,19 +2,25 @@ import Link from "next/link";
 import ToolCard from "@/components/ui/ToolCard";
 import { getRelatedTools } from "@/data/tools";
 
+<<<<<<< HEAD
 interface HowToStep {
   step: string;
   detail?: string;
 }
 
+=======
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
 interface ToolLayoutProps {
   toolId: string;
   title: string;
   description: string;
+<<<<<<< HEAD
   /** Short one-liner shown above the tool card */
   intro?: string;
   /** Step-by-step usage instructions */
   howTo?: HowToStep[];
+=======
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
   children: React.ReactNode;
 }
 
@@ -22,13 +28,17 @@ export default function ToolLayout({
   toolId,
   title,
   description,
+<<<<<<< HEAD
   intro,
   howTo,
+=======
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
   children,
 }: ToolLayoutProps) {
   const related = getRelatedTools(toolId);
 
   return (
+<<<<<<< HEAD
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12">
 
       {/* Breadcrumb */}
@@ -36,10 +46,23 @@ export default function ToolLayout({
         <Link href="/" className="hover:text-ink-muted transition-colors">Home</Link>
         <span>/</span>
         <Link href="/tools" className="hover:text-ink-muted transition-colors">Tools</Link>
+=======
+    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+      {/* Breadcrumb */}
+      <nav className="mb-6 flex items-center gap-2 text-sm text-ink-subtle">
+        <Link href="/" className="hover:text-ink-muted">
+          Home
+        </Link>
+        <span>/</span>
+        <Link href="/tools" className="hover:text-ink-muted">
+          Tools
+        </Link>
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
         <span>/</span>
         <span className="text-ink-muted">{title}</span>
       </nav>
 
+<<<<<<< HEAD
       {/* Page header */}
       <div className="mb-6 sm:mb-8">
         <h1 className="font-display text-2xl font-extrabold text-ink sm:text-3xl lg:text-4xl">
@@ -91,16 +114,36 @@ export default function ToolLayout({
 
       {/* Tool UI card */}
       <div className="rounded-2xl border border-border bg-surface-card p-5 shadow-tool sm:p-7">
+=======
+      {/* Header */}
+      <div className="mb-8">
+        <h1 className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
+          {title}
+        </h1>
+        <p className="mt-2 text-base text-ink-muted">{description}</p>
+      </div>
+
+      {/* Tool UI */}
+      <div className="rounded-2xl border border-border bg-surface-card p-6 shadow-tool sm:p-8">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
         {children}
       </div>
 
       {/* Related tools */}
       {related.length > 0 && (
+<<<<<<< HEAD
         <section className="mt-12">
           <h2 className="mb-4 font-display text-lg font-bold text-ink sm:text-xl">
             Related Tools
           </h2>
           <div className="grid gap-3 sm:grid-cols-3">
+=======
+        <section className="mt-14">
+          <h2 className="mb-4 font-display text-xl font-bold text-ink">
+            Related Tools
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-3">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
             {related.map((tool) => (
               <ToolCard key={tool.id} tool={tool} compact />
             ))}

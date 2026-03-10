@@ -4,6 +4,7 @@ import TextReverser from "@/components/tools/TextReverser";
 
 export const metadata: Metadata = {
   title: "Text Reverser",
+<<<<<<< HEAD
   description: "Reverse any text character by character or word by word. Instant results, no signup needed.",
 };
 
@@ -14,6 +15,14 @@ export default function TextReverserPage() {
       title="Text Reverser"
       description="Reverse any text character by character or word by word. Instant results, no signup needed."
     >
+=======
+  description: "Reverse any text character by character or word by word instantly.",
+};
+
+export default function Page() {
+  return (
+    <ToolLayout toolId="text-reverser" title="Text Reverser" description="Reverse any text character by character or word by word instantly.">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
       <TextReverser />
     </ToolLayout>
   );

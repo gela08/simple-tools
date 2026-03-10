@@ -28,7 +28,11 @@ export default function DiceRoller() {
           {DICE_TYPES.map((d) => (
             <button key={d} onClick={() => { setDieType(d); setResults([]); }}
               className={`rounded-xl border px-4 py-2.5 text-sm font-bold transition-all ${
+<<<<<<< HEAD
                 dieType === d ? "border-brand bg-brand/10 text-brand" : "border-border bg-surface-muted text-ink-muted hover:border-brand/40"
+=======
+                dieType === d ? "border-brand-orange bg-brand-orange/10 text-brand-orange" : "border-border bg-surface-muted text-ink-muted hover:border-brand-orange/40"
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
               }`}>
               {DICE_EMOJI[d]} d{d}
             </button>
@@ -37,19 +41,31 @@ export default function DiceRoller() {
       </div>
 
       <div>
+<<<<<<< HEAD
         <p className="mb-2 text-sm font-medium text-ink">Number of dice: <span className="font-bold text-brand">{count}</span></p>
+=======
+        <p className="mb-2 text-sm font-medium text-ink">Number of dice: <span className="font-bold text-brand-orange">{count}</span></p>
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
         <div className="flex gap-2">
           {[1, 2, 3, 4, 5, 6].map((n) => (
             <button key={n} onClick={() => { setCount(n); setResults([]); }}
               className={`rounded-lg border px-3 py-2 text-sm font-medium transition-all ${
+<<<<<<< HEAD
                 count === n ? "border-brand bg-brand/10 text-brand" : "border-border text-ink-muted hover:border-brand/40"
+=======
+                count === n ? "border-brand-orange bg-brand-orange/10 text-brand-orange" : "border-border text-ink-muted hover:border-brand-orange/40"
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
               }`}>{n}</button>
           ))}
         </div>
       </div>
 
       <button onClick={roll} disabled={rolling}
+<<<<<<< HEAD
         className="flex items-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-dark active:scale-95 disabled:opacity-60">
+=======
+        className="flex items-center gap-2 rounded-xl bg-brand-orange px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-orange-dark active:scale-95 disabled:opacity-60">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
         {rolling ? "Rolling…" : `🎲 Roll ${count}d${dieType}`}
       </button>
 
@@ -58,7 +74,11 @@ export default function DiceRoller() {
           <div className="flex flex-wrap gap-3">
             {results.map((r, i) => (
               <div key={i} className={`flex h-16 w-16 items-center justify-center rounded-2xl border-2 text-2xl font-bold transition-all ${
+<<<<<<< HEAD
                 r === dieType ? "border-brand bg-brand/10 text-brand" : r === 1 ? "border-red-300 bg-red-50 text-red-600" : "border-border bg-surface-muted text-ink"
+=======
+                r === dieType ? "border-brand-orange bg-brand-orange/10 text-brand-orange" : r === 1 ? "border-red-300 bg-red-50 text-red-600" : "border-border bg-surface-muted text-ink"
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
               }`}>{r}</div>
             ))}
           </div>

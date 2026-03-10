@@ -26,6 +26,7 @@ export default function ListRandomizer() {
         <label className="mb-1.5 block text-sm font-medium text-ink">Your list (one item per line)</label>
         <textarea value={input} onChange={(e) => setInput(e.target.value)}
           placeholder={"Alice\nBob\nCharlie\nDiana\nEthan"}
+<<<<<<< HEAD
           className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" rows={7} />
       </div>
       <div className="flex gap-2">
@@ -34,12 +35,26 @@ export default function ListRandomizer() {
           🎲 Shuffle
         </button>
         {output && <button onClick={() => { setInput(""); setOutput(""); }} className="rounded-xl border border-border px-4 py-3 text-sm font-medium text-ink-muted hover:border-brand/40 transition-all">Reset</button>}
+=======
+          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder:text-ink-subtle focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20" rows={7} />
+      </div>
+      <div className="flex gap-2">
+        <button onClick={shuffle} disabled={!input.trim()}
+          className="flex items-center gap-2 rounded-xl bg-brand-orange px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-orange-dark active:scale-95 disabled:opacity-60">
+          🎲 Shuffle
+        </button>
+        {output && <button onClick={() => { setInput(""); setOutput(""); }} className="rounded-xl border border-border px-4 py-3 text-sm font-medium text-ink-muted hover:border-brand-orange/40 transition-all">Reset</button>}
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
       </div>
       {output && (
         <div>
           <div className="mb-1.5 flex items-center justify-between">
             <label className="text-sm font-medium text-ink">Shuffled</label>
+<<<<<<< HEAD
             <button onClick={handleCopy} className={`text-xs font-medium border rounded-lg px-3 py-1.5 transition-all ${copied ? "border-green-400 bg-green-50 text-green-700" : "border-border text-ink-muted hover:border-brand/40"}`}>
+=======
+            <button onClick={handleCopy} className={`text-xs font-medium border rounded-lg px-3 py-1.5 transition-all ${copied ? "border-green-400 bg-green-50 text-green-700" : "border-border text-ink-muted hover:border-brand-orange/40"}`}>
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
               {copied ? "✓ Copied" : "Copy"}
             </button>
           </div>

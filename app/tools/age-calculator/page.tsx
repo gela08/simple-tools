@@ -4,6 +4,7 @@ import AgeCalculator from "@/components/tools/AgeCalculator";
 
 export const metadata: Metadata = {
   title: "Age Calculator",
+<<<<<<< HEAD
   description:
     "Calculate your exact age in years, months, and days. Also shows days until your next birthday.",
 };
@@ -20,6 +21,14 @@ export default function AgeCalculatorPage() {
         { step: "Check your next birthday", detail: "Days until your next birthday are shown at the bottom." },
       ]}
     >
+=======
+  description: "Calculate your exact age in years, months, and days.",
+};
+
+export default function Page() {
+  return (
+    <ToolLayout toolId="age-calculator" title="Age Calculator" description="Calculate your exact age in years, months, and days.">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
       <AgeCalculator />
     </ToolLayout>
   );

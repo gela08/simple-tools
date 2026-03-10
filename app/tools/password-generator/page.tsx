@@ -4,6 +4,7 @@ import PasswordGenerator from "@/components/tools/PasswordGenerator";
 
 export const metadata: Metadata = {
   title: "Password Generator",
+<<<<<<< HEAD
   description:
     "Generate strong, secure, random passwords instantly. Customizable length and character sets. Runs entirely in your browser.",
 };
@@ -21,6 +22,14 @@ export default function PasswordGeneratorPage() {
         { step: "Copy your password", detail: "Click the Copy button to copy it to your clipboard." },
       ]}
     >
+=======
+  description: "Generate strong, secure, random passwords instantly.",
+};
+
+export default function Page() {
+  return (
+    <ToolLayout toolId="password-generator" title="Password Generator" description="Generate strong, secure, random passwords instantly.">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
       <PasswordGenerator />
     </ToolLayout>
   );

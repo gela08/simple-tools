@@ -92,7 +92,11 @@ export default function IdeaGenerator() {
           {(Object.keys(CATEGORIES) as Cat[]).map((c) => (
             <button key={c} onClick={() => { setCategory(c); setIdea(""); }}
               className={`rounded-xl border px-3 py-2.5 text-sm font-medium transition-all ${
+<<<<<<< HEAD
                 category === c ? "border-brand bg-brand/10 text-brand" : "border-border bg-surface-muted text-ink-muted hover:border-brand/40"
+=======
+                category === c ? "border-brand-orange bg-brand-orange/10 text-brand-orange" : "border-border bg-surface-muted text-ink-muted hover:border-brand-orange/40"
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
               }`}>
               {CATEGORIES[c].emoji} {CATEGORIES[c].label}
             </button>
@@ -101,11 +105,16 @@ export default function IdeaGenerator() {
       </div>
 
       <button onClick={generate}
+<<<<<<< HEAD
         className="flex items-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-dark active:scale-95">
+=======
+        className="flex items-center gap-2 rounded-xl bg-brand-orange px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-orange-dark active:scale-95">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
         💡 Generate Idea
       </button>
 
       {idea && (
+<<<<<<< HEAD
         <div className="rounded-2xl border border-brand/20 bg-brand/5 p-5">
           <p className="text-base leading-relaxed text-ink">{idea}</p>
           <div className="mt-4 flex gap-2">
@@ -113,6 +122,15 @@ export default function IdeaGenerator() {
               {copied ? "✓ Copied" : "Copy"}
             </button>
             <button onClick={generate} className="rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-ink-muted hover:border-brand/40 transition-all">
+=======
+        <div className="rounded-2xl border border-brand-orange/20 bg-brand-orange/5 p-5">
+          <p className="text-base leading-relaxed text-ink">{idea}</p>
+          <div className="mt-4 flex gap-2">
+            <button onClick={handleCopy} className={`rounded-lg border px-3 py-1.5 text-xs font-medium transition-all ${copied ? "border-green-400 bg-green-50 text-green-700" : "border-border text-ink-muted hover:border-brand-orange/40"}`}>
+              {copied ? "✓ Copied" : "Copy"}
+            </button>
+            <button onClick={generate} className="rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-ink-muted hover:border-brand-orange/40 transition-all">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
               Another →
             </button>
           </div>

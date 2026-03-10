@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 
 export default function WordCounterPage() {
   return (
+<<<<<<< HEAD
     <ToolLayout
       toolId="word-counter"
       title="Word Counter"
@@ -22,5 +23,16 @@ export default function WordCounterPage() {
     >
       <WordCounter />
     </ToolLayout>
+=======
+    <div className="select-none">
+      <ToolLayout
+        toolId="word-counter"
+        title="Word Counter"
+        description="Count words, characters, sentences, and paragraphs in real time. Just paste your text and see instant results."
+      >
+        <WordCounter />
+      </ToolLayout>
+    </div>
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
   );
 }

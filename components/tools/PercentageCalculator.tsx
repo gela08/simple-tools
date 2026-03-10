@@ -13,6 +13,7 @@ export default function PercentageCalculator() {
 
   const Input = ({ val, set, ph }: { val: string; set: (v: string) => void; ph: string }) => (
     <input type="number" value={val} onChange={(e) => set(e.target.value)} placeholder={ph}
+<<<<<<< HEAD
       className="w-full rounded-xl border border-border bg-surface-muted px-3 py-2 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" />
   );
 
@@ -20,6 +21,15 @@ export default function PercentageCalculator() {
     <div className="rounded-xl border border-brand/20 bg-brand/5 p-3">
       <p className="text-xs text-ink-subtle mb-0.5">{label}</p>
       <p className="text-xl font-bold font-display text-brand">{val}</p>
+=======
+      className="w-full rounded-xl border border-border bg-surface-muted px-3 py-2 text-sm text-ink placeholder:text-ink-subtle focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20" />
+  );
+
+  const Result = ({ val, label }: { val: string | null; label: string }) => val ? (
+    <div className="rounded-xl border border-brand-orange/20 bg-brand-orange/5 p-3">
+      <p className="text-xs text-ink-subtle mb-0.5">{label}</p>
+      <p className="text-xl font-bold font-display text-brand-orange">{val}</p>
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
     </div>
   ) : null;
 
@@ -49,7 +59,11 @@ export default function PercentageCalculator() {
           <Input val={a3} set={setA3} ph="From (e.g. 80)" />
           <Input val={b3} set={setB3} ph="To (e.g. 100)" />
         </div>
+<<<<<<< HEAD
         {r3 && <div className="rounded-xl border border-brand/20 bg-brand/5 p-3">
+=======
+        {r3 && <div className="rounded-xl border border-brand-orange/20 bg-brand-orange/5 p-3">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
           <p className="text-xs text-ink-subtle mb-0.5">Change from {a3} to {b3}</p>
           <p className={`text-xl font-bold font-display ${isIncrease ? "text-green-600" : "text-red-600"}`}>{isIncrease ? "+" : ""}{r3}</p>
         </div>}

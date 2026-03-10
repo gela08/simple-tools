@@ -4,7 +4,11 @@ import ToolCard from "@/components/ui/ToolCard";
 import { tools, categoryLabels, type ToolCategory } from "@/data/tools";
 
 export const metadata: Metadata = {
+<<<<<<< HEAD
   title: "Simple Tools Hub — Free Online Text and Utility Tools",
+=======
+  title: "Simple Tools Hub — Free Online Text & Utility Tools",
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
   description:
     "Fast, free, and privacy-friendly online tools. Word counter, password generator, unit converter, dice roller, and 30+ more. No signup needed.",
 };
@@ -16,6 +20,7 @@ const FEATURED_IDS = [
 
 const CATEGORIES: ToolCategory[] = ["text", "formatter", "generator", "sorter", "fun", "utility"];
 
+<<<<<<< HEAD
 // Feature items for the "Why" section — no emojis, use SVG icons
 const WHY_ITEMS = [
   {
@@ -51,10 +56,15 @@ export default function HomePage() {
   const featured = FEATURED_IDS
     .map((id) => tools.find((t) => t.id === id))
     .filter(Boolean) as typeof tools;
+=======
+export default function HomePage() {
+  const featured = FEATURED_IDS.map((id) => tools.find((t) => t.id === id)).filter(Boolean) as typeof tools;
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
 
   return (
     <>
       {/* ── Hero ── */}
+<<<<<<< HEAD
       <section className="border-b border-border bg-gradient-to-b from-brand-subtle to-surface-bg">
         <div className="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-24">
           <div className="mx-auto max-w-2xl">
@@ -63,10 +73,20 @@ export default function HomePage() {
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-50" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
+=======
+      <section className="border-b border-border bg-gradient-to-b from-surface-muted to-surface-bg">
+        <div className="mx-auto max-w-6xl px-4 py-20 text-center sm:px-6 sm:py-28">
+          <div className="mx-auto max-w-2xl">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-orange/30 bg-brand-orange/8 px-4 py-1.5 text-sm font-medium text-brand-orange">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-orange opacity-50" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-orange" />
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
               </span>
               {tools.length} Free Tools — No Account Needed
             </div>
 
+<<<<<<< HEAD
             <h1 className="font-display text-3xl font-extrabold leading-tight text-ink sm:text-5xl lg:text-6xl">
               Tools that just{" "}
               <span className="relative inline-block text-brand">
@@ -74,15 +94,28 @@ export default function HomePage() {
                 {/* Decorative underline */}
                 <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 200 8" fill="none" aria-hidden="true">
                   <path d="M2 6 C50 2 150 2 198 6" stroke="#4F46E5" strokeWidth="3" strokeLinecap="round" />
+=======
+            <h1 className="font-display text-4xl font-extrabold leading-tight text-ink sm:text-5xl lg:text-6xl">
+              Tools that just{" "}
+              <span className="relative inline-block text-brand-orange">
+                work
+                <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 200 8" fill="none" aria-hidden="true">
+                  <path d="M2 6 C50 2 150 2 198 6" stroke="#FF6B35" strokeWidth="3" strokeLinecap="round" />
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
                 </svg>
               </span>
             </h1>
 
+<<<<<<< HEAD
             <p className="mt-5 text-base leading-relaxed text-ink-muted sm:mt-6 sm:text-lg">
+=======
+            <p className="mt-6 text-lg leading-relaxed text-ink-muted">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
               From text utilities to random generators, sorting tools, and everyday calculators.
               All free, all instant, all private.
             </p>
 
+<<<<<<< HEAD
             <div className="mt-7 flex flex-col items-center gap-3 sm:mt-8 sm:flex-row sm:justify-center">
               <Link
                 href="/tools"
@@ -94,16 +127,30 @@ export default function HomePage() {
                 href="#featured"
                 className="w-full rounded-xl border border-border bg-surface-card px-6 py-3 text-sm font-semibold text-ink transition-all hover:-translate-y-0.5 hover:shadow-sm active:translate-y-0 sm:w-auto"
               >
+=======
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              <Link href="/tools" className="rounded-xl bg-brand-orange px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-brand-orange-dark hover:shadow-md">
+                Browse All {tools.length} Tools →
+              </Link>
+              <Link href="#featured" className="rounded-xl border border-border bg-surface-card px-6 py-3 text-sm font-semibold text-ink transition-all hover:-translate-y-0.5 hover:shadow-sm">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
                 Quick Start
               </Link>
             </div>
           </div>
 
+<<<<<<< HEAD
           {/* Trust badges */}
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-ink-subtle sm:gap-6">
             {["No signup", "No tracking", "No ads", "Works offline", "Free forever"].map((item) => (
               <span key={item} className="flex items-center gap-1.5">
                 <svg className="h-3.5 w-3.5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+=======
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-xs font-medium text-ink-subtle">
+            {["No signup", "No tracking", "No ads", "Works offline", "Free forever"].map((item) => (
+              <span key={item} className="flex items-center gap-1.5">
+                <svg className="h-3.5 w-3.5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
                 {item}
@@ -113,6 +160,7 @@ export default function HomePage() {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* ── Featured Tools ── */}
       <section id="featured" className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-14">
         <div className="mb-6 flex items-end justify-between sm:mb-7">
@@ -127,12 +175,25 @@ export default function HomePage() {
           </Link>
         </div>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+=======
+      {/* ── Featured ── */}
+      <section id="featured" className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+        <div className="mb-7 flex items-end justify-between">
+          <div>
+            <h2 className="font-display text-2xl font-extrabold text-ink sm:text-3xl">Featured Tools</h2>
+            <p className="mt-1 text-sm text-ink-muted">Popular picks to get you started.</p>
+          </div>
+          <Link href="/tools" className="text-sm font-medium text-brand-orange hover:underline">View all →</Link>
+        </div>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
           {featured.map((tool, i) => (
             <ToolCard key={tool.id} tool={tool} animationDelay={`${i * 0.05}s`} />
           ))}
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* ── Browse by Category ── */}
       <section className="border-t border-border bg-surface-muted">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-14">
@@ -140,11 +201,19 @@ export default function HomePage() {
             Browse by Category
           </h2>
           <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+=======
+      {/* ── Categories ── */}
+      <section className="border-t border-border bg-surface-muted">
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+          <h2 className="mb-7 font-display text-2xl font-extrabold text-ink sm:text-3xl">Browse by Category</h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
             {CATEGORIES.map((cat) => {
               const catTools = tools.filter((t) => t.category === cat);
               if (!catTools.length) return null;
               const first3 = catTools.slice(0, 3);
               return (
+<<<<<<< HEAD
                 <Link
                   key={cat}
                   href={`/tools#${cat}`}
@@ -176,6 +245,22 @@ export default function HomePage() {
                     <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
+=======
+                <Link key={cat} href={`/tools#${cat}`}
+                  className="group rounded-2xl border border-border bg-surface-card p-5 transition-all hover:-translate-y-0.5 hover:shadow-card-hover shadow-card">
+                  <div className="mb-3 flex items-center justify-between">
+                    <h3 className="font-display font-bold text-ink">{categoryLabels[cat]}</h3>
+                    <span className="rounded-full bg-surface-muted px-2 py-0.5 text-xs font-medium text-ink-subtle">{catTools.length}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-1">
+                    {first3.map((t) => (
+                      <span key={t.id} className="rounded-full border border-border px-2.5 py-0.5 text-xs text-ink-muted">{t.name}</span>
+                    ))}
+                    {catTools.length > 3 && <span className="rounded-full border border-border px-2.5 py-0.5 text-xs text-ink-subtle">+{catTools.length - 3} more</span>}
+                  </div>
+                  <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-brand-orange opacity-0 transition-opacity group-hover:opacity-100">
+                    Browse {categoryLabels[cat]} →
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
                   </span>
                 </Link>
               );
@@ -186,6 +271,7 @@ export default function HomePage() {
 
       {/* ── Why section ── */}
       <section className="border-t border-border">
+<<<<<<< HEAD
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-14">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-display text-xl font-extrabold text-ink sm:text-2xl lg:text-3xl">
@@ -202,6 +288,25 @@ export default function HomePage() {
                 <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand">
                   {item.icon}
                 </div>
+=======
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="font-display text-2xl font-extrabold text-ink sm:text-3xl">
+              Built for speed. Designed for everyone.
+            </h2>
+            <p className="mt-3 text-ink-muted">
+              We believe utility tools should load instantly, work without accounts, respect your privacy, and stay out of your way.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-5 sm:grid-cols-3">
+            {[
+              { emoji: "⚡", title: "Instant Results", body: "Every tool processes your input in real time — no submit buttons, no loading spinners." },
+              { emoji: "🔒", title: "100% Private", body: "All processing happens in your browser. Your text never leaves your device." },
+              { emoji: "📱", title: "Works Everywhere", body: "Fully responsive design that works on any device — phone, tablet, or desktop." },
+            ].map((item) => (
+              <div key={item.title} className="rounded-2xl border border-border bg-surface-card p-6 shadow-card">
+                <div className="mb-3 text-3xl">{item.emoji}</div>
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
                 <h3 className="font-display font-bold text-ink">{item.title}</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">{item.body}</p>
               </div>
