@@ -1,0 +1,381 @@
+export type ToolCategory =
+  | "text"
+  | "generator"
+  | "formatter"
+  | "sorter"
+  | "utility"
+  | "fun";
+
+export interface Tool {
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+  longDescription: string;
+  category: ToolCategory;
+  emoji: string;
+  color: string;
+  tags?: string[];
+}
+
+export const categoryLabels: Record<ToolCategory, string> = {
+  text: "Text Tools",
+  formatter: "Formatters",
+  generator: "Generators",
+  sorter: "Sorting Tools",
+  utility: "Utility Tools",
+  fun: "Fun & Random",
+};
+
+export const tools: Tool[] = [
+  {
+    id: "word-counter",
+    name: "Word Counter",
+    slug: "/tools/word-counter",
+    description: "Count words, sentences, paragraphs, and more in real time.",
+    longDescription: "Paste any text and instantly see the word count, character count, sentence count, and paragraph count.",
+    category: "text",
+    emoji: "📝",
+    color: "bg-blue-50",
+    tags: ["words", "count", "essay", "writing"],
+  },
+  {
+    id: "character-counter",
+    name: "Character Counter",
+    slug: "/tools/character-counter",
+    description: "Count characters with and without spaces instantly.",
+    longDescription: "Track exact character counts in real time. Ideal for Twitter/X posts, SMS messages, meta descriptions.",
+    category: "text",
+    emoji: "🔤",
+    color: "bg-purple-50",
+    tags: ["characters", "twitter", "sms", "limit"],
+  },
+  {
+    id: "reading-time",
+    name: "Reading Time Calculator",
+    slug: "/tools/reading-time",
+    description: "Estimate how long it takes to read any text.",
+    longDescription: "Paste your article or content and get an estimated reading time based on average adult reading speed.",
+    category: "text",
+    emoji: "⏱️",
+    color: "bg-amber-50",
+    tags: ["read", "time", "article", "blog"],
+  },
+  {
+    id: "text-reverser",
+    name: "Text Reverser",
+    slug: "/tools/text-reverser",
+    description: "Reverse any text, word by word or character by character.",
+    longDescription: "Instantly reverse text — flip each character or reverse word order. Great for puzzles and encoding.",
+    category: "text",
+    emoji: "🔃",
+    color: "bg-cyan-50",
+    tags: ["reverse", "flip", "mirror", "text"],
+  },
+  {
+    id: "remove-duplicate-lines",
+    name: "Remove Duplicate Lines",
+    slug: "/tools/remove-duplicate-lines",
+    description: "Remove repeated lines from any list or text instantly.",
+    longDescription: "Paste a list with duplicates and get a clean deduplicated version. Perfect for email lists, tags, keywords.",
+    category: "text",
+    emoji: "🧽",
+    color: "bg-teal-50",
+    tags: ["duplicate", "dedupe", "clean", "list", "unique"],
+  },
+  {
+    id: "capitalize-sentences",
+    name: "Capitalize Sentences",
+    slug: "/tools/capitalize-sentences",
+    description: "Auto-capitalize the first letter of every sentence.",
+    longDescription: "Fix uncapitalized sentences instantly. Great for fixing pasted content, notes, and poorly formatted text.",
+    category: "text",
+    emoji: "✏️",
+    color: "bg-lime-50",
+    tags: ["capitalize", "sentence", "grammar", "fix"],
+  },
+  {
+    id: "slug-generator",
+    name: "Slug Generator",
+    slug: "/tools/slug-generator",
+    description: "Convert any text into a clean, URL-friendly slug.",
+    longDescription: "Turn any title or phrase into a clean URL slug. Removes special characters, replaces spaces with dashes.",
+    category: "text",
+    emoji: "🔗",
+    color: "bg-violet-50",
+    tags: ["slug", "url", "seo", "permalink", "developer"],
+  },
+  {
+    id: "lorem-ipsum",
+    name: "Lorem Ipsum Generator",
+    slug: "/tools/lorem-ipsum",
+    description: "Generate placeholder text for designs and mockups.",
+    longDescription: "Generate classic Lorem Ipsum placeholder text by paragraph count. Great for mockups and UI prototyping.",
+    category: "text",
+    emoji: "📄",
+    color: "bg-slate-50",
+    tags: ["lorem", "ipsum", "placeholder", "dummy", "design"],
+  },
+  {
+    id: "text-case-converter",
+    name: "Text Case Converter",
+    slug: "/tools/text-case-converter",
+    description: "Convert text to UPPERCASE, lowercase, Title Case, and more.",
+    longDescription: "Instantly transform your text between multiple case formats: uppercase, lowercase, title case, sentence case, and camelCase.",
+    category: "formatter",
+    emoji: "🔡",
+    color: "bg-green-50",
+    tags: ["case", "uppercase", "lowercase", "title", "camel"],
+  },
+  {
+    id: "remove-spaces",
+    name: "Remove Extra Spaces",
+    slug: "/tools/remove-spaces",
+    description: "Clean up messy text by removing extra whitespace.",
+    longDescription: "Remove duplicate spaces, trailing, and leading spaces from any text. Clean up copy-pasted content in one click.",
+    category: "formatter",
+    emoji: "🧹",
+    color: "bg-pink-50",
+    tags: ["spaces", "whitespace", "clean", "trim"],
+  },
+  {
+    id: "line-sorter",
+    name: "Line Sorter",
+    slug: "/tools/line-sorter",
+    description: "Sort lines of text alphabetically or in reverse.",
+    longDescription: "Paste a list of items and sort them alphabetically, reverse alphabetically, or by length.",
+    category: "formatter",
+    emoji: "📋",
+    color: "bg-indigo-50",
+    tags: ["sort", "lines", "alphabetical", "list"],
+  },
+  {
+    id: "alphabetical-sort",
+    name: "Alphabetical Sort",
+    slug: "/tools/alphabetical-sort",
+    description: "Sort any list of words or items from A to Z or Z to A.",
+    longDescription: "Paste a list, one item per line, and sort it alphabetically. Choose ascending or descending order.",
+    category: "sorter",
+    emoji: "🔠",
+    color: "bg-orange-50",
+    tags: ["alphabetical", "sort", "a-z", "list", "order"],
+  },
+  {
+    id: "number-sort",
+    name: "Number Sort",
+    slug: "/tools/number-sort",
+    description: "Sort a list of numbers from lowest to highest or vice versa.",
+    longDescription: "Paste a list of numbers, one per line, and sort them numerically in ascending or descending order.",
+    category: "sorter",
+    emoji: "🔢",
+    color: "bg-yellow-50",
+    tags: ["number", "sort", "numeric", "order", "list"],
+  },
+  {
+    id: "list-randomizer",
+    name: "List Randomizer",
+    slug: "/tools/list-randomizer",
+    description: "Shuffle any list into a random order instantly.",
+    longDescription: "Paste a list of items, names, or lines and shuffle them into a completely random order.",
+    category: "sorter",
+    emoji: "🎲",
+    color: "bg-fuchsia-50",
+    tags: ["shuffle", "random", "list", "order", "randomize"],
+  },
+  {
+    id: "username-generator",
+    name: "Username Generator",
+    slug: "/tools/username-generator",
+    description: "Generate creative, custom usernames for any platform.",
+    longDescription: "Generate unique usernames instantly using your own name or words. Choose from cute, gaming, aesthetic, and more styles.",
+    category: "generator",
+    emoji: "🧑‍💻",
+    color: "bg-orange-50",
+    tags: ["username", "handle", "social media", "gaming", "nickname"],
+  },
+  {
+    id: "password-generator",
+    name: "Password Generator",
+    slug: "/tools/password-generator",
+    description: "Generate strong, secure, random passwords instantly.",
+    longDescription: "Create strong passwords with customizable length and character sets. All generated locally in your browser.",
+    category: "generator",
+    emoji: "🔐",
+    color: "bg-red-50",
+    tags: ["password", "secure", "random", "strong", "security"],
+  },
+  {
+    id: "wedding-hashtag",
+    name: "Wedding Hashtag Generator",
+    slug: "/tools/wedding-hashtag",
+    description: "Generate cute, creative wedding hashtags for couples.",
+    longDescription: "Enter the bride and groom's names and get dozens of creative, cute, and punny wedding hashtags for Instagram.",
+    category: "generator",
+    emoji: "💒",
+    color: "bg-rose-50",
+    tags: ["wedding", "hashtag", "couple", "bride", "groom", "instagram"],
+  },
+  {
+    id: "random-name-picker",
+    name: "Random Name Picker",
+    slug: "/tools/random-name-picker",
+    description: "Pick a random name or winner from any list.",
+    longDescription: "Paste a list of names and pick one at random. Great for giveaways, classroom activities, and team assignments.",
+    category: "generator",
+    emoji: "🎯",
+    color: "bg-emerald-50",
+    tags: ["random", "name", "picker", "winner", "giveaway", "classroom"],
+  },
+  {
+    id: "random-number",
+    name: "Random Number Generator",
+    slug: "/tools/random-number",
+    description: "Generate random numbers in any custom range.",
+    longDescription: "Set a minimum and maximum, choose how many numbers to generate, and get truly random results instantly.",
+    category: "fun",
+    emoji: "🎱",
+    color: "bg-sky-50",
+    tags: ["random", "number", "generate", "range", "raffle"],
+  },
+  {
+    id: "dice-roller",
+    name: "Dice Roller",
+    slug: "/tools/dice-roller",
+    description: "Roll any number of dice with any number of sides.",
+    longDescription: "Roll classic d6 dice or customize with d4, d8, d10, d12, d20, and d100. Roll multiple dice at once.",
+    category: "fun",
+    emoji: "🎲",
+    color: "bg-purple-50",
+    tags: ["dice", "roll", "d6", "d20", "dnd", "game", "random"],
+  },
+  {
+    id: "coin-flip",
+    name: "Coin Flip",
+    slug: "/tools/coin-flip",
+    description: "Flip a virtual coin. Heads or tails, decided instantly.",
+    longDescription: "Can't find a coin? Flip a virtual one. Simple, fair, and instant. Keeps track of your flip history.",
+    category: "fun",
+    emoji: "🪙",
+    color: "bg-yellow-50",
+    tags: ["coin", "flip", "heads", "tails", "random", "decide"],
+  },
+  {
+    id: "yes-no-picker",
+    name: "Yes / No Generator",
+    slug: "/tools/yes-no-picker",
+    description: "Get a random Yes or No answer when you can't decide.",
+    longDescription: "Stuck on a decision? Get a clear yes or no answer at random. Clean, instant, and oddly satisfying.",
+    category: "fun",
+    emoji: "🎱",
+    color: "bg-indigo-50",
+    tags: ["yes", "no", "random", "decide", "magic 8 ball"],
+  },
+  {
+    id: "spin-the-wheel",
+    name: "Spin the Wheel",
+    slug: "/tools/spin-the-wheel",
+    description: "Add custom options and spin to pick one at random.",
+    longDescription: "Build a custom spinning wheel with your own options. Perfect for games, classroom picks, and team decisions.",
+    category: "fun",
+    emoji: "🎡",
+    color: "bg-orange-50",
+    tags: ["wheel", "spin", "random", "pick", "game", "decision"],
+  },
+  {
+    id: "idea-generator",
+    name: "Idea Generator",
+    slug: "/tools/idea-generator",
+    description: "Get random creative writing prompts and project ideas.",
+    longDescription: "Stuck in a creative rut? Generate random writing prompts, project ideas, and conversation starters.",
+    category: "fun",
+    emoji: "💡",
+    color: "bg-amber-50",
+    tags: ["idea", "prompt", "creative", "writing", "inspiration"],
+  },
+  {
+    id: "countdown-calculator",
+    name: "Days Until Calculator",
+    slug: "/tools/countdown-calculator",
+    description: "Calculate how many days until any date.",
+    longDescription: "Enter any future date and instantly see how many days, weeks, and months away it is.",
+    category: "utility",
+    emoji: "📅",
+    color: "bg-green-50",
+    tags: ["countdown", "days", "date", "calculator", "event", "birthday"],
+  },
+  {
+    id: "age-calculator",
+    name: "Age Calculator",
+    slug: "/tools/age-calculator",
+    description: "Calculate your exact age in years, months, and days.",
+    longDescription: "Enter your birth date and get your precise age down to the day. Also shows days until your next birthday.",
+    category: "utility",
+    emoji: "🎂",
+    color: "bg-pink-50",
+    tags: ["age", "birthday", "calculate", "born", "years"],
+  },
+  {
+    id: "percentage-calculator",
+    name: "Percentage Calculator",
+    slug: "/tools/percentage-calculator",
+    description: "Calculate percentages, tips, discounts, and more.",
+    longDescription: "Three percentage calculators in one: find X% of Y, what percent X is of Y, and percent change between two numbers.",
+    category: "utility",
+    emoji: "💯",
+    color: "bg-teal-50",
+    tags: ["percent", "percentage", "tip", "discount", "calculate", "math"],
+  },
+  {
+    id: "unit-converter",
+    name: "Unit Converter",
+    slug: "/tools/unit-converter",
+    description: "Convert between common length, weight, and temperature units.",
+    longDescription: "Quick conversions between the most-used units: km/miles, kg/lbs, cm/inches, Celsius/Fahrenheit, and more.",
+    category: "utility",
+    emoji: "📐",
+    color: "bg-cyan-50",
+    tags: ["convert", "unit", "km", "miles", "kg", "lbs", "celsius", "fahrenheit"],
+  },
+  {
+    id: "password-strength",
+    name: "Password Strength Checker",
+    slug: "/tools/password-strength",
+    description: "Check how strong your password really is.",
+    longDescription: "Analyze password strength — checks length, character variety, common patterns, and entropy. Runs 100% in your browser.",
+    category: "utility",
+    emoji: "🛡️",
+    color: "bg-blue-50",
+    tags: ["password", "strength", "security", "check"],
+  },
+  {
+    id: "text-to-binary",
+    name: "Text to Binary",
+    slug: "/tools/text-to-binary",
+    description: "Convert text to binary code and binary back to text.",
+    longDescription: "Convert any text string into binary representation, or decode binary back to readable text. Great for developers and students.",
+    category: "utility",
+    emoji: "💻",
+    color: "bg-slate-50",
+    tags: ["binary", "text", "convert", "encode", "decode", "developer"],
+  },
+];
+
+export function getRelatedTools(toolId: string): Tool[] {
+  const tool = tools.find((t) => t.id === toolId);
+  if (!tool) return [];
+  return tools
+    .filter((t) => t.id !== toolId && t.category === tool.category)
+    .slice(0, 3);
+}
+
+export function searchTools(query: string): Tool[] {
+  if (!query.trim()) return tools;
+  const q = query.toLowerCase();
+  return tools.filter(
+    (t) =>
+      t.name.toLowerCase().includes(q) ||
+      t.description.toLowerCase().includes(q) ||
+      t.category.toLowerCase().includes(q) ||
+      (t.tags ?? []).some((tag) => tag.toLowerCase().includes(q))
+  );
+}
