@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import SearchBar from "@/components/ui/SearchBar";
@@ -17,18 +18,25 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-surface-bg/90 backdrop-blur-sm select-none">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        {/* Logo */}
-        <Link
-          href="/"
-          className="flex shrink-0 items-center gap-2 font-display text-xl font-extrabold text-ink transition-opacity hover:opacity-80"
-        >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-orange text-sm text-white">
-            ⚡
-          </span>
-          <span>
-            Simple<span className="text-brand-orange">Tools</span>
-          </span>
-        </Link>
+
+{/* Logo */}
+<Link
+  href="/"
+  className="flex shrink-0 items-center gap-2 font-display text-xl font-extrabold text-ink transition-opacity hover:opacity-80"
+>
+  <span className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg bg-brand-orange">
+    <Image 
+      src="/icon.png" 
+      alt="Simple Tools Hub Logo" 
+      width={31} 
+      height={31} 
+      className="object-contain"
+    />
+  </span>
+  <span>
+    Simple<span className="text-brand-orange">Tools</span>
+  </span>
+</Link>
 
         {/* Search bar — hidden on small, shown on md+ */}
         <div className="hidden w-full max-w-xs md:block">

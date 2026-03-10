@@ -25,6 +25,15 @@ export const metadata: Metadata = {
   },
   description:
     "Free, fast, and privacy-friendly online tools. Word counter, character counter, text case converter, reading time calculator, and more.",
+  
+  // --- ADD THIS SECTION ---
+  icons: {
+    icon: "/icon.png", // Path to your icon in the /public folder
+    shortcut: "/icon.png",
+    apple: "/apple-touch-icon.png", // Optional: for iOS home screen
+  },
+  // ------------------------
+
   keywords: [
     "word counter",
     "character counter",
@@ -43,8 +52,15 @@ export const metadata: Metadata = {
     url: "https://simpletoolshub.com",
     siteName: "Simple Tools Hub",
     title: "Simple Tools Hub — Free Online Text & Utility Tools",
-    description:
-      "Free, fast, and privacy-friendly online tools. No signup needed.",
+    description: "Free, fast, and privacy-friendly online tools. No signup needed.",
+    images: [
+      {
+        url: '/icon.png', 
+        width: 1200,
+        height: 630,
+        alt: "Simple Tools Hub Preview",
+      },
+    ], // Fixed the missing closing brace here
   },
   twitter: {
     card: "summary_large_image",
