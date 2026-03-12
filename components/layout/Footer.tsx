@@ -10,7 +10,7 @@ const FOOTER_CATS: ToolCategory[] = ["text", "formatter", "generator", "sorter",
 // ── Developer info ──
 const DEVELOPER_NAME = "Angela Gardan";
 const DEVELOPER_PORTFOLIO = "https://akaizer.vercel.app/";
-const DEVELOPER_GITHUB = ""; // e.g. "https://github.com/gela08"
+const DEVELOPER_GITHUB = "https://github.com/gela08"; 
 
 // ── Showcase items ──
 const OTHER_WORKS = [
@@ -34,6 +34,11 @@ const OTHER_WORKS = [
     description: "A student management system for attendance tracking and organizational programs.",
     url: "https://hcdc-cetso-portal.vercel.app/" 
   },
+  { 
+    title: "Cloud Image Manager", 
+    description: "A specialized tool for managing assets and inventory with cloud integration.",
+    url: "https://gela08.github.io/Quest-Inventory/" 
+  },
 ];
 
 export default function Footer() {
@@ -46,7 +51,7 @@ export default function Footer() {
         {/* Main Footer Grid */}
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
 
-          {/* Column 1: Brand & About */}
+          {/* Column 1: Brand & About (Unchanged) */}
           <div className="lg:col-span-1">
             <Link href="/" className="group flex items-center gap-2.5 font-display text-xl font-extrabold text-ink transition-opacity hover:opacity-90">
               <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg bg-brand transition-transform group-hover:scale-105">
@@ -70,9 +75,9 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Columns 2 & 3: Dynamic Tool Categories */}
+          {/* Columns 2 & 3: Dynamic Tool Categories (Unchanged) */}
           {FOOTER_CATS.slice(0, 2).map((cat) => (
-            <div key={cat}>
+            <nav key={cat} aria-label={`${categoryLabels[cat]} links`}>
               <h3 className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-ink-subtle">
                 {categoryLabels[cat]}
               </h3>
@@ -91,11 +96,11 @@ export default function Footer() {
                     </li>
                   ))}
               </ul>
-            </div>
+            </nav>
           ))}
 
-          {/* Column 4: Site Links */}
-          <div>
+          {/* Column 4: Site Links (Updated with Contact) */}
+          <nav aria-label="Site resources">
             <h3 className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-ink-subtle">
               Resources
             </h3>
@@ -103,19 +108,20 @@ export default function Footer() {
               {[
                 { href: "/tools", label: "Browse All Tools" },
                 { href: "/about", label: "About This Site" },
+                { href: "/contact", label: "Contact & Support" }, // Added here
                 { href: "/privacy", label: "Privacy Policy" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-ink-muted transition-colors hover:text-ink"
+                    className="text-sm text-ink-muted transition-colors hover:text-ink hover:underline decoration-brand/30 underline-offset-4"
                   >
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
         </div>
 
         {/* ── Developer Showcase Section ── */}
@@ -169,12 +175,16 @@ export default function Footer() {
                 {DEVELOPER_NAME}
               </a>
             </span>
+            
             {DEVELOPER_GITHUB && (
-              <a href={DEVELOPER_GITHUB} target="_blank" rel="noopener noreferrer" className="hover:text-ink transition-colors" aria-label="GitHub">
-                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
-                </svg>
-              </a>
+              <>
+                <span className="h-3 w-px bg-border hidden sm:block" />
+                <a href={DEVELOPER_GITHUB} target="_blank" rel="noopener noreferrer" className="hover:text-ink transition-colors" aria-label="GitHub">
+                  <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+                  </svg>
+                </a>
+              </>
             )}
           </div>
         </div>
