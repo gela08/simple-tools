@@ -41,21 +41,51 @@ export default function RandomNamePicker() {
         </label>
         <textarea value={input} onChange={(e) => setInput(e.target.value)}
           placeholder={"Alice\nBob\nCharlie\nDiana\nEthan"}
+<<<<<<< HEAD
           className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20"
+=======
+<<<<<<< HEAD
+          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20"
+=======
+          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder:text-ink-subtle focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
           rows={6} />
         <p className="mt-1 text-xs text-ink-subtle">{names.length} name{names.length !== 1 ? "s" : ""} entered</p>
       </div>
 
       <button onClick={pick} disabled={names.length < 2 || picking}
+<<<<<<< HEAD
         className="flex items-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-dark active:scale-95 disabled:opacity-60">
+=======
+<<<<<<< HEAD
+        className="flex items-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-dark active:scale-95 disabled:opacity-60">
+=======
+        className="flex items-center gap-2 rounded-xl bg-brand-orange px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-orange-dark active:scale-95 disabled:opacity-60">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
         🎯 {picking ? "Picking…" : "Pick a Name"}
       </button>
 
       {winner && (
+<<<<<<< HEAD
         <div className="rounded-2xl border-2 border-brand/30 bg-brand/5 p-6 text-center">
           <p className="text-xs font-medium uppercase tracking-wider text-ink-subtle mb-1">🎉 Winner</p>
           <p className="text-3xl font-extrabold font-display text-ink">{winner}</p>
           <button onClick={handleCopy} className={`mt-3 text-sm font-medium border rounded-lg px-4 py-1.5 transition-all ${copied ? "border-green-400 text-green-600" : "border-border text-ink-muted hover:border-brand/40"}`}>
+=======
+<<<<<<< HEAD
+        <div className="rounded-2xl border-2 border-brand/30 bg-brand/5 p-6 text-center">
+          <p className="text-xs font-medium uppercase tracking-wider text-ink-subtle mb-1">🎉 Winner</p>
+          <p className="text-3xl font-extrabold font-display text-ink">{winner}</p>
+          <button onClick={handleCopy} className={`mt-3 text-sm font-medium border rounded-lg px-4 py-1.5 transition-all ${copied ? "border-green-400 text-green-600" : "border-border text-ink-muted hover:border-brand/40"}`}>
+=======
+        <div className="rounded-2xl border-2 border-brand-orange/30 bg-brand-orange/5 p-6 text-center">
+          <p className="text-xs font-medium uppercase tracking-wider text-ink-subtle mb-1">🎉 Winner</p>
+          <p className="text-3xl font-extrabold font-display text-ink">{winner}</p>
+          <button onClick={handleCopy} className={`mt-3 text-sm font-medium border rounded-lg px-4 py-1.5 transition-all ${copied ? "border-green-400 text-green-600" : "border-border text-ink-muted hover:border-brand-orange/40"}`}>
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
             {copied ? "✓ Copied!" : "Copy name"}
           </button>
         </div>

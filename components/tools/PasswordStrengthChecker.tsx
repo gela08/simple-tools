@@ -46,7 +46,15 @@ export default function PasswordStrengthChecker() {
         <div className="relative">
           <input type={show ? "text" : "password"} value={pwd} onChange={(e) => setPwd(e.target.value)}
             placeholder="Type your password…"
+<<<<<<< HEAD
             className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 pr-12 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" />
+=======
+<<<<<<< HEAD
+            className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 pr-12 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" />
+=======
+            className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 pr-12 text-sm text-ink placeholder:text-ink-subtle focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20" />
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
           <button onClick={() => setShow(!show)} className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-subtle hover:text-ink text-sm">
             {show ? "Hide" : "Show"}
           </button>

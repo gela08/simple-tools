@@ -89,7 +89,15 @@ export default function SearchBar({ onClose, autoFocus, placeholder = "Search to
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={handleKey}
           placeholder={placeholder}
+<<<<<<< HEAD
           className="w-full rounded-xl border border-border bg-surface-muted py-2.5 pl-10 pr-10 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20"
+=======
+<<<<<<< HEAD
+          className="w-full rounded-xl border border-border bg-surface-muted py-2.5 pl-9 pr-4 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20"
+=======
+          className="w-full rounded-xl border border-border bg-surface-muted py-2.5 pl-9 pr-4 text-sm text-ink placeholder:text-ink-subtle focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
         />
 
         {query && (
@@ -103,6 +111,7 @@ export default function SearchBar({ onClose, autoFocus, placeholder = "Search to
       </div>
 
       {results.length > 0 && (
+<<<<<<< HEAD
         <div className="absolute top-full z-50 mt-2 w-full overflow-hidden rounded-xl border border-border bg-surface-card shadow-xl">
           {results.map((t, i) => {
             // Get the dynamic Icon component
@@ -127,6 +136,28 @@ export default function SearchBar({ onClose, autoFocus, placeholder = "Search to
               </button>
             );
           })}
+=======
+        <div className="absolute top-full z-50 mt-1 w-full overflow-hidden rounded-xl border border-border bg-surface-card shadow-card-hover">
+          {results.map((t, i) => (
+            <button
+              key={t.id}
+              onClick={() => go(t.slug)}
+              className={`flex w-full items-center gap-3 px-4 py-3 text-left transition-colors ${
+<<<<<<< HEAD
+                i === active ? "bg-brand/10" : "hover:bg-surface-muted"
+=======
+                i === active ? "bg-brand-orange/10" : "hover:bg-surface-muted"
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+              } ${i !== results.length - 1 ? "border-b border-border" : ""}`}
+            >
+              <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm ${t.color}`}>{t.emoji}</span>
+              <div className="min-w-0">
+                <p className="text-sm font-medium text-ink truncate">{t.name}</p>
+                <p className="text-xs text-ink-subtle truncate">{t.description}</p>
+              </div>
+            </button>
+          ))}
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
         </div>
       )}
 

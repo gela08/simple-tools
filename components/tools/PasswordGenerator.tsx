@@ -57,7 +57,15 @@ export default function PasswordGenerator() {
     <button
       onClick={() => set(!val)}
       className={`rounded-lg border px-3 py-2 text-sm font-medium transition-all ${
+<<<<<<< HEAD
         val ? "border-brand bg-brand/10 text-brand" : "border-border text-ink-muted hover:border-brand/40"
+=======
+<<<<<<< HEAD
+        val ? "border-brand bg-brand/10 text-brand" : "border-border text-ink-muted hover:border-brand/40"
+=======
+        val ? "border-brand-orange bg-brand-orange/10 text-brand-orange" : "border-border text-ink-muted hover:border-brand-orange/40"
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
       }`}
     >
       {val ? "✓" : "○"} {label}
@@ -68,10 +76,24 @@ export default function PasswordGenerator() {
     <div className="space-y-6">
       <div>
         <label className="mb-1.5 block text-sm font-medium text-ink">
+<<<<<<< HEAD
           Password length: <span className="font-bold text-brand">{len}</span>
         </label>
         <input type="range" min={6} max={64} value={len} onChange={(e) => setLen(+e.target.value)}
           className="w-full accent-brand" />
+=======
+<<<<<<< HEAD
+          Password length: <span className="font-bold text-brand">{len}</span>
+        </label>
+        <input type="range" min={6} max={64} value={len} onChange={(e) => setLen(+e.target.value)}
+          className="w-full accent-brand" />
+=======
+          Password length: <span className="font-bold text-brand-orange">{len}</span>
+        </label>
+        <input type="range" min={6} max={64} value={len} onChange={(e) => setLen(+e.target.value)}
+          className="w-full accent-brand-orange" />
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
         <div className="mt-1 flex justify-between text-xs text-ink-subtle"><span>6</span><span>64</span></div>
       </div>
 
@@ -90,13 +112,29 @@ export default function PasswordGenerator() {
         {[1, 3, 5, 10].map((n) => (
           <button key={n} onClick={() => setCount(n)}
             className={`rounded-lg border px-3 py-1.5 text-sm font-medium transition-all ${
+<<<<<<< HEAD
               count === n ? "border-brand bg-brand/10 text-brand" : "border-border text-ink-muted hover:border-brand/40"
+=======
+<<<<<<< HEAD
+              count === n ? "border-brand bg-brand/10 text-brand" : "border-border text-ink-muted hover:border-brand/40"
+=======
+              count === n ? "border-brand-orange bg-brand-orange/10 text-brand-orange" : "border-border text-ink-muted hover:border-brand-orange/40"
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
             }`}>{n}</button>
         ))}
       </div>
 
       <button onClick={generate_}
+<<<<<<< HEAD
         className="flex items-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-dark active:scale-95">
+=======
+<<<<<<< HEAD
+        className="flex items-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-dark active:scale-95">
+=======
+        className="flex items-center gap-2 rounded-xl bg-brand-orange px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-orange-dark active:scale-95">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
         🔐 Generate Passwords
       </button>
 
@@ -110,7 +148,15 @@ export default function PasswordGenerator() {
                   <code className="flex-1 break-all text-sm text-ink">{p}</code>
                   <button onClick={() => handleCopy(p)}
                     className={`shrink-0 rounded-lg border px-3 py-1.5 text-xs font-medium transition-all ${
+<<<<<<< HEAD
                       copied === p ? "border-green-400 bg-green-50 text-green-700" : "border-border bg-white text-ink-muted hover:border-brand/40"
+=======
+<<<<<<< HEAD
+                      copied === p ? "border-green-400 bg-green-50 text-green-700" : "border-border bg-white text-ink-muted hover:border-brand/40"
+=======
+                      copied === p ? "border-green-400 bg-green-50 text-green-700" : "border-border bg-white text-ink-muted hover:border-brand-orange/40"
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
                     }`}>
                     {copied === p ? "✓ Copied" : "Copy"}
                   </button>

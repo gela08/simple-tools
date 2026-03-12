@@ -5,11 +5,23 @@ import UsernameGenerator from "@/components/tools/UsernameGenerator";
 export const metadata: Metadata = {
   title: "Username Generator",
   description:
+<<<<<<< HEAD
     "Generate creative, unique usernames for any platform. Choose from cute, gaming, aesthetic, funny, professional, and witty Filipino styles.",
+=======
+<<<<<<< HEAD
+    "Generate creative, unique usernames for any platform. Choose from cute, gaming, aesthetic, funny, professional, and witty Filipino styles.",
+=======
+    "Generate creative, unique usernames for social media, gaming, and developer profiles. Choose from fun, professional, or gamer styles.",
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
 };
 
 export default function UsernameGeneratorPage() {
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
     <ToolLayout
       toolId="username-generator"
       title="Username Generator"
@@ -24,5 +36,20 @@ export default function UsernameGeneratorPage() {
     >
       <UsernameGenerator />
     </ToolLayout>
+<<<<<<< HEAD
+=======
+=======
+    <div className="select-none">
+      <ToolLayout
+        toolId="username-generator"
+        title="Username Generator"
+        description="Generate unique, creative usernames for any platform. Choose your style and regenerate as many times as you like."
+      >
+        <UsernameGenerator />
+      </ToolLayout>
+    </div>
+
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
   );
 }

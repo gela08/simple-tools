@@ -116,6 +116,7 @@ export default function AboutPage() {
         </ul>
       </section>
 
+<<<<<<< HEAD
       {/* Footer Info / Contact */}
       <section className="mt-24 rounded-[2rem] bg-ink p-8 text-center text-white sm:p-12">
         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 mb-6">
@@ -136,6 +137,35 @@ export default function AboutPage() {
             Get in touch
           </Link>
         </div>
+=======
+      {/* Philosophy */}
+<<<<<<< HEAD
+      <section className="mt-12 rounded-2xl bg-brand/5 p-6 ring-1 ring-brand/15">
+=======
+      <section className="mt-12 rounded-2xl bg-brand-orange/5 p-6 ring-1 ring-brand-orange/15">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+        <h2 className="mb-2 font-display text-lg font-bold text-ink">
+          Our Philosophy
+        </h2>
+        <ul className="space-y-1.5 text-sm text-ink-muted">
+          {[
+            "Free, always.",
+            "No tracking. No ads. No dark patterns.",
+            "All processing runs in your browser.",
+            "Optimized for speed and low-end devices.",
+            "Accessible to everyone.",
+          ].map((item) => (
+            <li key={item} className="flex items-start gap-2">
+<<<<<<< HEAD
+              <span className="mt-0.5 text-brand">✓</span>
+=======
+              <span className="mt-0.5 text-brand-orange">✓</span>
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+              {item}
+            </li>
+          ))}
+        </ul>
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
       </section>
     </div>
   );

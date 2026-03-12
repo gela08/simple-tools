@@ -20,20 +20,48 @@ export default function CountdownCalculator() {
         <div>
           <label className="mb-1.5 block text-sm font-medium text-ink">Target date</label>
           <input type="date" value={date} onChange={(e) => setDate(e.target.value)}
+<<<<<<< HEAD
             className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" />
+=======
+<<<<<<< HEAD
+            className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" />
+=======
+            className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20" />
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
         </div>
         <div>
           <label className="mb-1.5 block text-sm font-medium text-ink">Event name <span className="text-ink-subtle">(optional)</span></label>
           <input type="text" value={label} onChange={(e) => setLabel(e.target.value)}
             placeholder="e.g. Birthday, Holiday…"
+<<<<<<< HEAD
             className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" />
+=======
+<<<<<<< HEAD
+            className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" />
+=======
+            className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink placeholder:text-ink-subtle focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20" />
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
         </div>
       </div>
 
       {diff !== null && (
+<<<<<<< HEAD
         <div className={`rounded-2xl border-2 p-6 text-center ${isPast ? "border-red-200 bg-red-50" : "border-brand/20 bg-brand/5"}`}>
           {label && <p className="text-sm font-medium text-ink-muted mb-2">{label}</p>}
           <p className={`text-6xl font-extrabold font-display ${isPast ? "text-red-600" : "text-brand"}`}>
+=======
+<<<<<<< HEAD
+        <div className={`rounded-2xl border-2 p-6 text-center ${isPast ? "border-red-200 bg-red-50" : "border-brand/20 bg-brand/5"}`}>
+          {label && <p className="text-sm font-medium text-ink-muted mb-2">{label}</p>}
+          <p className={`text-6xl font-extrabold font-display ${isPast ? "text-red-600" : "text-brand"}`}>
+=======
+        <div className={`rounded-2xl border-2 p-6 text-center ${isPast ? "border-red-200 bg-red-50" : "border-brand-orange/20 bg-brand-orange/5"}`}>
+          {label && <p className="text-sm font-medium text-ink-muted mb-2">{label}</p>}
+          <p className={`text-6xl font-extrabold font-display ${isPast ? "text-red-600" : "text-brand-orange"}`}>
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
             {Math.abs(diff)}
           </p>
           <p className="text-lg font-semibold text-ink mt-1">{Math.abs(diff) === 1 ? "day" : "days"} {isPast ? "ago" : "away"}</p>

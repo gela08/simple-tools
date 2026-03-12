@@ -55,8 +55,18 @@ export default function TextCaseConverter() {
               title={`Example: "${c.example}"`}
               className={`rounded-lg border px-4 py-1.5 text-sm font-medium transition-colors ${
                 activeCase === c.id
+<<<<<<< HEAD
                   ? "border-brand bg-brand text-white"
                   : "border-border bg-surface-muted text-ink-muted hover:border-brand/50 hover:text-ink"
+=======
+<<<<<<< HEAD
+                  ? "border-brand bg-brand text-white"
+                  : "border-border bg-surface-muted text-ink-muted hover:border-brand/50 hover:text-ink"
+=======
+                  ? "border-brand-orange bg-brand-orange text-white"
+                  : "border-border bg-surface-muted text-ink-muted hover:border-brand-orange/50 hover:text-ink"
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
               }`}
             >
               {c.label}
@@ -74,7 +84,15 @@ export default function TextCaseConverter() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Paste your text here..."
+<<<<<<< HEAD
           className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder-ink-subtle transition-colors focus:border-brand focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand/20"
+=======
+<<<<<<< HEAD
+          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder-ink-subtle transition-colors focus:border-brand focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand/20"
+=======
+          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder-ink-subtle transition-colors focus:border-brand-orange focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
           rows={5}
         />
       </div>

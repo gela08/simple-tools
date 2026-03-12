@@ -21,7 +21,15 @@ export default function TextReverser() {
         {([["chars", "Reverse characters"], ["words", "Reverse words"]] as const).map(([id, label]) => (
           <button key={id} onClick={() => setMode(id)}
             className={`rounded-xl border px-4 py-2 text-sm font-medium transition-all ${
+<<<<<<< HEAD
               mode === id ? "border-brand bg-brand/10 text-brand" : "border-border text-ink-muted hover:border-brand/40"
+=======
+<<<<<<< HEAD
+              mode === id ? "border-brand bg-brand/10 text-brand" : "border-border text-ink-muted hover:border-brand/40"
+=======
+              mode === id ? "border-brand-orange bg-brand-orange/10 text-brand-orange" : "border-border text-ink-muted hover:border-brand-orange/40"
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
             }`}>{label}</button>
         ))}
       </div>
@@ -29,13 +37,29 @@ export default function TextReverser() {
         <label className="mb-1.5 block text-sm font-medium text-ink">Input</label>
         <textarea value={input} onChange={(e) => setInput(e.target.value)}
           placeholder="Type or paste your text here…"
+<<<<<<< HEAD
           className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" rows={4} />
+=======
+<<<<<<< HEAD
+          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" rows={4} />
+=======
+          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder:text-ink-subtle focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20" rows={4} />
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
       </div>
       {output && (
         <div>
           <div className="mb-1.5 flex items-center justify-between">
             <label className="text-sm font-medium text-ink">Result</label>
+<<<<<<< HEAD
             <button onClick={handleCopy} className={`text-xs font-medium border rounded-lg px-3 py-1.5 transition-all ${copied ? "border-green-400 bg-green-50 text-green-700" : "border-border text-ink-muted hover:border-brand/40"}`}>
+=======
+<<<<<<< HEAD
+            <button onClick={handleCopy} className={`text-xs font-medium border rounded-lg px-3 py-1.5 transition-all ${copied ? "border-green-400 bg-green-50 text-green-700" : "border-border text-ink-muted hover:border-brand/40"}`}>
+=======
+            <button onClick={handleCopy} className={`text-xs font-medium border rounded-lg px-3 py-1.5 transition-all ${copied ? "border-green-400 bg-green-50 text-green-700" : "border-border text-ink-muted hover:border-brand-orange/40"}`}>
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
               {copied ? "✓ Copied" : "Copy"}
             </button>
           </div>

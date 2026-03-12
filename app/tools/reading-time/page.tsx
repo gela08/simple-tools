@@ -5,11 +5,23 @@ import ReadingTime from "@/components/tools/ReadingTime";
 export const metadata: Metadata = {
   title: "Reading Time Calculator",
   description:
+<<<<<<< HEAD
     "Estimate how long it takes to read any text. Paste your article or blog post for an instant reading time estimate.",
+=======
+<<<<<<< HEAD
+    "Estimate how long it takes to read any text. Paste your article or blog post for an instant reading time estimate.",
+=======
+    "Estimate how long it takes to read any text. Adjustable reading speed — slow, average, or fast.",
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
 };
 
 export default function ReadingTimePage() {
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
     <ToolLayout
       toolId="reading-time"
       title="Reading Time Calculator"
@@ -22,5 +34,20 @@ export default function ReadingTimePage() {
     >
       <ReadingTime />
     </ToolLayout>
+<<<<<<< HEAD
+=======
+=======
+    <div className="select-none">
+      <ToolLayout
+        toolId="reading-time"
+        title="Reading Time Calculator"
+        description="Estimate reading time based on word count and your reading speed."
+      >
+        <ReadingTime />
+      </ToolLayout>
+    </div>
+
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
   );
 }

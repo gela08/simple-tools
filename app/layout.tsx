@@ -76,7 +76,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${syne.variable} ${dmSans.variable}`}>
+<<<<<<< HEAD
       <body className="flex min-h-screen flex-col bg-surface-bg font-body text-ink antialiased overflow-x-hidden selection:bg-brand/10 selection:text-brand">
+=======
+<<<<<<< HEAD
+      <body className="flex min-h-screen flex-col bg-surface-bg font-body text-ink antialiased overflow-x-hidden">
+=======
+      <body className="flex min-h-screen flex-col bg-surface-bg font-body text-ink antialiased">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -28,12 +28,28 @@ export default function AgeCalculator() {
         <label className="mb-1.5 block text-sm font-medium text-ink">Your date of birth</label>
         <input type="date" value={birthdate} onChange={(e) => setBirthdate(e.target.value)}
           max={today.toISOString().split("T")[0]}
+<<<<<<< HEAD
           className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" />
+=======
+<<<<<<< HEAD
+          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" />
+=======
+          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20" />
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
       </div>
 
       {birth && !isNaN(birth.getTime()) && (
         <div className="space-y-3">
+<<<<<<< HEAD
           <div className="rounded-2xl border-2 border-brand/20 bg-brand/5 p-6 text-center">
+=======
+<<<<<<< HEAD
+          <div className="rounded-2xl border-2 border-brand/20 bg-brand/5 p-6 text-center">
+=======
+          <div className="rounded-2xl border-2 border-brand-orange/20 bg-brand-orange/5 p-6 text-center">
+>>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
+>>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
             <p className="text-sm text-ink-muted mb-1">You are</p>
             <p className="text-5xl font-extrabold font-display text-ink">{years}</p>
             <p className="text-lg text-ink-muted">years old</p>
