@@ -49,7 +49,7 @@ export default function Header() {
               priority
             />
           </div>
-          <span className="hidden xs:block">
+          <span className="xs:block">
             Simple<span className="text-brand">Tools</span>
           </span>
         </Link>

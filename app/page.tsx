@@ -46,8 +46,8 @@ export default function HomePage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="border-b border-border bg-gradient-to-b from-brand/5 to-surface-bg">
-        <div className="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-24">
+      <section className="border-b border-border bg-gradient-to-b from-brand/5 to-surface-bg ">
+        <div className="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-24 select-none">
           <div className="mx-auto max-w-2xl">
             {/* Live badge */}
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand">
@@ -104,7 +104,7 @@ export default function HomePage() {
 
       {/* ── Featured Tools ── */}
       <section id="featured" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-        <div className="mb-10 flex items-end justify-between">
+        <div className="mb-10 flex items-end justify-between select-none">
           <div>
             <h2 className="font-display text-2xl font-black tracking-tight text-ink sm:text-4xl">
               Featured Tools
@@ -125,7 +125,7 @@ export default function HomePage() {
 
       {/* ── Browse by Category ── */}
       <section className="border-y border-border bg-surface-muted/50 py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 select-none">
           <div className="mb-10 flex items-center gap-3">
             <LayoutGrid className="text-brand" size={28} />
             <h2 className="font-display text-2xl font-black tracking-tight text-ink sm:text-4xl">
@@ -169,7 +169,7 @@ export default function HomePage() {
 
       {/* ── Why section ── */}
       <section className="py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 text-center">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 text-center select-none">
           <h2 className="font-display text-2xl font-black tracking-tight text-ink sm:text-4xl">
             Built for speed. Designed for privacy.
           </h2>
