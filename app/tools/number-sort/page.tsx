@@ -3,12 +3,16 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import NumberSort from "@/components/tools/NumberSort";
 
 export const metadata: Metadata = {
-  title: "Number Sort",
-<<<<<<< HEAD
-  description: "Sort a list of numbers from lowest to highest or vice versa instantly.",
-=======
-<<<<<<< HEAD
-  description: "Sort a list of numbers from lowest to highest or vice versa instantly.",
+  title: "Number Sort — Sort Numerical Lists Instantly",
+  description:
+    "Organize any list of numbers from lowest to highest or highest to lowest. Handles decimals, negatives, and large datasets with ease. Fast, free, and runs in your browser.",
+  keywords: [
+    "number sort",
+    "sort numbers online",
+    "ascending order calculator",
+    "descending order tool",
+    "numerical list organizer",
+  ],
 };
 
 export default function NumberSortPage() {
@@ -16,26 +20,25 @@ export default function NumberSortPage() {
     <ToolLayout
       toolId="number-sort"
       title="Number Sort"
-      description="Sort a list of numbers from lowest to highest or vice versa instantly."
+      description="Quickly organize your numerical data. Whether it's prices, measurements, or random IDs, we'll sort your list from lowest to highest or vice versa in one click."
+      howTo={[
+        { 
+          step: "Enter your numbers", 
+          detail: "Paste or type your numbers into the input area, separated by lines, commas, or spaces." 
+        },
+        { 
+          step: "Select sort order", 
+          detail: "Choose between Ascending (Smallest to Largest) or Descending (Largest to Smallest)." 
+        },
+        { 
+          step: "Copy your result", 
+          detail: "Get your perfectly ordered numerical list immediately. Click the copy button to use it anywhere." 
+        },
+      ]}
     >
-=======
-  description: "Sort a list of numbers from lowest to highest or vice versa.",
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-};
-
-export default function NumberSortPage() {
-  return (
-<<<<<<< HEAD
-    <ToolLayout
-      toolId="number-sort"
-      title="Number Sort"
-      description="Sort a list of numbers from lowest to highest or vice versa instantly."
-    >
-=======
-    <ToolLayout toolId="number-sort" title="Number Sort" description="Sort a list of numbers from lowest to highest or vice versa.">
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-      <NumberSort />
+      <div className="mx-auto max-w-3xl">
+        <NumberSort />
+      </div>
     </ToolLayout>
   );
 }

@@ -3,14 +3,17 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import UnitConverter from "@/components/tools/UnitConverter";
 
 export const metadata: Metadata = {
-  title: "Unit Converter",
-<<<<<<< HEAD
+  title: "Unit Converter — Instant Length, Weight & Temperature Conversion",
   description:
-    "Convert between common length, weight, and temperature units instantly. Free online unit converter — no signup needed.",
-=======
-<<<<<<< HEAD
-  description:
-    "Convert between common length, weight, and temperature units instantly. Free online unit converter — no signup needed.",
+    "Convert between common length, weight, temperature, and speed units instantly. A fast, free, and comprehensive online unit converter for daily use.",
+  keywords: [
+    "unit converter",
+    "length converter",
+    "weight conversion",
+    "celsius to fahrenheit",
+    "metric to imperial",
+    "online converter",
+  ],
 };
 
 export default function UnitConverterPage() {
@@ -18,38 +21,29 @@ export default function UnitConverterPage() {
     <ToolLayout
       toolId="unit-converter"
       title="Unit Converter"
-      description="Quick conversions between the most-used units: km/miles, kg/lbs, cm/inches, Celsius/Fahrenheit, and more."
+      description="Quickly convert between the most-used units including kilometers/miles, kilograms/pounds, centimeters/inches, Celsius/Fahrenheit, and more."
       howTo={[
-        { step: "Choose a category", detail: "Select Length, Weight, or Temperature." },
-        { step: "Enter a value", detail: "Type the number you want to convert." },
-        { step: "Select the source unit", detail: "Pick the unit you are converting from." },
-        { step: "See the result", detail: "The converted value appears instantly." },
+        { 
+          step: "Choose a category", 
+          detail: "Select the type of unit you want to convert (Length, Weight, Temperature, or Speed)." 
+        },
+        { 
+          step: "Enter your value", 
+          detail: "Type the number you wish to convert into the input field." 
+        },
+        { 
+          step: "Select your units", 
+          detail: "Pick your 'from' and 'to' units. The calculation updates instantly as you change them." 
+        },
+        { 
+          step: "Copy the result", 
+          detail: "Click the result to copy it to your clipboard for use in your projects or documents." 
+        },
       ]}
     >
-=======
-  description: "Convert between length, weight, temperature, and speed units.",
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-};
-
-export default function UnitConverterPage() {
-  return (
-<<<<<<< HEAD
-    <ToolLayout
-      toolId="unit-converter"
-      title="Unit Converter"
-      description="Quick conversions between the most-used units: km/miles, kg/lbs, cm/inches, Celsius/Fahrenheit, and more."
-      howTo={[
-        { step: "Choose a category", detail: "Select Length, Weight, or Temperature." },
-        { step: "Enter a value", detail: "Type the number you want to convert." },
-        { step: "Select the source unit", detail: "Pick the unit you are converting from." },
-        { step: "See the result", detail: "The converted value appears instantly." },
-      ]}
-    >
-=======
-    <ToolLayout toolId="unit-converter" title="Unit Converter" description="Convert between length, weight, temperature, and speed units.">
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-      <UnitConverter />
+      <div className="mx-auto max-w-3xl">
+        <UnitConverter />
+      </div>
     </ToolLayout>
   );
 }

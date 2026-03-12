@@ -3,12 +3,16 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import CapitalizeSentences from "@/components/tools/CapitalizeSentences";
 
 export const metadata: Metadata = {
-  title: "Capitalize Sentences",
-<<<<<<< HEAD
-  description: "Auto-capitalize the first letter of every sentence instantly. Fix formatting in one click.",
-=======
-<<<<<<< HEAD
-  description: "Auto-capitalize the first letter of every sentence instantly. Fix formatting in one click.",
+  title: "Capitalize Sentences — Auto-Fix Text Formatting",
+  description:
+    "Automatically capitalize the first letter of every sentence and fix common formatting errors instantly. Fast, free, and runs entirely in your browser.",
+  keywords: [
+    "capitalize sentences",
+    "sentence case converter",
+    "fix text formatting",
+    "auto capitalization tool",
+    "online text editor",
+  ],
 };
 
 export default function CapitalizeSentencesPage() {
@@ -16,26 +20,25 @@ export default function CapitalizeSentencesPage() {
     <ToolLayout
       toolId="capitalize-sentences"
       title="Capitalize Sentences"
-      description="Auto-capitalize the first letter of every sentence instantly. Fix formatting in one click."
+      description="Paste your text and we'll automatically capitalize the first letter of every sentence. Perfect for fixing quickly typed notes or unformatted drafts."
+      howTo={[
+        { 
+          step: "Paste your text", 
+          detail: "Enter your unformatted or lowercase text into the input area." 
+        },
+        { 
+          step: "Apply formatting", 
+          detail: "The tool will automatically detect sentence boundaries and capitalize the first letter of each." 
+        },
+        { 
+          step: "Copy and use", 
+          detail: "Click the copy button to get your professionally formatted text back." 
+        },
+      ]}
     >
-=======
-  description: "Auto-capitalize the first letter of every sentence instantly.",
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-};
-
-export default function CapitalizeSentencesPage() {
-  return (
-<<<<<<< HEAD
-    <ToolLayout
-      toolId="capitalize-sentences"
-      title="Capitalize Sentences"
-      description="Auto-capitalize the first letter of every sentence instantly. Fix formatting in one click."
-    >
-=======
-    <ToolLayout toolId="capitalize-sentences" title="Capitalize Sentences" description="Auto-capitalize the first letter of every sentence instantly.">
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-      <CapitalizeSentences />
+      <div className="mx-auto max-w-3xl">
+        <CapitalizeSentences />
+      </div>
     </ToolLayout>
   );
 }

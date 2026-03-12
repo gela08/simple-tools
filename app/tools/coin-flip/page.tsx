@@ -3,12 +3,16 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import CoinFlip from "@/components/tools/CoinFlip";
 
 export const metadata: Metadata = {
-  title: "Coin Flip",
-<<<<<<< HEAD
-  description: "Flip a virtual coin — heads or tails decided instantly. Tracks your flip history.",
-=======
-<<<<<<< HEAD
-  description: "Flip a virtual coin — heads or tails decided instantly. Tracks your flip history.",
+  title: "Coin Flip — Heads or Tails Virtual Flip",
+  description:
+    "Flip a virtual coin to get heads or tails instantly. Our tool uses a fair random generator and tracks your session history so you can see your results over time.",
+  keywords: [
+    "coin flip online",
+    "heads or tails",
+    "virtual coin toss",
+    "random decision maker",
+    "flip a coin",
+  ],
 };
 
 export default function CoinFlipPage() {
@@ -16,26 +20,25 @@ export default function CoinFlipPage() {
     <ToolLayout
       toolId="coin-flip"
       title="Coin Flip"
-      description="Flip a virtual coin — heads or tails decided instantly. Tracks your flip history."
+      description="Can't decide? Flip a virtual coin. It's fast, fair, and perfectly random. We'll even keep track of your heads and tails count for this session."
+      howTo={[
+        { 
+          step: "Flip the coin", 
+          detail: "Click the 'Flip Coin' button to trigger the animation and generate a random result." 
+        },
+        { 
+          step: "View the result", 
+          detail: "Heads or Tails will be displayed instantly on the screen." 
+        },
+        { 
+          step: "Check your stats", 
+          detail: "Scroll down to see your session history and the percentage breakdown of your results." 
+        },
+      ]}
     >
-=======
-  description: "Flip a virtual coin and get heads or tails instantly.",
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-};
-
-export default function CoinFlipPage() {
-  return (
-<<<<<<< HEAD
-    <ToolLayout
-      toolId="coin-flip"
-      title="Coin Flip"
-      description="Flip a virtual coin — heads or tails decided instantly. Tracks your flip history."
-    >
-=======
-    <ToolLayout toolId="coin-flip" title="Coin Flip" description="Flip a virtual coin and get heads or tails instantly.">
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-      <CoinFlip />
+      <div className="mx-auto max-w-2xl">
+        <CoinFlip />
+      </div>
     </ToolLayout>
   );
 }

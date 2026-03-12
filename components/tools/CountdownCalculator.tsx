@@ -7,6 +7,8 @@ export default function CountdownCalculator() {
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);
+
+  // Appending T00:00:00 ensures the date is treated as local time rather than UTC
   const target = date ? new Date(date + "T00:00:00") : null;
   const diff = target ? Math.round((target.getTime() - today.getTime()) / (1000 * 60 * 60 * 24)) : null;
 
@@ -19,57 +21,55 @@ export default function CountdownCalculator() {
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label className="mb-1.5 block text-sm font-medium text-ink">Target date</label>
-          <input type="date" value={date} onChange={(e) => setDate(e.target.value)}
-<<<<<<< HEAD
-            className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" />
-=======
-<<<<<<< HEAD
-            className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" />
-=======
-            className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20" />
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
+          <input 
+            type="date" 
+            value={date} 
+            onChange={(e) => setDate(e.target.value)}
+            className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20 transition-all" 
+          />
         </div>
         <div>
-          <label className="mb-1.5 block text-sm font-medium text-ink">Event name <span className="text-ink-subtle">(optional)</span></label>
-          <input type="text" value={label} onChange={(e) => setLabel(e.target.value)}
+          <label className="mb-1.5 block text-sm font-medium text-ink">
+            Event name <span className="text-ink-subtle">(optional)</span>
+          </label>
+          <input 
+            type="text" 
+            value={label} 
+            onChange={(e) => setLabel(e.target.value)}
             placeholder="e.g. Birthday, Holiday…"
-<<<<<<< HEAD
-            className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" />
-=======
-<<<<<<< HEAD
-            className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" />
-=======
-            className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink placeholder:text-ink-subtle focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20" />
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
+            className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20 transition-all" 
+          />
         </div>
       </div>
 
       {diff !== null && (
-<<<<<<< HEAD
-        <div className={`rounded-2xl border-2 p-6 text-center ${isPast ? "border-red-200 bg-red-50" : "border-brand/20 bg-brand/5"}`}>
+        <div className={`rounded-2xl border-2 p-6 text-center animate-in fade-in zoom-in-95 duration-300 ${
+          isPast ? "border-red-200 bg-red-50" : "border-brand/20 bg-brand/5"
+        }`}>
           {label && <p className="text-sm font-medium text-ink-muted mb-2">{label}</p>}
           <p className={`text-6xl font-extrabold font-display ${isPast ? "text-red-600" : "text-brand"}`}>
-=======
-<<<<<<< HEAD
-        <div className={`rounded-2xl border-2 p-6 text-center ${isPast ? "border-red-200 bg-red-50" : "border-brand/20 bg-brand/5"}`}>
-          {label && <p className="text-sm font-medium text-ink-muted mb-2">{label}</p>}
-          <p className={`text-6xl font-extrabold font-display ${isPast ? "text-red-600" : "text-brand"}`}>
-=======
-        <div className={`rounded-2xl border-2 p-6 text-center ${isPast ? "border-red-200 bg-red-50" : "border-brand-orange/20 bg-brand-orange/5"}`}>
-          {label && <p className="text-sm font-medium text-ink-muted mb-2">{label}</p>}
-          <p className={`text-6xl font-extrabold font-display ${isPast ? "text-red-600" : "text-brand-orange"}`}>
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
             {Math.abs(diff)}
           </p>
-          <p className="text-lg font-semibold text-ink mt-1">{Math.abs(diff) === 1 ? "day" : "days"} {isPast ? "ago" : "away"}</p>
-          <div className="mt-4 flex justify-center gap-6 text-sm text-ink-muted">
-            <span>~{weeks} week{weeks !== 1 ? "s" : ""}</span>
-            <span>~{months} month{months !== 1 ? "s" : ""}</span>
+          <p className="text-lg font-semibold text-ink mt-1">
+            {Math.abs(diff) === 1 ? "day" : "days"} {isPast ? "ago" : "away"}
+          </p>
+          
+          <div className="mt-4 flex justify-center gap-6 text-sm text-ink-muted border-t border-black/5 pt-4">
+            <span className="flex flex-col">
+              <strong className="text-ink text-base">{weeks}</strong>
+              week{weeks !== 1 ? "s" : ""}
+            </span>
+            <span className="flex flex-col">
+              <strong className="text-ink text-base">{months}</strong>
+              month{months !== 1 ? "s" : ""}
+            </span>
           </div>
-          {diff === 0 && <p className="mt-3 text-lg font-bold text-green-600">🎉 That's today!</p>}
+          
+          {diff === 0 && (
+            <p className="mt-3 text-lg font-bold text-green-600 animate-bounce">
+              🎉 That's today!
+            </p>
+          )}
         </div>
       )}
     </div>

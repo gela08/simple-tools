@@ -7,65 +7,95 @@ export default function AgeCalculator() {
   const today = new Date();
   const birth = birthdate ? new Date(birthdate) : null;
 
-  let years = 0, months = 0, days = 0, nextBirthday = 0;
+  let years = 0,
+    months = 0,
+    days = 0,
+    nextBirthday = 0;
+
   if (birth && !isNaN(birth.getTime())) {
     years = today.getFullYear() - birth.getFullYear();
     months = today.getMonth() - birth.getMonth();
     days = today.getDate() - birth.getDate();
-    if (days < 0) { months--; days += new Date(today.getFullYear(), today.getMonth(), 0).getDate(); }
-    if (months < 0) { years--; months += 12; }
+    
+    // Adjust for negative days in the current month
+    if (days < 0) {
+      months--;
+      days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+    }
+    // Adjust for negative months in the current year
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
 
-    const thisYearBirthday = new Date(today.getFullYear(), birth.getMonth(), birth.getDate());
-    if (thisYearBirthday <= today) thisYearBirthday.setFullYear(today.getFullYear() + 1);
-    nextBirthday = Math.round((thisYearBirthday.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+    const thisYearBirthday = new Date(
+      today.getFullYear(),
+      birth.getMonth(),
+      birth.getDate()
+    );
+    
+    if (thisYearBirthday <= today) {
+      thisYearBirthday.setFullYear(today.getFullYear() + 1);
+    }
+    
+    nextBirthday = Math.round(
+      (thisYearBirthday.getTime() - today.getTime()) / (1000 * 60 * 60 * 24)
+    );
   }
 
-  const totalDays = birth ? Math.round((today.getTime() - birth.getTime()) / (1000 * 60 * 60 * 24)) : 0;
+  const totalDays = birth
+    ? Math.round((today.getTime() - birth.getTime()) / (1000 * 60 * 60 * 24))
+    : 0;
 
   return (
     <div className="space-y-5">
       <div>
-        <label className="mb-1.5 block text-sm font-medium text-ink">Your date of birth</label>
-        <input type="date" value={birthdate} onChange={(e) => setBirthdate(e.target.value)}
+        <label className="mb-1.5 block text-sm font-medium text-ink">
+          Your date of birth
+        </label>
+        <input
+          type="date"
+          value={birthdate}
+          onChange={(e) => setBirthdate(e.target.value)}
           max={today.toISOString().split("T")[0]}
-<<<<<<< HEAD
-          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" />
-=======
-<<<<<<< HEAD
-          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" />
-=======
-          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20" />
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
+          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20"
+        />
       </div>
 
       {birth && !isNaN(birth.getTime()) && (
         <div className="space-y-3">
-<<<<<<< HEAD
           <div className="rounded-2xl border-2 border-brand/20 bg-brand/5 p-6 text-center">
-=======
-<<<<<<< HEAD
-          <div className="rounded-2xl border-2 border-brand/20 bg-brand/5 p-6 text-center">
-=======
-          <div className="rounded-2xl border-2 border-brand-orange/20 bg-brand-orange/5 p-6 text-center">
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
             <p className="text-sm text-ink-muted mb-1">You are</p>
-            <p className="text-5xl font-extrabold font-display text-ink">{years}</p>
+            <p className="text-5xl font-extrabold font-display text-ink">
+              {years}
+            </p>
             <p className="text-lg text-ink-muted">years old</p>
-            <p className="mt-2 text-sm text-ink-muted">{years} years, {months} months, {days} days</p>
+            <p className="mt-2 text-sm text-ink-muted">
+              {years} years, {months} months, {days} days
+            </p>
           </div>
+
           <div className="grid grid-cols-2 gap-3">
             <div className="rounded-xl border border-border bg-surface-muted p-4 text-center">
-              <p className="text-2xl font-bold font-display text-ink">{totalDays.toLocaleString()}</p>
+              <p className="text-2xl font-bold font-display text-ink">
+                {totalDays.toLocaleString()}
+              </p>
               <p className="text-xs text-ink-subtle mt-1">days lived</p>
             </div>
             <div className="rounded-xl border border-border bg-surface-muted p-4 text-center">
-              <p className="text-2xl font-bold font-display text-ink">{nextBirthday}</p>
-              <p className="text-xs text-ink-subtle mt-1">days to next birthday</p>
+              <p className="text-2xl font-bold font-display text-ink">
+                {nextBirthday}
+              </p>
+              <p className="text-xs text-ink-subtle mt-1">
+                days to next birthday
+              </p>
             </div>
           </div>
-          {nextBirthday === 0 && <p className="text-center text-green-600 font-semibold">🎂 Happy Birthday!</p>}
+          {nextBirthday === 0 && (
+            <p className="text-center text-green-600 font-semibold animate-bounce">
+              🎂 Happy Birthday!
+            </p>
+          )}
         </div>
       )}
     </div>

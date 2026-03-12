@@ -24,34 +24,26 @@ export default function CopyButton({ text, disabled }: CopyButtonProps) {
     <button
       onClick={handleCopy}
       disabled={disabled || !text}
-      className={`flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-sm font-medium transition-all duration-150 ${
+      className={`flex items-center gap-1.5 rounded-xl px-4 py-2 text-sm font-bold transition-all duration-200 ${
         copied
-          ? "bg-green-100 text-green-700"
-<<<<<<< HEAD
+          ? "bg-green-50 text-green-600 ring-1 ring-green-200"
           : "bg-surface-muted text-ink-muted hover:bg-brand/10 hover:text-brand disabled:cursor-not-allowed disabled:opacity-40"
-=======
-<<<<<<< HEAD
-          : "bg-surface-muted text-ink-muted hover:bg-brand/10 hover:text-brand disabled:cursor-not-allowed disabled:opacity-40"
-=======
-          : "bg-surface-muted text-ink-muted hover:bg-brand-orange/10 hover:text-brand-orange disabled:cursor-not-allowed disabled:opacity-40"
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
       }`}
       aria-label={copied ? "Copied!" : "Copy to clipboard"}
     >
       {copied ? (
         <>
           <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
           </svg>
-          Copied!
+          <span className="animate-in fade-in slide-in-from-left-1">Copied!</span>
         </>
       ) : (
         <>
           <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
           </svg>
-          Copy
+          <span>Copy</span>
         </>
       )}
     </button>

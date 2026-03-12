@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { tools, type Tool } from "@/data/tools";
-import { Search, X } from "lucide-react"; // Import Lucide icons
+import { Search, X } from "lucide-react";
 
 interface SearchBarProps {
   onClose?: () => void;
@@ -11,29 +11,28 @@ interface SearchBarProps {
   placeholder?: string;
 }
 
-// Helper to map your color strings to background classes for the small icons
 const getIconBg = (color: string) => {
   const map: Record<string, string> = {
-    blue: "bg-blue-100 text-blue-600",
-    purple: "bg-purple-100 text-purple-600",
-    amber: "bg-amber-100 text-amber-600",
-    cyan: "bg-cyan-100 text-cyan-600",
-    teal: "bg-teal-100 text-teal-600",
-    lime: "bg-green-100 text-green-600",
-    violet: "bg-violet-100 text-violet-600",
-    slate: "bg-slate-200 text-slate-600",
-    green: "bg-emerald-100 text-emerald-600",
-    pink: "bg-pink-100 text-pink-600",
-    indigo: "bg-indigo-100 text-indigo-600",
-    orange: "bg-orange-100 text-orange-600",
-    yellow: "bg-yellow-100 text-yellow-600",
-    fuchsia: "bg-fuchsia-100 text-fuchsia-600",
-    red: "bg-red-100 text-red-600",
-    rose: "bg-rose-100 text-rose-600",
-    emerald: "bg-emerald-100 text-emerald-600",
-    sky: "bg-sky-100 text-sky-600",
+    blue: "bg-blue-50 text-blue-600",
+    purple: "bg-purple-50 text-purple-600",
+    amber: "bg-amber-50 text-amber-600",
+    cyan: "bg-cyan-50 text-cyan-600",
+    teal: "bg-teal-50 text-teal-600",
+    lime: "bg-green-50 text-green-600",
+    violet: "bg-violet-50 text-violet-600",
+    slate: "bg-slate-100 text-slate-600",
+    green: "bg-emerald-50 text-emerald-600",
+    pink: "bg-pink-50 text-pink-600",
+    indigo: "bg-indigo-50 text-indigo-600",
+    orange: "bg-orange-50 text-orange-600",
+    yellow: "bg-yellow-50 text-yellow-600",
+    fuchsia: "bg-fuchsia-50 text-fuchsia-600",
+    red: "bg-red-50 text-red-600",
+    rose: "bg-rose-50 text-rose-600",
+    emerald: "bg-emerald-50 text-emerald-600",
+    sky: "bg-sky-50 text-sky-600",
   };
-  return map[color] || "bg-gray-100 text-gray-600";
+  return map[color] || "bg-gray-50 text-gray-600";
 };
 
 export default function SearchBar({ onClose, autoFocus, placeholder = "Search tools…" }: SearchBarProps) {
@@ -50,15 +49,15 @@ export default function SearchBar({ onClose, autoFocus, placeholder = "Search to
   useEffect(() => {
     if (!query.trim()) { setResults([]); return; }
     const q = query.toLowerCase();
-    setResults(
-      tools.filter(
-        (t) =>
-          t.name.toLowerCase().includes(q) ||
-          t.description.toLowerCase().includes(q) ||
-          (t.tags ?? []).some((tag) => tag.toLowerCase().includes(q)) ||
-          t.category.toLowerCase().includes(q)
-      ).slice(0, 7)
-    );
+    const filtered = tools.filter(
+      (t) =>
+        t.name.toLowerCase().includes(q) ||
+        t.description.toLowerCase().includes(q) ||
+        (t.tags ?? []).some((tag) => tag.toLowerCase().includes(q)) ||
+        t.category.toLowerCase().includes(q)
+    ).slice(0, 7);
+    
+    setResults(filtered);
     setActive(0);
   }, [query]);
 
@@ -70,17 +69,28 @@ export default function SearchBar({ onClose, autoFocus, placeholder = "Search to
   };
 
   const handleKey = (e: React.KeyboardEvent) => {
-    if (e.key === "ArrowDown") { e.preventDefault(); setActive((a) => Math.min(a + 1, results.length - 1)); }
-    if (e.key === "ArrowUp") { e.preventDefault(); setActive((a) => Math.max(a - 1, 0)); }
-    if (e.key === "Enter" && results[active]) go(results[active].slug);
-    if (e.key === "Escape") { setQuery(""); setResults([]); onClose?.(); }
+    if (e.key === "ArrowDown") { 
+      e.preventDefault(); 
+      setActive((a) => Math.min(a + 1, results.length - 1)); 
+    }
+    if (e.key === "ArrowUp") { 
+      e.preventDefault(); 
+      setActive((a) => Math.max(a - 1, 0)); 
+    }
+    if (e.key === "Enter" && results[active]) {
+      go(results[active].slug);
+    }
+    if (e.key === "Escape") { 
+      setQuery(""); 
+      setResults([]); 
+      onClose?.(); 
+    }
   };
 
   return (
     <div className="relative w-full">
       <div className="relative">
-        {/* Lucide Search Icon */}
-        <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-subtle" />
+        <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-subtle" />
         
         <input
           ref={inputRef}
@@ -89,81 +99,51 @@ export default function SearchBar({ onClose, autoFocus, placeholder = "Search to
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={handleKey}
           placeholder={placeholder}
-<<<<<<< HEAD
-          className="w-full rounded-xl border border-border bg-surface-muted py-2.5 pl-10 pr-10 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20"
-=======
-<<<<<<< HEAD
-          className="w-full rounded-xl border border-border bg-surface-muted py-2.5 pl-9 pr-4 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20"
-=======
-          className="w-full rounded-xl border border-border bg-surface-muted py-2.5 pl-9 pr-4 text-sm text-ink placeholder:text-ink-subtle focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
+          className="w-full rounded-xl border border-border bg-surface-muted py-2.5 pl-10 pr-10 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-4 focus:ring-brand/10 transition-all"
         />
 
         {query && (
           <button 
             onClick={() => { setQuery(""); setResults([]); }} 
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-subtle hover:text-ink"
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-subtle hover:text-ink p-1 rounded-md hover:bg-surface-card transition-colors"
           >
-            <X size={16} />
+            <X size={14} />
           </button>
         )}
       </div>
 
       {results.length > 0 && (
-<<<<<<< HEAD
-        <div className="absolute top-full z-50 mt-2 w-full overflow-hidden rounded-xl border border-border bg-surface-card shadow-xl">
+        <div className="absolute top-full z-50 mt-2 w-full overflow-hidden rounded-xl border border-border bg-white shadow-xl shadow-brand/5 animate-in fade-in slide-in-from-top-2 duration-200">
           {results.map((t, i) => {
-            // Get the dynamic Icon component
-            const Icon = t.icon;
+            const ToolIcon = t.icon;
             return (
               <button
                 key={t.id}
+                onMouseEnter={() => setActive(i)}
                 onClick={() => go(t.slug)}
                 className={`flex w-full items-center gap-3 px-4 py-3 text-left transition-colors ${
                   i === active ? "bg-brand/5" : "hover:bg-surface-muted"
                 } ${i !== results.length - 1 ? "border-b border-border" : ""}`}
               >
-                {/* Updated Icon Container */}
                 <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${getIconBg(t.color)}`}>
-                  <Icon size={16} strokeWidth={2.5} />
+                  <ToolIcon size={16} strokeWidth={2.5} />
                 </span>
                 
                 <div className="min-w-0">
                   <p className="text-sm font-bold text-ink truncate">{t.name}</p>
-                  <p className="text-[11px] text-ink-subtle truncate uppercase tracking-tight">{t.category}</p>
+                  <p className="text-[10px] text-ink-subtle truncate uppercase font-black tracking-widest">{t.category}</p>
                 </div>
               </button>
             );
           })}
-=======
-        <div className="absolute top-full z-50 mt-1 w-full overflow-hidden rounded-xl border border-border bg-surface-card shadow-card-hover">
-          {results.map((t, i) => (
-            <button
-              key={t.id}
-              onClick={() => go(t.slug)}
-              className={`flex w-full items-center gap-3 px-4 py-3 text-left transition-colors ${
-<<<<<<< HEAD
-                i === active ? "bg-brand/10" : "hover:bg-surface-muted"
-=======
-                i === active ? "bg-brand-orange/10" : "hover:bg-surface-muted"
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
-              } ${i !== results.length - 1 ? "border-b border-border" : ""}`}
-            >
-              <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm ${t.color}`}>{t.emoji}</span>
-              <div className="min-w-0">
-                <p className="text-sm font-medium text-ink truncate">{t.name}</p>
-                <p className="text-xs text-ink-subtle truncate">{t.description}</p>
-              </div>
-            </button>
-          ))}
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
         </div>
       )}
 
       {query.trim() && results.length === 0 && (
-        <div className="absolute top-full z-50 mt-2 w-full rounded-xl border border-border bg-surface-card px-4 py-4 text-center text-sm text-ink-subtle shadow-card">
-          No tools found for <span className="font-bold text-ink">"{query}"</span>
+        <div className="absolute top-full z-50 mt-2 w-full rounded-xl border border-border bg-white px-4 py-6 text-center shadow-xl animate-in fade-in slide-in-from-top-2">
+          <p className="text-sm text-ink-subtle">
+            No tools found for <span className="font-bold text-ink">"{query}"</span>
+          </p>
         </div>
       )}
     </div>

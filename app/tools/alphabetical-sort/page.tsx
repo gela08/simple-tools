@@ -3,12 +3,16 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import AlphabeticalSort from "@/components/tools/AlphabeticalSort";
 
 export const metadata: Metadata = {
-  title: "Alphabetical Sort",
-<<<<<<< HEAD
-  description: "Sort any list of words or items from A to Z or Z to A instantly.",
-=======
-<<<<<<< HEAD
-  description: "Sort any list of words or items from A to Z or Z to A instantly.",
+  title: "Alphabetical Sort — Quickly Sort Lists A-Z or Z-A",
+  description:
+    "Organize any list of names, words, or items alphabetically. Supports A-Z and Z-A sorting, case sensitivity options, and line-by-line processing. Fast, free, and private.",
+  keywords: [
+    "alphabetical sort",
+    "sort list online",
+    "A-Z sorter",
+    "alphabetize list",
+    "text sorter tool",
+  ],
 };
 
 export default function AlphabeticalSortPage() {
@@ -16,26 +20,25 @@ export default function AlphabeticalSortPage() {
     <ToolLayout
       toolId="alphabetical-sort"
       title="Alphabetical Sort"
-      description="Sort any list of words or items from A to Z or Z to A instantly."
+      description="Paste your list and organize it instantly. Whether it's names, inventory, or random notes, we'll sort them from A to Z or Z to A in a single click."
+      howTo={[
+        { 
+          step: "Paste your list", 
+          detail: "Enter your items into the text area, with each item on a new line." 
+        },
+        { 
+          step: "Choose sort order", 
+          detail: "Select whether you want to sort alphabetically (A-Z) or in reverse (Z-A)." 
+        },
+        { 
+          step: "Copy your result", 
+          detail: "Once sorted, click the copy button to grab your organized list." 
+        },
+      ]}
     >
-=======
-  description: "Sort any list of items from A to Z or Z to A.",
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-};
-
-export default function AlphabeticalSortPage() {
-  return (
-<<<<<<< HEAD
-    <ToolLayout
-      toolId="alphabetical-sort"
-      title="Alphabetical Sort"
-      description="Sort any list of words or items from A to Z or Z to A instantly."
-    >
-=======
-    <ToolLayout toolId="alphabetical-sort" title="Alphabetical Sort" description="Sort any list of items from A to Z or Z to A.">
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-      <AlphabeticalSort />
+      <div className="mx-auto max-w-3xl">
+        <AlphabeticalSort />
+      </div>
     </ToolLayout>
   );
 }

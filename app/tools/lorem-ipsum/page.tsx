@@ -3,12 +3,16 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import LoremIpsumGenerator from "@/components/tools/LoremIpsumGenerator";
 
 export const metadata: Metadata = {
-  title: "Lorem Ipsum Generator",
-<<<<<<< HEAD
-  description: "Generate classic Lorem Ipsum placeholder text by paragraph count for designs and mockups.",
-=======
-<<<<<<< HEAD
-  description: "Generate classic Lorem Ipsum placeholder text by paragraph count for designs and mockups.",
+  title: "Lorem Ipsum Generator — Professional Placeholder Text",
+  description:
+    "Generate classic Lorem Ipsum placeholder text by paragraph, sentence, or word count. Perfect for designers, developers, and mockups. Fast, free, and simple.",
+  keywords: [
+    "lorem ipsum generator",
+    "placeholder text",
+    "dummy text generator",
+    "lipsum",
+    "filler text for mockups",
+  ],
 };
 
 export default function LoremIpsumGeneratorPage() {
@@ -16,26 +20,25 @@ export default function LoremIpsumGeneratorPage() {
     <ToolLayout
       toolId="lorem-ipsum"
       title="Lorem Ipsum Generator"
-      description="Generate classic Lorem Ipsum placeholder text by paragraph count for designs and mockups."
+      description="Quickly generate custom placeholder text for your designs and mockups. Choose the number of paragraphs you need and get instant results."
+      howTo={[
+        { 
+          step: "Choose your quantity", 
+          detail: "Select the number of paragraphs, sentences, or words you need for your design." 
+        },
+        { 
+          step: "Generate the text", 
+          detail: "Click 'Generate' to create classic Latin placeholder text instantly." 
+        },
+        { 
+          step: "Copy and paste", 
+          detail: "Use the copy button to grab the text and use it in your UI mockups or documents." 
+        },
+      ]}
     >
-=======
-  description: "Generate classic Lorem Ipsum placeholder text for mockups.",
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-};
-
-export default function LoremIpsumGeneratorPage() {
-  return (
-<<<<<<< HEAD
-    <ToolLayout
-      toolId="lorem-ipsum"
-      title="Lorem Ipsum Generator"
-      description="Generate classic Lorem Ipsum placeholder text by paragraph count for designs and mockups."
-    >
-=======
-    <ToolLayout toolId="lorem-ipsum" title="Lorem Ipsum Generator" description="Generate classic Lorem Ipsum placeholder text for mockups.">
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-      <LoremIpsumGenerator />
+      <div className="mx-auto max-w-3xl">
+        <LoremIpsumGenerator />
+      </div>
     </ToolLayout>
   );
 }

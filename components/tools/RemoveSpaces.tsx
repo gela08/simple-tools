@@ -1,6 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { 
+  Trash2, 
+  Sparkles, 
+  FileText, 
+  CheckCircle2, 
+  Eraser, 
+  Info 
+} from "lucide-react";
 import CopyButton from "@/components/ui/CopyButton";
 import { removeExtraSpaces } from "@/lib/utils";
 
@@ -12,70 +20,79 @@ export default function RemoveSpaces() {
 
   return (
     <div className="space-y-6">
-      {/* Input */}
-      <div>
-        <label className="mb-2 block text-sm font-medium text-ink-muted">
-          Paste your messy text
-        </label>
+      {/* Input Section */}
+      <div className="space-y-3">
+        <div className="flex items-center gap-2 px-1">
+          <FileText size={14} className="text-brand" />
+          <label className="text-xs font-bold uppercase tracking-widest text-ink-subtle">
+            Paste your messy text
+          </label>
+        </div>
         <textarea
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Paste text with extra spaces, tabs, or blank lines..."
-<<<<<<< HEAD
-          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder-ink-subtle transition-colors focus:border-brand focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand/20"
-=======
-<<<<<<< HEAD
-          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder-ink-subtle transition-colors focus:border-brand focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand/20"
-=======
-          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder-ink-subtle transition-colors focus:border-brand-orange focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
+          className="w-full rounded-2xl border border-border bg-surface-muted px-4 py-4 text-sm text-ink placeholder:text-ink-subtle transition-all focus:border-brand focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand/20 shadow-inner min-h-[160px]"
           rows={6}
         />
       </div>
 
-      {/* Stats row */}
+      {/* Stats Row */}
       {input && (
-        <div className="flex flex-wrap gap-4 text-sm text-ink-muted">
-          <span>
-            Before:{" "}
-            <strong className="text-ink">{input.length}</strong> chars
-          </span>
-          <span>
-            After:{" "}
-            <strong className="text-ink">{output.length}</strong> chars
-          </span>
+        <div className="flex flex-wrap items-center gap-3 text-xs font-semibold animate-in fade-in slide-in-from-left-2">
+          <div className="flex items-center gap-2 rounded-xl bg-surface-muted px-3 py-2 border border-border text-ink-subtle">
+            <span className="opacity-60">Before:</span>
+            <span className="text-ink font-bold">{input.length.toLocaleString()}</span>
+          </div>
+          <div className="flex items-center gap-2 rounded-xl bg-surface-muted px-3 py-2 border border-border text-ink-subtle">
+            <span className="opacity-60">After:</span>
+            <span className="text-ink font-bold">{output.length.toLocaleString()}</span>
+          </div>
           {spacesRemoved > 0 && (
-            <span className="font-medium text-green-600">
-              −{spacesRemoved} characters removed
-            </span>
+            <div className="flex items-center gap-2 rounded-xl bg-green-50 px-3 py-2 border border-green-100 text-green-700 shadow-sm animate-bounce-short">
+              <Sparkles size={14} />
+              <span>{spacesRemoved.toLocaleString()} characters removed</span>
+            </div>
           )}
         </div>
       )}
 
-      {/* Output */}
+      {/* Output Section */}
       {output && (
-        <div>
-          <div className="mb-2 flex items-center justify-between">
-            <label className="text-sm font-medium text-ink-muted">
-              Cleaned text
-            </label>
+        <div className="animate-in fade-in zoom-in duration-300">
+          <div className="mb-3 flex items-center justify-between px-1">
+            <div className="flex items-center gap-2">
+              <CheckCircle2 size={14} className="text-green-600" />
+              <label className="text-xs font-bold uppercase tracking-widest text-ink-subtle">
+                Cleaned text
+              </label>
+            </div>
             <CopyButton text={output} />
           </div>
-          <div className="min-h-[120px] rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink whitespace-pre-wrap break-words select-text">
+          <div className="min-h-[140px] rounded-2xl border border-border bg-white px-5 py-5 text-sm text-ink whitespace-pre-wrap break-words select-text shadow-sm transition-all hover:border-brand/30">
             {output}
           </div>
         </div>
       )}
 
-      {/* Clear */}
-      <button
-        onClick={() => setInput("")}
-        disabled={!input}
-        className="rounded-lg px-3.5 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-red-50 hover:text-red-600 disabled:cursor-not-allowed disabled:opacity-40"
-      >
-        Clear
-      </button>
+      {/* Footer Actions */}
+      <div className="flex items-center justify-between border-t border-border/50 pt-4">
+        <button
+          onClick={() => setInput("")}
+          disabled={!input}
+          className="group flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-bold uppercase tracking-widest text-ink-subtle transition-all hover:bg-red-50 hover:text-red-600 disabled:opacity-0 active:scale-95"
+        >
+          <Trash2 size={14} className="transition-transform group-hover:rotate-12" />
+          <span>Clear All</span>
+        </button>
+        
+        {!input && (
+          <div className="flex items-center gap-2 text-[11px] text-ink-subtle italic">
+            <Info size={12} />
+            <p>Removes duplicate spaces, tabs, and blank lines.</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

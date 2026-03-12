@@ -3,12 +3,17 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import SpinTheWheel from "@/components/tools/SpinTheWheel";
 
 export const metadata: Metadata = {
-  title: "Spin the Wheel",
-<<<<<<< HEAD
-  description: "Build a custom spinning wheel with your own options. Perfect for games and classroom picks.",
-=======
-<<<<<<< HEAD
-  description: "Build a custom spinning wheel with your own options. Perfect for games and classroom picks.",
+  title: "Spin the Wheel — Custom Random Decision Maker",
+  description:
+    "Create a custom spinning wheel with your own choices. A fun, interactive way to pick winners, make random decisions, or engage students in the classroom.",
+  keywords: [
+    "spin the wheel",
+    "random wheel picker",
+    "decision wheel online",
+    "custom prize wheel",
+    "classroom spinner",
+    "wheel of names",
+  ],
 };
 
 export default function SpinTheWheelPage() {
@@ -16,26 +21,25 @@ export default function SpinTheWheelPage() {
     <ToolLayout
       toolId="spin-the-wheel"
       title="Spin the Wheel"
-      description="Build a custom spinning wheel with your own options. Perfect for games and classroom picks."
+      description="Need a fair way to decide? Add your custom options to the wheel and give it a spin! Perfect for giveaways, choosing who goes first, or making daily choices fun."
+      howTo={[
+        { 
+          step: "Add your choices", 
+          detail: "Enter your options or names into the list. Each entry will become a colorful segment on the wheel." 
+        },
+        { 
+          step: "Spin to win", 
+          detail: "Click the 'Spin' button to set the wheel in motion. Our physics-based animation ensures a fair and random result." 
+        },
+        { 
+          step: "Celebrate the result", 
+          detail: "The wheel will slow down and land on a winner. You can remove the winning option or spin again immediately." 
+        },
+      ]}
     >
-=======
-  description: "Add custom options and spin a wheel to pick one at random.",
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-};
-
-export default function SpinTheWheelPage() {
-  return (
-<<<<<<< HEAD
-    <ToolLayout
-      toolId="spin-the-wheel"
-      title="Spin the Wheel"
-      description="Build a custom spinning wheel with your own options. Perfect for games and classroom picks."
-    >
-=======
-    <ToolLayout toolId="spin-the-wheel" title="Spin the Wheel" description="Add custom options and spin a wheel to pick one at random.">
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-      <SpinTheWheel />
+      <div className="mx-auto max-w-4xl">
+        <SpinTheWheel />
+      </div>
     </ToolLayout>
   );
 }

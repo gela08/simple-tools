@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     description: "Free, fast, and privacy-friendly online tools. No signup needed.",
     images: [
       {
-        url: "/icon.png",
+        url: "/og-image.png", // Recommended: Use a dedicated OG image file
         width: 1200,
         height: 630,
         alt: "Simple Tools Hub Preview",
@@ -75,18 +75,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${syne.variable} ${dmSans.variable}`}>
-<<<<<<< HEAD
-      <body className="flex min-h-screen flex-col bg-surface-bg font-body text-ink antialiased overflow-x-hidden selection:bg-brand/10 selection:text-brand">
-=======
-<<<<<<< HEAD
-      <body className="flex min-h-screen flex-col bg-surface-bg font-body text-ink antialiased overflow-x-hidden">
-=======
-      <body className="flex min-h-screen flex-col bg-surface-bg font-body text-ink antialiased">
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
+    <html lang="en" className={`${syne.variable} ${dmSans.variable} scroll-smooth`}>
+      <body className="flex min-h-screen flex-col bg-surface-bg font-sans text-ink antialiased">
         <Header />
-        <main className="flex-1">{children}</main>
+        <main className="flex-grow">{children}</main>
         <Footer />
       </body>
     </html>

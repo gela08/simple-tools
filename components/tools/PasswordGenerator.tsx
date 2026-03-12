@@ -31,7 +31,7 @@ function strength(pwd: string): { score: number; label: string; color: string } 
   if (/[^A-Za-z0-9]/.test(pwd)) s++;
   if (s <= 2) return { score: s, label: "Weak", color: "bg-red-400" };
   if (s <= 4) return { score: s, label: "Fair", color: "bg-yellow-400" };
-  if (s <= 5) return { score: s, label: "Good", color: "bg-blue-400" };
+  if (s <= 5) return { score: s, label: "Good", color: "bg-brand-light" };
   return { score: s, label: "Strong", color: "bg-green-500" };
 }
 
@@ -50,22 +50,22 @@ export default function PasswordGenerator() {
   }, [len, upper, lower, nums, syms, count]);
 
   const handleCopy = async (p: string) => {
-    try { await navigator.clipboard.writeText(p); setCopied(p); setTimeout(() => setCopied(null), 1500); } catch {}
+    try {
+      await navigator.clipboard.writeText(p);
+      setCopied(p);
+      setTimeout(() => setCopied(null), 1500);
+    } catch (err) {
+      console.error("Failed to copy password", err);
+    }
   };
 
   const Toggle = ({ label, val, set }: { label: string; val: boolean; set: (v: boolean) => void }) => (
     <button
       onClick={() => set(!val)}
       className={`rounded-lg border px-3 py-2 text-sm font-medium transition-all ${
-<<<<<<< HEAD
-        val ? "border-brand bg-brand/10 text-brand" : "border-border text-ink-muted hover:border-brand/40"
-=======
-<<<<<<< HEAD
-        val ? "border-brand bg-brand/10 text-brand" : "border-border text-ink-muted hover:border-brand/40"
-=======
-        val ? "border-brand-orange bg-brand-orange/10 text-brand-orange" : "border-border text-ink-muted hover:border-brand-orange/40"
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
+        val 
+          ? "border-brand bg-brand/10 text-brand" 
+          : "border-border bg-white text-ink-muted hover:border-brand/40"
       }`}
     >
       {val ? "✓" : "○"} {label}
@@ -74,98 +74,88 @@ export default function PasswordGenerator() {
 
   return (
     <div className="space-y-6">
+      {/* Length Slider */}
       <div>
         <label className="mb-1.5 block text-sm font-medium text-ink">
-<<<<<<< HEAD
           Password length: <span className="font-bold text-brand">{len}</span>
         </label>
-        <input type="range" min={6} max={64} value={len} onChange={(e) => setLen(+e.target.value)}
-          className="w-full accent-brand" />
-=======
-<<<<<<< HEAD
-          Password length: <span className="font-bold text-brand">{len}</span>
-        </label>
-        <input type="range" min={6} max={64} value={len} onChange={(e) => setLen(+e.target.value)}
-          className="w-full accent-brand" />
-=======
-          Password length: <span className="font-bold text-brand-orange">{len}</span>
-        </label>
-        <input type="range" min={6} max={64} value={len} onChange={(e) => setLen(+e.target.value)}
-          className="w-full accent-brand-orange" />
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-        <div className="mt-1 flex justify-between text-xs text-ink-subtle"><span>6</span><span>64</span></div>
-      </div>
-
-      <div>
-        <p className="mb-2 text-sm font-medium text-ink">Include:</p>
-        <div className="flex flex-wrap gap-2">
-          <Toggle label="Uppercase A–Z" val={upper} set={setUpper} />
-          <Toggle label="Lowercase a–z" val={lower} set={setLower} />
-          <Toggle label="Numbers 0–9" val={nums} set={setNums} />
-          <Toggle label="Symbols !@#" val={syms} set={setSyms} />
+        <input 
+          type="range" min={6} max={64} value={len} 
+          onChange={(e) => setLen(+e.target.value)}
+          className="w-full accent-brand cursor-pointer" 
+        />
+        <div className="mt-1 flex justify-between text-xs text-ink-subtle">
+          <span>6</span><span>64</span>
         </div>
       </div>
 
+      {/* Options */}
+      <div>
+        <p className="mb-2 text-sm font-medium text-ink">Include:</p>
+        <div className="flex flex-wrap gap-2">
+          <Toggle label="Uppercase" val={upper} set={setUpper} />
+          <Toggle label="Lowercase" val={lower} set={setLower} />
+          <Toggle label="Numbers" val={nums} set={setNums} />
+          <Toggle label="Symbols" val={syms} set={setSyms} />
+        </div>
+      </div>
+
+      {/* Quantity Selection */}
       <div className="flex items-center gap-3">
-        <label className="text-sm font-medium text-ink">How many:</label>
+        <label className="text-sm font-medium text-ink">Quantity:</label>
         {[1, 3, 5, 10].map((n) => (
-          <button key={n} onClick={() => setCount(n)}
+          <button 
+            key={n} onClick={() => setCount(n)}
             className={`rounded-lg border px-3 py-1.5 text-sm font-medium transition-all ${
-<<<<<<< HEAD
-              count === n ? "border-brand bg-brand/10 text-brand" : "border-border text-ink-muted hover:border-brand/40"
-=======
-<<<<<<< HEAD
-              count === n ? "border-brand bg-brand/10 text-brand" : "border-border text-ink-muted hover:border-brand/40"
-=======
-              count === n ? "border-brand-orange bg-brand-orange/10 text-brand-orange" : "border-border text-ink-muted hover:border-brand-orange/40"
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-            }`}>{n}</button>
+              count === n 
+                ? "border-brand bg-brand/10 text-brand shadow-sm" 
+                : "border-border bg-white text-ink-muted hover:border-brand/40"
+            }`}
+          >
+            {n}
+          </button>
         ))}
       </div>
 
-      <button onClick={generate_}
-<<<<<<< HEAD
-        className="flex items-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-dark active:scale-95">
-=======
-<<<<<<< HEAD
-        className="flex items-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-dark active:scale-95">
-=======
-        className="flex items-center gap-2 rounded-xl bg-brand-orange px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-orange-dark active:scale-95">
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
+      <button 
+        onClick={generate_}
+        className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-dark active:scale-95 shadow-sm"
+      >
         🔐 Generate Passwords
       </button>
 
+      {/* Results */}
       {passwords.length > 0 && (
-        <div className="space-y-2">
+        <div className="space-y-2 animate-in fade-in slide-in-from-top-2 duration-300">
           {passwords.map((p, i) => {
             const s = strength(p);
             return (
               <div key={i} className="rounded-xl border border-border bg-surface-muted p-3">
                 <div className="flex items-center justify-between gap-2">
-                  <code className="flex-1 break-all text-sm text-ink">{p}</code>
-                  <button onClick={() => handleCopy(p)}
+                  <code className="flex-1 break-all text-sm text-brand-dark font-mono bg-white/50 px-2 py-1 rounded">
+                    {p}
+                  </code>
+                  <button 
+                    onClick={() => handleCopy(p)}
                     className={`shrink-0 rounded-lg border px-3 py-1.5 text-xs font-medium transition-all ${
-<<<<<<< HEAD
-                      copied === p ? "border-green-400 bg-green-50 text-green-700" : "border-border bg-white text-ink-muted hover:border-brand/40"
-=======
-<<<<<<< HEAD
-                      copied === p ? "border-green-400 bg-green-50 text-green-700" : "border-border bg-white text-ink-muted hover:border-brand/40"
-=======
-                      copied === p ? "border-green-400 bg-green-50 text-green-700" : "border-border bg-white text-ink-muted hover:border-brand-orange/40"
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-                    }`}>
+                      copied === p 
+                        ? "border-green-400 bg-green-50 text-green-700" 
+                        : "border-border bg-white text-ink-muted hover:border-brand/40"
+                    }`}
+                  >
                     {copied === p ? "✓ Copied" : "Copy"}
                   </button>
                 </div>
                 <div className="mt-2 flex items-center gap-2">
-                  <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-border">
-                    <div className={`h-full rounded-full transition-all ${s.color}`} style={{ width: `${(s.score / 7) * 100}%` }} />
+                  <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-border/50">
+                    <div 
+                      className={`h-full rounded-full transition-all duration-500 ${s.color}`} 
+                      style={{ width: `${(s.score / 7) * 100}%` }} 
+                    />
                   </div>
-                  <span className="text-xs text-ink-subtle">{s.label}</span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-ink-subtle min-w-[45px]">
+                    {s.label}
+                  </span>
                 </div>
               </div>
             );

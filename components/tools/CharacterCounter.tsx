@@ -20,8 +20,7 @@ export default function CharacterCounter() {
   const words = text.trim() ? text.trim().split(/\s+/).length : 0;
   const lines = text ? text.split("\n").length : 0;
 
-  const remaining =
-    selectedLimit !== null ? selectedLimit - chars : null;
+  const remaining = selectedLimit !== null ? selectedLimit - chars : null;
   const overLimit = remaining !== null && remaining < 0;
 
   return (
@@ -40,18 +39,8 @@ export default function CharacterCounter() {
               }
               className={`rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors ${
                 selectedLimit === l.max
-<<<<<<< HEAD
                   ? "border-brand bg-brand/10 text-brand"
                   : "border-border bg-surface-muted text-ink-muted hover:border-brand/50 hover:text-ink"
-=======
-<<<<<<< HEAD
-                  ? "border-brand bg-brand/10 text-brand"
-                  : "border-border bg-surface-muted text-ink-muted hover:border-brand/50 hover:text-ink"
-=======
-                  ? "border-brand-orange bg-brand-orange/10 text-brand-orange"
-                  : "border-border bg-surface-muted text-ink-muted hover:border-brand-orange/50 hover:text-ink"
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
               }`}
             >
               {l.platform} ({l.max})
@@ -69,22 +58,14 @@ export default function CharacterCounter() {
           className={`w-full rounded-xl border bg-surface-muted px-4 py-3 text-sm text-ink placeholder-ink-subtle transition-colors focus:bg-white focus:outline-none focus:ring-2 ${
             overLimit
               ? "border-red-400 focus:border-red-400 focus:ring-red-200"
-<<<<<<< HEAD
               : "border-border focus:border-brand focus:ring-brand/20"
-=======
-<<<<<<< HEAD
-              : "border-border focus:border-brand focus:ring-brand/20"
-=======
-              : "border-border focus:border-brand-orange focus:ring-brand-orange/20"
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
           }`}
           rows={7}
         />
 
         {/* Character progress bar */}
         {selectedLimit !== null && (
-          <div className="mt-2">
+          <div className="mt-2 animate-in fade-in slide-in-from-top-1 duration-200">
             <div className="flex justify-between text-xs text-ink-subtle mb-1">
               <span>{chars} characters used</span>
               <span className={overLimit ? "font-semibold text-red-500" : ""}>
@@ -95,20 +76,12 @@ export default function CharacterCounter() {
             </div>
             <div className="h-1.5 w-full rounded-full bg-surface-muted overflow-hidden">
               <div
-                className={`h-full rounded-full transition-all duration-150 ${
+                className={`h-full rounded-full transition-all duration-300 ${
                   overLimit
                     ? "bg-red-500"
                     : chars / selectedLimit > 0.8
                     ? "bg-amber-400"
-<<<<<<< HEAD
                     : "bg-brand"
-=======
-<<<<<<< HEAD
-                    : "bg-brand"
-=======
-                    : "bg-brand-orange"
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
                 }`}
                 style={{
                   width: `${Math.min(100, (chars / selectedLimit) * 100)}%`,

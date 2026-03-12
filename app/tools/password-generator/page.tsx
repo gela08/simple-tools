@@ -3,14 +3,16 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import PasswordGenerator from "@/components/tools/PasswordGenerator";
 
 export const metadata: Metadata = {
-  title: "Password Generator",
-<<<<<<< HEAD
+  title: "Password Generator — Secure, Random & Private",
   description:
-    "Generate strong, secure, random passwords instantly. Customizable length and character sets. Runs entirely in your browser.",
-=======
-<<<<<<< HEAD
-  description:
-    "Generate strong, secure, random passwords instantly. Customizable length and character sets. Runs entirely in your browser.",
+    "Generate strong, secure passwords instantly with customizable length and character sets. Created locally in your browser—your passwords are never sent to a server.",
+  keywords: [
+    "password generator",
+    "secure password",
+    "random password creator",
+    "strong password tool",
+    "offline password generator",
+  ],
 };
 
 export default function PasswordGeneratorPage() {
@@ -18,38 +20,25 @@ export default function PasswordGeneratorPage() {
     <ToolLayout
       toolId="password-generator"
       title="Password Generator"
-      description="Create strong, random passwords with customizable length and character types. All generated locally — never sent anywhere."
+      description="Create strong, random passwords with customizable length and character types. All generated locally on your device — safe, secure, and private."
       howTo={[
-        { step: "Set the password length", detail: "Use the slider or input to choose how long your password should be." },
-        { step: "Choose character types", detail: "Toggle uppercase, lowercase, numbers, and symbols as needed." },
-        { step: "Click Generate", detail: "A new password appears instantly." },
-        { step: "Copy your password", detail: "Click the Copy button to copy it to your clipboard." },
+        { 
+          step: "Set the password length", 
+          detail: "Use the slider or input field to choose how long your password should be (we recommend at least 16 characters)." 
+        },
+        { 
+          step: "Choose character types", 
+          detail: "Toggle uppercase letters, lowercase letters, numbers, and symbols to meet your security requirements." 
+        },
+        { 
+          step: "Generate and Copy", 
+          detail: "Click 'Generate' to create a new password and use the 'Copy' button to move it to your clipboard securely." 
+        },
       ]}
     >
-=======
-  description: "Generate strong, secure, random passwords instantly.",
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-};
-
-export default function PasswordGeneratorPage() {
-  return (
-<<<<<<< HEAD
-    <ToolLayout
-      toolId="password-generator"
-      title="Password Generator"
-      description="Create strong, random passwords with customizable length and character types. All generated locally — never sent anywhere."
-      howTo={[
-        { step: "Set the password length", detail: "Use the slider or input to choose how long your password should be." },
-        { step: "Choose character types", detail: "Toggle uppercase, lowercase, numbers, and symbols as needed." },
-        { step: "Click Generate", detail: "A new password appears instantly." },
-        { step: "Copy your password", detail: "Click the Copy button to copy it to your clipboard." },
-      ]}
-    >
-=======
-    <ToolLayout toolId="password-generator" title="Password Generator" description="Generate strong, secure, random passwords instantly.">
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-      <PasswordGenerator />
+      <div className="mx-auto max-w-2xl">
+        <PasswordGenerator />
+      </div>
     </ToolLayout>
   );
 }

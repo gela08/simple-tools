@@ -3,42 +3,43 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import WordCounter from "@/components/tools/WordCounter";
 
 export const metadata: Metadata = {
-  title: "Word Counter",
+  title: "Word Counter — Real-Time Text Statistics",
   description:
-    "Count words, characters, sentences, and paragraphs instantly. Free online word counter with real-time results.",
+    "Count words, characters, sentences, and paragraphs instantly. A free, fast, and private online word counter with real-time results for writers and editors.",
+  keywords: [
+    "word counter",
+    "character count",
+    "sentence counter",
+    "paragraph counter",
+    "text analyzer online",
+    "word count tool",
+  ],
 };
 
 export default function WordCounterPage() {
   return (
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
     <ToolLayout
       toolId="word-counter"
       title="Word Counter"
-      description="Count words, characters, sentences, and paragraphs in real time. Just paste your text and see instant results."
+      description="Analyze your text in real time. Simply paste your content or start typing to get an instant breakdown of word count, character density, and structural statistics."
       howTo={[
-        { step: "Paste or type your text", detail: "Click the text area and paste in any content." },
-        { step: "See live counts", detail: "Word, character, sentence, and paragraph counts update instantly." },
-        { step: "Copy or clear", detail: "Use the Copy button to copy your text, or Clear to start fresh." },
+        { 
+          step: "Paste or type your text", 
+          detail: "Enter your content into the main text area. The analysis starts the moment you begin typing." 
+        },
+        { 
+          step: "Monitor live statistics", 
+          detail: "View word, character, sentence, and paragraph counts at the top of the interface as they update live." 
+        },
+        { 
+          step: "Copy or clear content", 
+          detail: "Use the built-in buttons to quickly copy your entire text or clear the workspace to start fresh on a new draft." 
+        },
       ]}
     >
-      <WordCounter />
-    </ToolLayout>
-<<<<<<< HEAD
-=======
-=======
-    <div className="select-none">
-      <ToolLayout
-        toolId="word-counter"
-        title="Word Counter"
-        description="Count words, characters, sentences, and paragraphs in real time. Just paste your text and see instant results."
-      >
+      <div className="mx-auto max-w-4xl">
         <WordCounter />
-      </ToolLayout>
-    </div>
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
+      </div>
+    </ToolLayout>
   );
 }

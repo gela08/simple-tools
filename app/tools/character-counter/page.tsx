@@ -3,50 +3,42 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import CharacterCounter from "@/components/tools/CharacterCounter";
 
 export const metadata: Metadata = {
-  title: "Character Counter",
+  title: "Character Counter — Real-Time Text Length & Limits",
   description:
-<<<<<<< HEAD
-    "Count characters with and without spaces instantly. Ideal for Twitter/X posts, SMS, and meta descriptions.",
-=======
-<<<<<<< HEAD
-    "Count characters with and without spaces instantly. Ideal for Twitter/X posts, SMS, and meta descriptions.",
-=======
-    "Count characters with and without spaces. Check against Twitter, Instagram, and SMS character limits instantly.",
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
+    "Count characters with and without spaces instantly. Check your text length against limits for Twitter/X, Instagram, SMS, and SEO meta descriptions.",
+  keywords: [
+    "character counter",
+    "word counter",
+    "twitter character limit",
+    "sms character count",
+    "letter counter online",
+  ],
 };
 
 export default function CharacterCounterPage() {
   return (
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
     <ToolLayout
       toolId="character-counter"
       title="Character Counter"
-      description="Track exact character counts in real time. Ideal for Twitter/X posts, SMS messages, and meta descriptions."
+      description="Track your text length in real-time. Whether you're writing a tweet, an SMS, or an SEO title, our tool ensures you stay within the perfect character limit."
       howTo={[
-        { step: "Paste or type your text", detail: "Character counts update instantly as you type." },
-        { step: "Check the limit indicators", detail: "See how your text compares to Twitter/X (280) and SMS (160) limits." },
-        { step: "Copy your text", detail: "Use the Copy button to copy the content." },
+        { 
+          step: "Paste or type your text", 
+          detail: "Enter your content into the editor. The character count updates instantly as you type." 
+        },
+        { 
+          step: "Review length metrics", 
+          detail: "See total characters (with spaces), character count excluding spaces, and total word count." 
+        },
+        { 
+          step: "Check platform limits", 
+          detail: "Use the built-in indicators to see if your text fits within limits for Twitter/X (280) and SMS (160)." 
+        },
       ]}
     >
-      <CharacterCounter />
-    </ToolLayout>
-<<<<<<< HEAD
-=======
-=======
-    <div className="select-none">
-      <ToolLayout
-        toolId="character-counter"
-        title="Character Counter"
-        description="Count characters with and without spaces. Check against platform limits in real time."
-      >
+      <div className="mx-auto max-w-3xl">
         <CharacterCounter />
-      </ToolLayout>
-    </div>
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
+      </div>
+    </ToolLayout>
   );
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { tools } from "@/data/tools";
-import { ShieldCheck, Zap, EyeOff, Heart, ChevronRight, Mail } from "lucide-react";
+import { ShieldCheck, Zap, EyeOff, ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About",
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Learn about Simple Tools Hub — free, fast, and privacy-friendly online tools for everyday tasks.",
 };
 
-// Helper for the icon backgrounds in the list
+// Helper for the icon backgrounds in the list based on tool color data
 const getIconBg = (color: string) => {
   const map: Record<string, string> = {
     blue: "bg-blue-100 text-blue-600",
@@ -17,10 +17,9 @@ const getIconBg = (color: string) => {
     amber: "bg-amber-100 text-amber-600",
     cyan: "bg-cyan-100 text-cyan-600",
     teal: "bg-teal-100 text-teal-600",
-    lime: "bg-green-100 text-green-600",
+    green: "bg-emerald-100 text-emerald-600",
     violet: "bg-violet-100 text-violet-600",
     slate: "bg-slate-200 text-slate-600",
-    green: "bg-emerald-100 text-emerald-600",
     pink: "bg-pink-100 text-pink-600",
     indigo: "bg-indigo-100 text-indigo-600",
     orange: "bg-orange-100 text-orange-600",
@@ -38,24 +37,24 @@ export default function AboutPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24 select-none">
       {/* Header */}
-      <div className="mb-16 text-center sm:text-left">
+      <header className="mb-16 text-center sm:text-left">
         <h1 className="font-display text-4xl font-black tracking-tight text-ink sm:text-5xl">
           About Simple Tools Hub
         </h1>
         <p className="mt-6 text-lg leading-relaxed text-ink-muted">
-          We build tiny, useful tools that just work. No accounts, no tracking, and definitely no ads.
+          We build tiny, useful tools that just work. No accounts, no tracking, and definitely no ads. 
           Everything stays right in your browser.
         </p>
-      </div>
+      </header>
 
       {/* Philosophy Grid */}
-      <div className="mb-20 grid gap-6 sm:grid-cols-3">
+      <section className="mb-20 grid gap-6 sm:grid-cols-3">
         {[
           { icon: Zap, title: "Pure Speed", desc: "No heavy frameworks or bloat. Just instant results." },
           { icon: EyeOff, title: "100% Private", desc: "Your data never leaves your device. Ever." },
           { icon: ShieldCheck, title: "Clean UI", desc: "No ads, popups, or dark patterns. Just utility." },
         ].map((item) => (
-          <div key={item.title} className="rounded-3xl border border-border bg-surface-card p-6 shadow-sm">
+          <div key={item.title} className="rounded-3xl border border-border bg-surface-card p-6 shadow-sm transition-shadow hover:shadow-md">
             <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand">
               <item.icon size={20} />
             </div>
@@ -63,21 +62,20 @@ export default function AboutPage() {
             <p className="mt-2 text-sm leading-relaxed text-ink-muted">{item.desc}</p>
           </div>
         ))}
-      </div>
+      </section>
 
       {/* Detailed Story */}
-      <section className="prose prose-slate max-w-none border-t border-border pt-16">
+      <section className="border-t border-border pt-16">
         <div className="space-y-6 text-base leading-relaxed text-ink-muted">
           <p>
-            Simple Tools Hub was born out of a specific frustration: the modern web is cluttered.
-            Most online utilities today are buried under layers of ads, cookie banners, and
+            Simple Tools Hub was born out of a specific frustration: the modern web is cluttered. 
+            Most online utilities today are buried under layers of ads, cookie banners, and 
             "sign up to download" walls. We wanted to create a sanctuary of simple, functional tools.
           </p>
           <p>
-            Our architecture is simple: <strong className="text-ink font-bold">Client-Side First</strong>.
-            When you use our Word Counter or Password Generator, the logic happens on your own CPU.
-            This means the tools work offline once loaded, and your sensitive information is never
-            transmitted over the wire.
+            Our architecture is simple: <strong className="text-ink font-bold">Client-Side First</strong>. 
+            When you use our tools, the logic happens on your own CPU. This means the tools work offline 
+            once loaded, and your sensitive information is never transmitted over the wire.
           </p>
         </div>
       </section>
@@ -114,58 +112,6 @@ export default function AboutPage() {
             );
           })}
         </ul>
-      </section>
-
-<<<<<<< HEAD
-      {/* Footer Info / Contact */}
-      <section className="mt-24 rounded-[2rem] bg-ink p-8 text-center text-white sm:p-12">
-        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 mb-6">
-          <Heart size={24} className="text-brand" fill="currentColor" />
-        </div>
-        <h2 className="font-display text-2xl font-bold">Open & Honest</h2>
-        <p className="mt-4 text-white/70">
-          This project is built with love for the developer community.
-          Have a tool suggestion or found a bug?
-        </p>
-        <div className="mt-8 flex justify-center">
-          {/* Use Link from next/link to navigate to your contact page */}
-          <Link
-            href="/contact"
-            className="flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-ink transition-transform hover:scale-105 active:scale-95"
-          >
-            <Mail size={18} />
-            Get in touch
-          </Link>
-        </div>
-=======
-      {/* Philosophy */}
-<<<<<<< HEAD
-      <section className="mt-12 rounded-2xl bg-brand/5 p-6 ring-1 ring-brand/15">
-=======
-      <section className="mt-12 rounded-2xl bg-brand-orange/5 p-6 ring-1 ring-brand-orange/15">
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
-        <h2 className="mb-2 font-display text-lg font-bold text-ink">
-          Our Philosophy
-        </h2>
-        <ul className="space-y-1.5 text-sm text-ink-muted">
-          {[
-            "Free, always.",
-            "No tracking. No ads. No dark patterns.",
-            "All processing runs in your browser.",
-            "Optimized for speed and low-end devices.",
-            "Accessible to everyone.",
-          ].map((item) => (
-            <li key={item} className="flex items-start gap-2">
-<<<<<<< HEAD
-              <span className="mt-0.5 text-brand">✓</span>
-=======
-              <span className="mt-0.5 text-brand-orange">✓</span>
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
-              {item}
-            </li>
-          ))}
-        </ul>
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
       </section>
     </div>
   );

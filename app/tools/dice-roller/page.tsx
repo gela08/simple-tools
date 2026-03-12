@@ -1,17 +1,19 @@
-"use client";
 import type { Metadata } from "next";
 import ToolLayout from "@/components/layout/ToolLayout";
 import DiceRoller from "@/components/tools/DiceRoller";
 
-<<<<<<< HEAD
-// Note: If this is a Client Component, move Metadata to a separate 
-// 'layout.tsx' or remove the 'use client' from this page and 
-// only keep it in the DiceRoller component itself.
-=======
 export const metadata: Metadata = {
-  title: "Dice Roller",
-<<<<<<< HEAD
-  description: "Roll classic d6 or customize with d4, d8, d10, d12, d20, and d100. Roll multiple dice at once.",
+  title: "Online Dice Roller — Virtual d4, d6, d8, d10, d12, d20",
+  description:
+    "Roll virtual dice for tabletop games or quick decisions. Support for d4, d6, d8, d10, d12, d20, and d100 with multiple dice totals and average tracking.",
+  keywords: [
+    "dice roller",
+    "online dice",
+    "virtual dice",
+    "d20 roller",
+    "roll a die",
+    "dungeons and dragons dice",
+  ],
 };
 
 export default function DiceRollerPage() {
@@ -19,20 +21,7 @@ export default function DiceRollerPage() {
     <ToolLayout
       toolId="dice-roller"
       title="Dice Roller"
-      description="Roll classic d6 or customize with d4, d8, d10, d12, d20, and d100. Roll multiple dice at once."
-    >
-=======
-  description: "Roll any number of dice with any number of sides.",
-};
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-
-export default function DiceRollerPage() {
-  return (
-<<<<<<< HEAD
-    <ToolLayout
-      toolId="dice-roller"
-      title="Dice Roller"
-      description="Roll classic d6 or customize with d4, d8, d10, d12, d20, and d100. Roll multiple dice at once."
+      description="Roll classic d6 dice or customize your roll with d4, d8, d10, d12, d20, and d100. Roll multiple dice at once and get instant totals for your tabletop games."
       howTo={[
         { 
           step: "Choose your die type", 
@@ -40,19 +29,17 @@ export default function DiceRollerPage() {
         },
         { 
           step: "Select quantity", 
-          detail: "Choose how many dice you want to roll at once (from 1 to 6)." 
+          detail: "Choose how many dice you want to roll at once (from 1 to 20)." 
         },
         { 
           step: "Roll and view results", 
-          detail: "Click 'Roll' to see individual results, the total sum, and the average value." 
+          detail: "Click 'Roll' to see individual results, the total sum, and the session history." 
         },
       ]}
     >
-=======
-    <ToolLayout toolId="dice-roller" title="Dice Roller" description="Roll any number of dice with any number of sides.">
->>>>>>> cd1576042c124b1971e7287fc9ef69b7cce2b85f
->>>>>>> cfe3c260f4ca9edf5d67869bdfb381c9cf117ae9
-      <DiceRoller />
+      <div className="mx-auto max-w-3xl">
+        <DiceRoller />
+      </div>
     </ToolLayout>
   );
 }
