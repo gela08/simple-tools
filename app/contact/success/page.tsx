@@ -19,10 +19,11 @@ export default function ContactSuccess() {
         <h1 className="font-display text-4xl font-black tracking-tight text-ink sm:text-5xl">
           Message <span className="text-emerald-500">Received!</span>
         </h1>
-        <p className="mt-6 max-w-sm text-lg leading-relaxed text-ink-muted">
-          I've got your feedback. I usually read and respond to inquiries personally within 1-3 business days.
-        </p>
+
       </div>
+      <p className="mt-6 max-w-sm text-lg leading-relaxed text-ink-muted">
+        I've got your feedback. I usually read and respond to inquiries personally within 1-3 business days.
+      </p>
 
       <div className="mt-12 flex flex-col gap-4 sm:flex-row animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-both">
         <Link
