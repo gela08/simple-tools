@@ -31,8 +31,8 @@ export default function ReadingTime() {
               onClick={() => setWpm(s.wpm)}
               className={`rounded-lg border px-3.5 py-1.5 text-sm font-medium transition-colors ${
                 wpm === s.wpm
-                  ? "border-brand-orange bg-brand-orange/10 text-brand-orange"
-                  : "border-border bg-surface-muted text-ink-muted hover:border-brand-orange/50"
+                  ? "border-brand bg-brand/10 text-brand"
+                  : "border-border bg-surface-muted text-ink-muted hover:border-brand/50"
               }`}
             >
               {s.label}
@@ -50,17 +50,17 @@ export default function ReadingTime() {
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Paste an article, blog post, essay, or any text..."
-          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder-ink-subtle transition-colors focus:border-brand-orange focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
+          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder-ink-subtle transition-colors focus:border-brand focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand/20"
           rows={7}
         />
       </div>
 
       {/* Result */}
       {text.trim() ? (
-        <div className="flex flex-col items-center gap-6 rounded-2xl bg-brand-orange/5 p-8 ring-1 ring-brand-orange/15 sm:flex-row sm:justify-around">
+        <div className="flex flex-col items-center gap-6 rounded-2xl bg-brand/5 p-8 ring-1 ring-brand/15 sm:flex-row sm:justify-around">
           {/* Time */}
           <div className="text-center">
-            <div className="stat-number text-5xl font-extrabold text-brand-orange">
+            <div className="stat-number text-5xl font-extrabold text-brand">
               {minutes}
             </div>
             <div className="mt-1 text-sm font-medium text-ink-muted">

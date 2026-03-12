@@ -4,12 +4,16 @@ import IdeaGenerator from "@/components/tools/IdeaGenerator";
 
 export const metadata: Metadata = {
   title: "Idea Generator",
-  description: "Get random creative writing prompts and project ideas.",
+  description: "Get random creative writing prompts and project ideas. Great for beating creative block.",
 };
 
-export default function Page() {
+export default function IdeaGeneratorPage() {
   return (
-    <ToolLayout toolId="idea-generator" title="Idea Generator" description="Get random creative writing prompts and project ideas.">
+    <ToolLayout
+      toolId="idea-generator"
+      title="Idea Generator"
+      description="Get random creative writing prompts and project ideas. Great for beating creative block."
+    >
       <IdeaGenerator />
     </ToolLayout>
   );

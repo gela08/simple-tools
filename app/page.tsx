@@ -1,13 +1,17 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
+import { 
+  Zap, 
+  ShieldCheck, 
+  Smartphone, 
+  ArrowRight, 
+  CheckCircle2, 
+  LayoutGrid,
+  ChevronRight
+} from "lucide-react";
 import ToolCard from "@/components/ui/ToolCard";
 import { tools, categoryLabels, type ToolCategory } from "@/data/tools";
-
-export const metadata: Metadata = {
-  title: "Simple Tools Hub — Free Online Text & Utility Tools",
-  description:
-    "Fast, free, and privacy-friendly online tools. Word counter, password generator, unit converter, dice roller, and 30+ more. No signup needed.",
-};
 
 const FEATURED_IDS = [
   "word-counter", "password-generator", "wedding-hashtag",
@@ -16,54 +20,81 @@ const FEATURED_IDS = [
 
 const CATEGORIES: ToolCategory[] = ["text", "formatter", "generator", "sorter", "fun", "utility"];
 
+const WHY_ITEMS = [
+  {
+    title: "Instant Results",
+    body: "Every tool processes your input in real time — no submit buttons, no loading spinners.",
+    icon: <Zap size={20} />,
+  },
+  {
+    title: "100% Private",
+    body: "All processing happens in your browser. Your text never leaves your device.",
+    icon: <ShieldCheck size={20} />,
+  },
+  {
+    title: "Works Everywhere",
+    body: "Fully responsive design that works on any device — phone, tablet, or desktop.",
+    icon: <Smartphone size={20} />,
+  },
+];
+
 export default function HomePage() {
-  const featured = FEATURED_IDS.map((id) => tools.find((t) => t.id === id)).filter(Boolean) as typeof tools;
+  const featured = FEATURED_IDS
+    .map((id) => tools.find((t) => t.id === id))
+    .filter(Boolean) as typeof tools;
 
   return (
     <>
       {/* ── Hero ── */}
-      <section className="border-b border-border bg-gradient-to-b from-surface-muted to-surface-bg">
-        <div className="mx-auto max-w-6xl px-4 py-20 text-center sm:px-6 sm:py-28">
+      <section className="border-b border-border bg-gradient-to-b from-brand/5 to-surface-bg">
+        <div className="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-24">
           <div className="mx-auto max-w-2xl">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-orange/30 bg-brand-orange/8 px-4 py-1.5 text-sm font-medium text-brand-orange">
+            {/* Live badge */}
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand">
               <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-orange opacity-50" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-orange" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-50" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
               </span>
               {tools.length} Free Tools — No Account Needed
             </div>
 
-            <h1 className="font-display text-4xl font-extrabold leading-tight text-ink sm:text-5xl lg:text-6xl">
+            <h1 className="font-display text-4xl font-black tracking-tight text-ink sm:text-6xl">
               Tools that just{" "}
-              <span className="relative inline-block text-brand-orange">
+              <span className="relative inline-block text-brand">
                 work
-                <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 200 8" fill="none" aria-hidden="true">
-                  <path d="M2 6 C50 2 150 2 198 6" stroke="#FF6B35" strokeWidth="3" strokeLinecap="round" />
+                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none" aria-hidden="true">
+                  <path d="M2 6 C50 2 150 2 198 6" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
                 </svg>
               </span>
             </h1>
 
-            <p className="mt-6 text-lg leading-relaxed text-ink-muted">
+            <p className="mt-8 text-lg leading-relaxed text-ink-muted sm:text-xl">
               From text utilities to random generators, sorting tools, and everyday calculators.
               All free, all instant, all private.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <Link href="/tools" className="rounded-xl bg-brand-orange px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-brand-orange-dark hover:shadow-md">
-                Browse All {tools.length} Tools →
+            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <Link
+                href="/tools"
+                className="group flex w-full items-center justify-center gap-2 rounded-2xl bg-brand px-8 py-4 text-base font-bold text-white shadow-xl shadow-brand/20 transition-all hover:bg-brand-dark hover:scale-[1.02] active:scale-[0.98] sm:w-auto"
+              >
+                Browse All Tools
+                <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </Link>
-              <Link href="#featured" className="rounded-xl border border-border bg-surface-card px-6 py-3 text-sm font-semibold text-ink transition-all hover:-translate-y-0.5 hover:shadow-sm">
+              <Link
+                href="#featured"
+                className="w-full rounded-2xl border border-border bg-surface-card px-8 py-4 text-base font-bold text-ink transition-all hover:bg-surface-muted sm:w-auto"
+              >
                 Quick Start
               </Link>
             </div>
           </div>
 
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-xs font-medium text-ink-subtle">
-            {["No signup", "No tracking", "No ads", "Works offline", "Free forever"].map((item) => (
-              <span key={item} className="flex items-center gap-1.5">
-                <svg className="h-3.5 w-3.5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
+          {/* Trust badges */}
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-xs font-bold uppercase tracking-widest text-ink-subtle">
+            {["No signup", "No tracking", "No ads", "Free forever"].map((item) => (
+              <span key={item} className="flex items-center gap-2">
+                <CheckCircle2 size={14} className="text-green-500" />
                 {item}
               </span>
             ))}
@@ -71,14 +102,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Featured ── */}
-      <section id="featured" className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <div className="mb-7 flex items-end justify-between">
+      {/* ── Featured Tools ── */}
+      <section id="featured" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+        <div className="mb-10 flex items-end justify-between">
           <div>
-            <h2 className="font-display text-2xl font-extrabold text-ink sm:text-3xl">Featured Tools</h2>
-            <p className="mt-1 text-sm text-ink-muted">Popular picks to get you started.</p>
+            <h2 className="font-display text-2xl font-black tracking-tight text-ink sm:text-4xl">
+              Featured Tools
+            </h2>
+            <p className="mt-2 text-ink-muted">Hand-picked essentials for your daily workflow.</p>
           </div>
-          <Link href="/tools" className="text-sm font-medium text-brand-orange hover:underline">View all →</Link>
+          <Link href="/tools" className="group hidden items-center gap-1 text-sm font-bold text-brand sm:flex">
+            View all
+            <ChevronRight size={16} className="transition-transform group-hover:translate-x-0.5" />
+          </Link>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((tool, i) => (
@@ -87,31 +123,43 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Categories ── */}
-      <section className="border-t border-border bg-surface-muted">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-          <h2 className="mb-7 font-display text-2xl font-extrabold text-ink sm:text-3xl">Browse by Category</h2>
+      {/* ── Browse by Category ── */}
+      <section className="border-y border-border bg-surface-muted/50 py-16 sm:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="mb-10 flex items-center gap-3">
+            <LayoutGrid className="text-brand" size={28} />
+            <h2 className="font-display text-2xl font-black tracking-tight text-ink sm:text-4xl">
+              Browse by Category
+            </h2>
+          </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {CATEGORIES.map((cat) => {
               const catTools = tools.filter((t) => t.category === cat);
               if (!catTools.length) return null;
-              const first3 = catTools.slice(0, 3);
               return (
-                <Link key={cat} href={`/tools#${cat}`}
-                  className="group rounded-2xl border border-border bg-surface-card p-5 transition-all hover:-translate-y-0.5 hover:shadow-card-hover shadow-card">
-                  <div className="mb-3 flex items-center justify-between">
-                    <h3 className="font-display font-bold text-ink">{categoryLabels[cat]}</h3>
-                    <span className="rounded-full bg-surface-muted px-2 py-0.5 text-xs font-medium text-ink-subtle">{catTools.length}</span>
+                <Link
+                  key={cat}
+                  href={`/tools?category=${cat}`}
+                  className="group relative flex flex-col justify-between rounded-3xl border border-border bg-surface-card p-6 transition-all hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div>
+                    <div className="mb-4 flex items-center justify-between">
+                      <h3 className="font-display text-lg font-black text-ink">{categoryLabels[cat]}</h3>
+                      <span className="rounded-lg bg-surface-muted px-2 py-1 text-[10px] font-black uppercase text-ink-subtle">
+                        {catTools.length} Tools
+                      </span>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {catTools.slice(0, 3).map((t) => (
+                        <span key={t.id} className="text-xs text-ink-muted">
+                          {t.name}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <div className="flex flex-wrap gap-1">
-                    {first3.map((t) => (
-                      <span key={t.id} className="rounded-full border border-border px-2.5 py-0.5 text-xs text-ink-muted">{t.name}</span>
-                    ))}
-                    {catTools.length > 3 && <span className="rounded-full border border-border px-2.5 py-0.5 text-xs text-ink-subtle">+{catTools.length - 3} more</span>}
+                  <div className="mt-6 flex items-center gap-1 text-xs font-bold text-brand">
+                    Explore category <ChevronRight size={14} />
                   </div>
-                  <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-brand-orange opacity-0 transition-opacity group-hover:opacity-100">
-                    Browse {categoryLabels[cat]} →
-                  </span>
                 </Link>
               );
             })}
@@ -120,26 +168,19 @@ export default function HomePage() {
       </section>
 
       {/* ── Why section ── */}
-      <section className="border-t border-border">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-display text-2xl font-extrabold text-ink sm:text-3xl">
-              Built for speed. Designed for everyone.
-            </h2>
-            <p className="mt-3 text-ink-muted">
-              We believe utility tools should load instantly, work without accounts, respect your privacy, and stay out of your way.
-            </p>
-          </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-3">
-            {[
-              { emoji: "⚡", title: "Instant Results", body: "Every tool processes your input in real time — no submit buttons, no loading spinners." },
-              { emoji: "🔒", title: "100% Private", body: "All processing happens in your browser. Your text never leaves your device." },
-              { emoji: "📱", title: "Works Everywhere", body: "Fully responsive design that works on any device — phone, tablet, or desktop." },
-            ].map((item) => (
-              <div key={item.title} className="rounded-2xl border border-border bg-surface-card p-6 shadow-card">
-                <div className="mb-3 text-3xl">{item.emoji}</div>
-                <h3 className="font-display font-bold text-ink">{item.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">{item.body}</p>
+      <section className="py-16 sm:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 text-center">
+          <h2 className="font-display text-2xl font-black tracking-tight text-ink sm:text-4xl">
+            Built for speed. Designed for privacy.
+          </h2>
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            {WHY_ITEMS.map((item) => (
+              <div key={item.title} className="group rounded-3xl border border-border bg-surface-card p-8 text-left transition-colors hover:border-brand/20">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand/10 text-brand transition-colors group-hover:bg-brand group-hover:text-white">
+                  {item.icon}
+                </div>
+                <h3 className="font-display text-lg font-bold text-ink">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-muted">{item.body}</p>
               </div>
             ))}
           </div>

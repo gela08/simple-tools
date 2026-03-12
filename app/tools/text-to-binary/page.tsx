@@ -4,12 +4,16 @@ import TextToBinary from "@/components/tools/TextToBinary";
 
 export const metadata: Metadata = {
   title: "Text to Binary Converter",
-  description: "Convert text to binary code or decode binary back to text.",
+  description: "Convert text to binary code and binary back to readable text. Great for developers and students.",
 };
 
-export default function Page() {
+export default function TextToBinaryPage() {
   return (
-    <ToolLayout toolId="text-to-binary" title="Text to Binary Converter" description="Convert text to binary code or decode binary back to text.">
+    <ToolLayout
+      toolId="text-to-binary"
+      title="Text to Binary Converter"
+      description="Convert text to binary code and binary back to readable text. Great for developers and students."
+    >
       <TextToBinary />
     </ToolLayout>
   );

@@ -19,21 +19,18 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://simpletoolshub.com"),
   title: {
     default: "Simple Tools Hub — Free Online Text & Utility Tools",
     template: "%s | Simple Tools Hub",
   },
   description:
     "Free, fast, and privacy-friendly online tools. Word counter, character counter, text case converter, reading time calculator, and more.",
-  
-  // --- ADD THIS SECTION ---
   icons: {
-    icon: "/icon.png", // Path to your icon in the /public folder
+    icon: "/icon.png",
     shortcut: "/icon.png",
-    apple: "/apple-touch-icon.png", // Optional: for iOS home screen
+    apple: "/apple-touch-icon.png",
   },
-  // ------------------------
-
   keywords: [
     "word counter",
     "character counter",
@@ -45,7 +42,6 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Simple Tools Hub" }],
   creator: "Simple Tools Hub",
-  metadataBase: new URL("https://simpletoolshub.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -55,12 +51,12 @@ export const metadata: Metadata = {
     description: "Free, fast, and privacy-friendly online tools. No signup needed.",
     images: [
       {
-        url: '/icon.png', 
+        url: "/icon.png",
         width: 1200,
         height: 630,
         alt: "Simple Tools Hub Preview",
       },
-    ], // Fixed the missing closing brace here
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -80,7 +76,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${syne.variable} ${dmSans.variable}`}>
-      <body className="flex min-h-screen flex-col bg-surface-bg font-body text-ink antialiased">
+      <body className="flex min-h-screen flex-col bg-surface-bg font-body text-ink antialiased overflow-x-hidden selection:bg-brand/10 selection:text-brand">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

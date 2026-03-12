@@ -22,7 +22,7 @@ export default function AlphabeticalSort() {
         {([["asc", "A → Z"], ["desc", "Z → A"]] as const).map(([id, label]) => (
           <button key={id} onClick={() => setOrder(id)}
             className={`rounded-xl border px-4 py-2 text-sm font-medium transition-all ${
-              order === id ? "border-brand-orange bg-brand-orange/10 text-brand-orange" : "border-border text-ink-muted hover:border-brand-orange/40"
+              order === id ? "border-brand bg-brand/10 text-brand" : "border-border text-ink-muted hover:border-brand/40"
             }`}>{label}</button>
         ))}
       </div>
@@ -30,7 +30,7 @@ export default function AlphabeticalSort() {
         <label className="mb-1.5 block text-sm font-medium text-ink">Items to sort (one per line)</label>
         <textarea value={input} onChange={(e) => setInput(e.target.value)}
           placeholder={"banana\napple\ncherry\ndate\nelderberry"}
-          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder:text-ink-subtle focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20" rows={7} />
+          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-3 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" rows={7} />
       </div>
       {output && (
         <div>
@@ -38,7 +38,7 @@ export default function AlphabeticalSort() {
             <label className="text-sm font-medium text-ink">Sorted ({sorted.length} items)</label>
             <div className="flex gap-2">
               <button onClick={() => setInput("")} className="text-xs text-ink-subtle hover:text-ink border border-border rounded-lg px-3 py-1.5">Reset</button>
-              <button onClick={handleCopy} className={`text-xs font-medium border rounded-lg px-3 py-1.5 transition-all ${copied ? "border-green-400 bg-green-50 text-green-700" : "border-border text-ink-muted hover:border-brand-orange/40"}`}>
+              <button onClick={handleCopy} className={`text-xs font-medium border rounded-lg px-3 py-1.5 transition-all ${copied ? "border-green-400 bg-green-50 text-green-700" : "border-border text-ink-muted hover:border-brand/40"}`}>
                 {copied ? "✓ Copied" : "Copy"}
               </button>
             </div>

@@ -4,12 +4,16 @@ import NumberSort from "@/components/tools/NumberSort";
 
 export const metadata: Metadata = {
   title: "Number Sort",
-  description: "Sort a list of numbers from lowest to highest or vice versa.",
+  description: "Sort a list of numbers from lowest to highest or vice versa instantly.",
 };
 
-export default function Page() {
+export default function NumberSortPage() {
   return (
-    <ToolLayout toolId="number-sort" title="Number Sort" description="Sort a list of numbers from lowest to highest or vice versa.">
+    <ToolLayout
+      toolId="number-sort"
+      title="Number Sort"
+      description="Sort a list of numbers from lowest to highest or vice versa instantly."
+    >
       <NumberSort />
     </ToolLayout>
   );

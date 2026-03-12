@@ -4,12 +4,16 @@ import SpinTheWheel from "@/components/tools/SpinTheWheel";
 
 export const metadata: Metadata = {
   title: "Spin the Wheel",
-  description: "Add custom options and spin a wheel to pick one at random.",
+  description: "Build a custom spinning wheel with your own options. Perfect for games and classroom picks.",
 };
 
-export default function Page() {
+export default function SpinTheWheelPage() {
   return (
-    <ToolLayout toolId="spin-the-wheel" title="Spin the Wheel" description="Add custom options and spin a wheel to pick one at random.">
+    <ToolLayout
+      toolId="spin-the-wheel"
+      title="Spin the Wheel"
+      description="Build a custom spinning wheel with your own options. Perfect for games and classroom picks."
+    >
       <SpinTheWheel />
     </ToolLayout>
   );

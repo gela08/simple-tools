@@ -11,7 +11,7 @@ export default function CoinFlip() {
     setTimeout(() => {
       const r = Math.random() < 0.5 ? "heads" : "tails";
       setResult(r);
-      setHistory((h) => [r, ...h].slice(0, 10));
+      setHistory((h) => [r, ...h].slice(0, 10) as ("heads" | "tails")[]);
       setFlipping(false);
     }, 400);
   };
@@ -22,11 +22,11 @@ export default function CoinFlip() {
   return (
     <div className="space-y-6 text-center">
       <div className={`mx-auto flex h-36 w-36 items-center justify-center rounded-full border-4 text-6xl transition-all duration-300 ${
-        flipping ? "animate-spin border-brand-orange/40 bg-brand-orange/5" :
+        flipping ? "animate-spin border-brand/40 bg-brand/5" :
         result === "heads" ? "border-amber-400 bg-amber-50" :
         result === "tails" ? "border-slate-400 bg-slate-50" : "border-border bg-surface-muted"
       }`}>
-        {flipping ? "🪙" : result === "heads" ? "👑" : result === "tails" ? "🦅" : "🪙"}
+        {flipping ? "🥮" : result === "heads" ? "👑" : result === "tails" ? "🦅" : "🥮"}
       </div>
 
       {result && !flipping && (
@@ -37,8 +37,8 @@ export default function CoinFlip() {
       )}
 
       <button onClick={flip} disabled={flipping}
-        className="rounded-xl bg-brand-orange px-8 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-orange-dark active:scale-95 disabled:opacity-60">
-        {flipping ? "Flipping…" : "🪙 Flip Coin"}
+        className="rounded-xl bg-brand px-8 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-dark active:scale-95 disabled:opacity-60">
+        {flipping ? "Flipping…" : "🥮 Flip Coin"}
       </button>
 
       {history.length > 0 && (

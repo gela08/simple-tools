@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ShieldCheck, Cookie, LineChart, Globe, Lock, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -8,64 +9,91 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="mx-auto max-w-2xl px-4 py-14 sm:px-6">
-      <h1 className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
-        Privacy Policy
-      </h1>
-      <p className="mt-2 text-sm text-ink-subtle">
-        Last updated: {new Date().getFullYear()}
-      </p>
+    <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24 select-none">
+      {/* Header */}
+      <div className="mb-12 border-b border-border pb-8">
+        <h1 className="font-display text-4xl font-black tracking-tight text-ink sm:text-5xl">
+          Privacy Policy
+        </h1>
+        <p className="mt-4 text-sm font-medium text-ink-subtle uppercase tracking-widest">
+          Last updated: March 2026
+        </p>
+      </div>
 
-      <div className="mt-8 space-y-8 text-sm leading-relaxed text-ink-muted">
-        {/* TL;DR */}
-        <div className="rounded-2xl bg-green-50 p-5 ring-1 ring-green-200">
-          <h2 className="font-display font-bold text-green-800">
-            TL;DR — The short version
-          </h2>
-          <p className="mt-1 text-green-700">
-            We do not collect your text, usage data, or personal information.
-            All tools run in your browser. Nothing is sent to our servers.
-          </p>
+      <div className="space-y-12">
+        {/* The "No-Tracking" Hero Badge */}
+        <div className="group rounded-3xl bg-emerald-50/50 p-8 ring-1 ring-emerald-500/20 transition-all hover:bg-emerald-50">
+          <div className="flex items-start gap-5">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-500 text-white shadow-lg shadow-emerald-200">
+              <ShieldCheck size={24} />
+            </div>
+            <div>
+              <h2 className="font-display text-xl font-bold text-emerald-900">
+                Privacy is our Default
+              </h2>
+              <p className="mt-2 text-base leading-relaxed text-emerald-800/80">
+                We do not collect your text, usage data, or personal information. 
+                Our business model is based on utility, not data brokerage. 
+                All tools run 100% locally in your browser.
+              </p>
+            </div>
+          </div>
         </div>
 
-        {/* Sections */}
-        {[
-          {
-            title: "1. Data We Collect",
-            body: "We do not collect any personal data. We do not store, log, or transmit any text you enter into our tools. All processing happens locally in your browser using JavaScript.",
-          },
-          {
-            title: "2. Cookies",
-            body: "We do not use cookies for tracking or advertising. We may use a single anonymous session cookie for basic functionality, but it contains no personal information.",
-          },
-          {
-            title: "3. Analytics",
-            body: "We do not use Google Analytics, Facebook Pixel, or any other behavioral tracking tools. We may use minimal, privacy-respecting server-side analytics (e.g., page view counts only) that do not track individual users.",
-          },
-          {
-            title: "4. Third-Party Services",
-            body: "We do not integrate with any third-party advertising networks or data brokers. Fonts are loaded from Google Fonts via the Next.js font optimization system, which may log an IP address on the initial load — but these are not tied to your tool usage.",
-          },
-          {
-            title: "5. Your Data",
-            body: "Since we don't collect your data, there is nothing to delete or export. You have full control over everything you enter into our tools.",
-          },
-          {
-            title: "6. Changes to This Policy",
-            body: "If we ever change this policy in a meaningful way, we will update this page. The date at the top of this page reflects when the policy was last updated.",
-          },
-          {
-            title: "7. Contact",
-            body: "If you have questions about this privacy policy, you can reach us through the About page.",
-          },
-        ].map((section) => (
-          <div key={section.title}>
-            <h2 className="font-display text-base font-bold text-ink">
-              {section.title}
-            </h2>
-            <p className="mt-2">{section.body}</p>
-          </div>
-        ))}
+        {/* Detailed Sections */}
+        <div className="grid gap-10">
+          {[
+            {
+              icon: Lock,
+              title: "1. Data Collection",
+              body: "We do not store, log, or transmit any text you enter into our tools. All processing happens locally in your browser using JavaScript. When you close the tab, the data is gone.",
+            },
+            {
+              icon: Cookie,
+              title: "2. Cookies & Local Storage",
+              body: "We do not use tracking cookies. Some tools may use 'Local Storage' to save your preferences (like dark mode or a recent tool list), but this data never leaves your computer.",
+            },
+            {
+              icon: LineChart,
+              title: "3. Analytics",
+              body: "We skip the invasive trackers. We use privacy-first, anonymous analytics to see which tools are popular, but we don't track who you are or where you come from.",
+            },
+            {
+              icon: Globe,
+              title: "4. Third-Party Requests",
+              body: "Fonts and icons are optimized via Next.js to minimize external requests. We don't load scripts from social media networks or ad platforms.",
+            },
+            {
+              icon: ShieldCheck,
+              title: "5. Your Rights",
+              body: "Since we don't collect personal data, there's no database to search or account to delete. You have the ultimate right: total anonymity.",
+            },
+            {
+              icon: Mail,
+              title: "6. Contact",
+              body: "Have questions about our security or privacy practices? Reach out via the email listed on our About page.",
+            },
+          ].map((section) => (
+            <div key={section.title} className="flex gap-6">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-surface-muted text-ink-subtle">
+                <section.icon size={20} strokeWidth={1.5} />
+              </div>
+              <div>
+                <h2 className="font-display text-lg font-bold text-ink">
+                  {section.title}
+                </h2>
+                <p className="mt-2 text-base leading-relaxed text-ink-muted">
+                  {section.body}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Closing Note */}
+        <div className="mt-16 rounded-2xl border border-border bg-surface-card p-6 text-center italic text-ink-subtle">
+          "The most secure data is the data that was never collected."
+        </div>
       </div>
     </div>
   );

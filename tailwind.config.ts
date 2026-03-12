@@ -9,25 +9,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Brand palette
+        // Brand palette — indigo/blue primary
         brand: {
-          orange: "#FF6B35",
-          "orange-light": "#FF8C5A",
-          "orange-dark": "#E55A25",
+          DEFAULT: "#4F46E5",
+          light: "#6366F1",
+          dark: "#3730A3",
+          subtle: "#EEF2FF",
+          muted: "#C7D2FE",
         },
         surface: {
-          bg: "#FFFBF5",
+          bg: "#F9FAFB",
           card: "#FFFFFF",
-          muted: "#F7F3EC",
+          muted: "#F3F4F6",
         },
         ink: {
-          DEFAULT: "#1A1A1A",
-          muted: "#6B6B6B",
-          subtle: "#9A9A9A",
+          DEFAULT: "#111827",
+          muted: "#6B7280",
+          subtle: "#9CA3AF",
         },
         border: {
-          DEFAULT: "#EDE9E0",
-          strong: "#D4CEC4",
+          DEFAULT: "#E5E7EB",
+          strong: "#D1D5DB",
         },
       },
       fontFamily: {
@@ -35,17 +37,22 @@ const config: Config = {
         body: ["var(--font-dm-sans)", "sans-serif"],
       },
       boxShadow: {
-        card: "0 2px 8px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04)",
-        "card-hover": "0 8px 24px rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.04)",
-        tool: "0 4px 16px rgba(0,0,0,0.08)",
+        card: "0 1px 3px rgba(0,0,0,0.07), 0 0 0 1px rgba(0,0,0,0.04)",
+        "card-hover": "0 8px 24px rgba(79,70,229,0.12), 0 0 0 1px rgba(79,70,229,0.08)",
+        tool: "0 4px 16px rgba(0,0,0,0.07)",
       },
       animation: {
         "fade-up": "fadeUp 0.4s ease both",
+        "slide-in": "slideIn 0.3s ease both",
       },
       keyframes: {
         fadeUp: {
           from: { opacity: "0", transform: "translateY(12px)" },
           to: { opacity: "1", transform: "translateY(0)" },
+        },
+        slideIn: {
+          from: { opacity: "0", transform: "translateX(-8px)" },
+          to: { opacity: "1", transform: "translateX(0)" },
         },
       },
     },

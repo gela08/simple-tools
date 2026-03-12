@@ -4,21 +4,17 @@ import RemoveSpaces from "@/components/tools/RemoveSpaces";
 
 export const metadata: Metadata = {
   title: "Remove Extra Spaces",
-  description:
-    "Remove duplicate spaces, trailing whitespace, and blank lines from any text. Clean up messy copy-pasted content instantly.",
+  description: "Clean up messy text by removing extra whitespace. Trim and deduplicate spaces in one click.",
 };
 
 export default function RemoveSpacesPage() {
   return (
-    <div className="select-none">
-      <ToolLayout
-        toolId="remove-spaces"
-        title="Remove Extra Spaces"
-        description="Clean up duplicate spaces, trailing whitespace, and blank lines from any text."
-      >
-        <RemoveSpaces />
-      </ToolLayout>
-    </div>
-
+    <ToolLayout
+      toolId="remove-spaces"
+      title="Remove Extra Spaces"
+      description="Clean up messy text by removing extra whitespace. Trim and deduplicate spaces in one click."
+    >
+      <RemoveSpaces />
+    </ToolLayout>
   );
 }

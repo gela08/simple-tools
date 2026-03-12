@@ -4,12 +4,16 @@ import ListRandomizer from "@/components/tools/ListRandomizer";
 
 export const metadata: Metadata = {
   title: "List Randomizer",
-  description: "Shuffle any list into a completely random order instantly.",
+  description: "Shuffle any list into a completely random order. Great for giveaways and team picks.",
 };
 
-export default function Page() {
+export default function ListRandomizerPage() {
   return (
-    <ToolLayout toolId="list-randomizer" title="List Randomizer" description="Shuffle any list into a completely random order instantly.">
+    <ToolLayout
+      toolId="list-randomizer"
+      title="List Randomizer"
+      description="Shuffle any list into a completely random order. Great for giveaways and team picks."
+    >
       <ListRandomizer />
     </ToolLayout>
   );

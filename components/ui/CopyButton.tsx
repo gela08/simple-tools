@@ -27,7 +27,7 @@ export default function CopyButton({ text, disabled }: CopyButtonProps) {
       className={`flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-sm font-medium transition-all duration-150 ${
         copied
           ? "bg-green-100 text-green-700"
-          : "bg-surface-muted text-ink-muted hover:bg-brand-orange/10 hover:text-brand-orange disabled:cursor-not-allowed disabled:opacity-40"
+          : "bg-surface-muted text-ink-muted hover:bg-brand/10 hover:text-brand disabled:cursor-not-allowed disabled:opacity-40"
       }`}
       aria-label={copied ? "Copied!" : "Copy to clipboard"}
     >

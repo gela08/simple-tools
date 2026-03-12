@@ -32,11 +32,11 @@ export default function YesNoPicker() {
         </label>
         <input type="text" value={question} onChange={(e) => setQuestion(e.target.value)}
           placeholder="e.g. Should I go for it?"
-          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20" />
+          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" />
       </div>
 
       <button onClick={pick} disabled={spinning}
-        className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand-orange px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-orange-dark active:scale-95 disabled:opacity-60">
+        className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-dark active:scale-95 disabled:opacity-60">
         {spinning ? "Deciding…" : "🎱 Ask the Universe"}
       </button>
 

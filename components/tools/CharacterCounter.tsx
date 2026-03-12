@@ -40,8 +40,8 @@ export default function CharacterCounter() {
               }
               className={`rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors ${
                 selectedLimit === l.max
-                  ? "border-brand-orange bg-brand-orange/10 text-brand-orange"
-                  : "border-border bg-surface-muted text-ink-muted hover:border-brand-orange/50 hover:text-ink"
+                  ? "border-brand bg-brand/10 text-brand"
+                  : "border-border bg-surface-muted text-ink-muted hover:border-brand/50 hover:text-ink"
               }`}
             >
               {l.platform} ({l.max})
@@ -59,7 +59,7 @@ export default function CharacterCounter() {
           className={`w-full rounded-xl border bg-surface-muted px-4 py-3 text-sm text-ink placeholder-ink-subtle transition-colors focus:bg-white focus:outline-none focus:ring-2 ${
             overLimit
               ? "border-red-400 focus:border-red-400 focus:ring-red-200"
-              : "border-border focus:border-brand-orange focus:ring-brand-orange/20"
+              : "border-border focus:border-brand focus:ring-brand/20"
           }`}
           rows={7}
         />
@@ -82,7 +82,7 @@ export default function CharacterCounter() {
                     ? "bg-red-500"
                     : chars / selectedLimit > 0.8
                     ? "bg-amber-400"
-                    : "bg-brand-orange"
+                    : "bg-brand"
                 }`}
                 style={{
                   width: `${Math.min(100, (chars / selectedLimit) * 100)}%`,

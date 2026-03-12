@@ -4,12 +4,16 @@ import PercentageCalculator from "@/components/tools/PercentageCalculator";
 
 export const metadata: Metadata = {
   title: "Percentage Calculator",
-  description: "Calculate percentages, tips, discounts, and percent change.",
+  description: "Calculate percentages, tips, discounts, and percent change. Three calculators in one.",
 };
 
-export default function Page() {
+export default function PercentageCalculatorPage() {
   return (
-    <ToolLayout toolId="percentage-calculator" title="Percentage Calculator" description="Calculate percentages, tips, discounts, and percent change.">
+    <ToolLayout
+      toolId="percentage-calculator"
+      title="Percentage Calculator"
+      description="Calculate percentages, tips, discounts, and percent change. Three calculators in one."
+    >
       <PercentageCalculator />
     </ToolLayout>
   );

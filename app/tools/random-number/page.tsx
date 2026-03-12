@@ -4,12 +4,23 @@ import RandomNumberGenerator from "@/components/tools/RandomNumberGenerator";
 
 export const metadata: Metadata = {
   title: "Random Number Generator",
-  description: "Generate random numbers in any custom range.",
+  description:
+    "Generate random numbers in any custom range. Set min, max, and quantity for truly random results.",
 };
 
-export default function Page() {
+export default function RandomNumberPage() {
   return (
-    <ToolLayout toolId="random-number" title="Random Number Generator" description="Generate random numbers in any custom range.">
+    <ToolLayout
+      toolId="random-number"
+      title="Random Number Generator"
+      description="Set a minimum and maximum value, choose how many numbers to generate, and get truly random results instantly."
+      howTo={[
+        { step: "Set the minimum value", detail: "Enter the lowest number in your desired range." },
+        { step: "Set the maximum value", detail: "Enter the highest number in your desired range." },
+        { step: "Choose how many to generate", detail: "Pick between 1 and 100 numbers." },
+        { step: "Click Generate", detail: "Your random numbers appear immediately." },
+      ]}
+    >
       <RandomNumberGenerator />
     </ToolLayout>
   );

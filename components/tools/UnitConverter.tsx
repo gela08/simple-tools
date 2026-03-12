@@ -54,7 +54,7 @@ export default function UnitConverter() {
           {(Object.keys(CONVERSIONS) as Category[]).map((c) => (
             <button key={c} onClick={() => { setCat(c); setConvIdx(0); setVal(""); }}
               className={`rounded-xl border px-3 py-2 text-sm font-medium transition-all ${
-                cat === c ? "border-brand-orange bg-brand-orange/10 text-brand-orange" : "border-border bg-surface-muted text-ink-muted hover:border-brand-orange/40"
+                cat === c ? "border-brand bg-brand/10 text-brand" : "border-border bg-surface-muted text-ink-muted hover:border-brand/40"
               }`}>{CATEGORY_LABELS[c]}</button>
           ))}
         </div>
@@ -66,7 +66,7 @@ export default function UnitConverter() {
           {CONVERSIONS[cat].map((c, i) => (
             <button key={i} onClick={() => { setConvIdx(i); setVal(""); }}
               className={`rounded-xl border px-3 py-2 text-sm font-medium transition-all ${
-                convIdx === i ? "border-brand-orange bg-brand-orange/10 text-brand-orange" : "border-border bg-surface-muted text-ink-muted hover:border-brand-orange/40"
+                convIdx === i ? "border-brand bg-brand/10 text-brand" : "border-border bg-surface-muted text-ink-muted hover:border-brand/40"
               }`}>{c.label}</button>
           ))}
         </div>
@@ -76,13 +76,13 @@ export default function UnitConverter() {
         <label className="mb-1.5 block text-sm font-medium text-ink">Value in {conv.from}</label>
         <input type="number" value={val} onChange={(e) => setVal(e.target.value)}
           placeholder={`Enter value in ${conv.from}…`}
-          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20" />
+          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" />
       </div>
 
       {result !== null && (
-        <div className="rounded-2xl border-2 border-brand-orange/20 bg-brand-orange/5 p-5 text-center">
+        <div className="rounded-2xl border-2 border-brand/20 bg-brand/5 p-5 text-center">
           <p className="text-sm text-ink-muted">{val} {conv.from} =</p>
-          <p className="text-4xl font-extrabold font-display text-brand-orange mt-1">
+          <p className="text-4xl font-extrabold font-display text-brand mt-1">
             {result % 1 === 0 ? result.toLocaleString() : result.toFixed(4)}
           </p>
           <p className="text-lg text-ink-muted">{conv.to}</p>

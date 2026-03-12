@@ -4,12 +4,16 @@ import CoinFlip from "@/components/tools/CoinFlip";
 
 export const metadata: Metadata = {
   title: "Coin Flip",
-  description: "Flip a virtual coin and get heads or tails instantly.",
+  description: "Flip a virtual coin — heads or tails decided instantly. Tracks your flip history.",
 };
 
-export default function Page() {
+export default function CoinFlipPage() {
   return (
-    <ToolLayout toolId="coin-flip" title="Coin Flip" description="Flip a virtual coin and get heads or tails instantly.">
+    <ToolLayout
+      toolId="coin-flip"
+      title="Coin Flip"
+      description="Flip a virtual coin — heads or tails decided instantly. Tracks your flip history."
+    >
       <CoinFlip />
     </ToolLayout>
   );

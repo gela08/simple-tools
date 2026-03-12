@@ -28,12 +28,12 @@ export default function AgeCalculator() {
         <label className="mb-1.5 block text-sm font-medium text-ink">Your date of birth</label>
         <input type="date" value={birthdate} onChange={(e) => setBirthdate(e.target.value)}
           max={today.toISOString().split("T")[0]}
-          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20" />
+          className="w-full rounded-xl border border-border bg-surface-muted px-4 py-2.5 text-sm text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20" />
       </div>
 
       {birth && !isNaN(birth.getTime()) && (
         <div className="space-y-3">
-          <div className="rounded-2xl border-2 border-brand-orange/20 bg-brand-orange/5 p-6 text-center">
+          <div className="rounded-2xl border-2 border-brand/20 bg-brand/5 p-6 text-center">
             <p className="text-sm text-ink-muted mb-1">You are</p>
             <p className="text-5xl font-extrabold font-display text-ink">{years}</p>
             <p className="text-lg text-ink-muted">years old</p>
