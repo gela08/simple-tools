@@ -40,12 +40,12 @@ export default function Header() {
           href="/"
           className="flex shrink-0 items-center gap-2.5 font-display text-lg font-extrabold text-ink transition-opacity hover:opacity-80 sm:text-xl"
         >
-          <div className="relative h-8 w-8 overflow-hidden rounded-lg bg-brand sm:h-9 sm:w-9">
+          <div className="relative h-8 w-8 overflow-hidden rounded-lg sm:h-9 sm:w-9">
             <Image
-              src="/icon.png"
+              src="/logo.png"
               alt="Logo"
               fill
-              className="object-contain p-1"
+              className="object-contain "
               priority
             />
           </div>
