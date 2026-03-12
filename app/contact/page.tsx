@@ -58,7 +58,7 @@ export default function ContactPage() {
             <div className="px-2 space-y-4">
               <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-ink-subtle">Follow the Project</h3>
               <div className="flex flex-col gap-3">
-                <Link href="https://github.com" className="group flex items-center gap-3 text-sm font-medium text-ink-muted hover:text-brand transition-colors">
+                <Link href="https://github.com/gela08" className="group flex items-center gap-3 text-sm font-medium text-ink-muted hover:text-brand transition-colors">
                   <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-surface-card border border-border group-hover:border-brand/20">
                     <Github size={16} />
                   </span>
