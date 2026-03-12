@@ -10,34 +10,34 @@ const FOOTER_CATS: ToolCategory[] = ["text", "formatter", "generator", "sorter",
 // ── Developer info ──
 const DEVELOPER_NAME = "Angela Gardan";
 const DEVELOPER_PORTFOLIO = "https://akaizer.vercel.app/";
-const DEVELOPER_GITHUB = "https://github.com/gela08"; 
+const DEVELOPER_GITHUB = "https://github.com/gela08";
 
 // ── Showcase items ──
 const OTHER_WORKS = [
-  { 
-    title: "My Portfolio", 
-    description: "Personal projects, professional work, and technical blog.", 
-    url: "https://akaizer.vercel.app/" 
+  {
+    title: "My Portfolio",
+    description: "Personal projects, professional work, and technical blog.",
+    url: "https://akaizer.vercel.app/"
   },
-  { 
-    title: "Jelly Photobooth", 
-    description: "A fun, web-based online photobooth with nostalgic filters.", 
-    url: "https://jelly-photobooth.vercel.app/" 
+  {
+    title: "Jelly Photobooth",
+    description: "A fun, web-based online photobooth with nostalgic filters.",
+    url: "https://jelly-photobooth.vercel.app/"
   },
-  { 
-    title: "Love Circuit Game Hub", 
+  {
+    title: "Love Circuit Game Hub",
     description: "A personalized arcade filled with nostalgic charm and custom surprises.",
-    url: "https://valentines-surprise-for-zeke.vercel.app/" 
+    url: "https://valentines-surprise-for-zeke.vercel.app/"
   },
-  { 
-    title: "HCDC CETSO Portal", 
+  {
+    title: "HCDC CETSO Portal",
     description: "A student management system for attendance tracking and organizational programs.",
-    url: "https://hcdc-cetso-portal.vercel.app/" 
+    url: "https://hcdc-cetso-portal.vercel.app/"
   },
-  { 
-    title: "Cloud Image Manager", 
+  {
+    title: "Cloud Image Manager",
     description: "A specialized tool for managing assets and inventory with cloud integration.",
-    url: "https://gela08.github.io/Quest-Inventory/" 
+    url: "https://gela08.github.io/Quest-Inventory/"
   },
 ];
 
@@ -47,28 +47,31 @@ export default function Footer() {
   return (
     <footer className="border-t border-border bg-surface-muted/50">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16 select-none">
-        
+
         {/* Main Footer Grid */}
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
 
           {/* Column 1: Brand & About (Unchanged) */}
           <div className="lg:col-span-1">
-            <Link href="/" className="group flex items-center gap-2.5 font-display text-xl font-extrabold text-ink transition-opacity hover:opacity-90">
-              <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg bg-brand transition-transform group-hover:scale-105">
+            <Link
+              href="/"
+              className="flex shrink-0 items-center gap-2.5 font-display text-lg font-extrabold text-ink transition-opacity hover:opacity-80 sm:text-xl"
+            >
+              <div className="relative h-9 w-9 rounded-lg border border-brand/20 bg-white p-1 shadow-sm sm:h-10 sm:w-10">
                 <Image
-                  src="/icon.png"
+                  src="/logo.png"
                   alt="Logo"
-                  width={24}
-                  height={24}
+                  fill
                   className="object-contain"
+                  priority
                 />
-              </span>
-              <span>
+              </div>
+              <span className="xs:block">
                 Simple<span className="text-brand">Tools</span>
               </span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-ink-muted">
-              {tools.length} free, fast, and privacy-first tools. No accounts, no tracking, just pure utility running right in your browser.
+              There are {tools.length} free, fast, and privacy-first tools. No accounts, no tracking, just pure utility running right in your browser.
             </p>
             <p className="mt-6 text-[11px] font-bold uppercase tracking-widest text-ink-subtle">
               © {currentYear} Simple Tools Hub
@@ -144,7 +147,7 @@ export default function Footer() {
                   className="group relative overflow-hidden rounded-2xl border border-border bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-xl hover:shadow-brand/5"
                 >
                   <div className="absolute -right-4 -top-4 h-20 w-20 rounded-full bg-brand/5 blur-2xl transition-opacity opacity-0 group-hover:opacity-100" />
-                  
+
                   <div className="relative h-full flex flex-col">
                     <div className="flex items-start justify-between">
                       <h4 className="font-bold text-ink group-hover:text-brand transition-colors text-sm">
@@ -167,15 +170,15 @@ export default function Footer() {
         {/* ── Final Credits Bar ── */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-center text-[11px] text-ink-subtle sm:flex-row sm:text-left">
           <p>Built with Next.js and Tailwind CSS. All processing happens on the client side.</p>
-          
+
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5">
-              Designed by 
+              Designed by
               <a href={DEVELOPER_PORTFOLIO} target="_blank" rel="noopener noreferrer" className="font-bold text-ink hover:text-brand transition-colors">
                 {DEVELOPER_NAME}
               </a>
             </span>
-            
+
             {DEVELOPER_GITHUB && (
               <>
                 <span className="h-3 w-px bg-border hidden sm:block" />

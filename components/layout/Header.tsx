@@ -34,18 +34,18 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-surface-bg/95 backdrop-blur-md select-none">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-4 sm:h-16 sm:px-6">
-        
+
         {/* Left: Logo */}
         <Link
           href="/"
           className="flex shrink-0 items-center gap-2.5 font-display text-lg font-extrabold text-ink transition-opacity hover:opacity-80 sm:text-xl"
         >
-          <div className="relative h-8 w-8 overflow-hidden rounded-lg sm:h-9 sm:w-9">
+          <div className="relative h-9 w-9 rounded-lg border border-brand/20 bg-white p-1 shadow-sm sm:h-10 sm:w-10">
             <Image
               src="/logo.png"
               alt="Logo"
               fill
-              className="object-contain "
+              className="object-contain"
               priority
             />
           </div>
@@ -67,9 +67,8 @@ export default function Header() {
               setSearchOpen(!searchOpen);
               setMobileMenuOpen(false);
             }}
-            className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:hidden ${
-              searchOpen ? "bg-brand/10 text-brand" : "text-ink-muted hover:bg-surface-muted"
-            }`}
+            className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:hidden ${searchOpen ? "bg-brand/10 text-brand" : "text-ink-muted hover:bg-surface-muted"
+              }`}
             aria-label="Toggle search"
           >
             {searchOpen ? <X size={20} /> : <Search size={20} />}
@@ -83,11 +82,10 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`rounded-lg px-3 py-2 text-sm font-medium transition-all ${
-                    isActive
+                  className={`rounded-lg px-3 py-2 text-sm font-medium transition-all ${isActive
                       ? "bg-brand/10 text-brand"
                       : "text-ink-muted hover:bg-surface-muted hover:text-ink"
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </Link>
@@ -101,9 +99,8 @@ export default function Header() {
               setMobileMenuOpen(!mobileMenuOpen);
               setSearchOpen(false);
             }}
-            className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:hidden ${
-              mobileMenuOpen ? "bg-brand/10 text-brand" : "text-ink-muted hover:bg-surface-muted"
-            }`}
+            className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:hidden ${mobileMenuOpen ? "bg-brand/10 text-brand" : "text-ink-muted hover:bg-surface-muted"
+              }`}
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -127,11 +124,10 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`rounded-xl px-4 py-3.5 text-base font-semibold transition-colors ${
-                  isActive
+                className={`rounded-xl px-4 py-3.5 text-base font-semibold transition-colors ${isActive
                     ? "bg-brand/10 text-brand"
                     : "text-ink-muted hover:bg-surface-muted hover:text-ink"
-                }`}
+                  }`}
               >
                 {link.label}
               </Link>

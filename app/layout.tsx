@@ -26,10 +26,12 @@ export const metadata: Metadata = {
   },
   description:
     "Free, fast, and privacy-friendly online tools. Word counter, character counter, text case converter, reading time calculator, and more.",
+  // Next.js automatically looks for icon.png in the /app folder. 
+  // If you use icons: {} here, make sure the files exist in /public.
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
   keywords: [
     "word counter",
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
     description: "Free, fast, and privacy-friendly online tools. No signup needed.",
     images: [
       {
-        url: "/og-image.png", // Recommended: Use a dedicated OG image file
+        url: "/logo.png", // Changed from /icon.png to /logo.png (since logo.png is in /public)
         width: 1200,
         height: 630,
         alt: "Simple Tools Hub Preview",
@@ -75,10 +77,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${syne.variable} ${dmSans.variable} scroll-smooth`}>
+    // Adding suppressHydrationWarning is often helpful when using many client components
+    <html lang="en" className={`${syne.variable} ${dmSans.variable} scroll-smooth`} suppressHydrationWarning>
       <body className="flex min-h-screen flex-col bg-surface-bg font-sans text-ink antialiased">
         <Header />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
