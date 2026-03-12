@@ -9,7 +9,8 @@ export default function ContactSuccess() {
       {/* Success Icon with Pulse Effect */}
       <div className="relative mb-8">
         <div className="absolute inset-0 animate-ping rounded-3xl bg-emerald-500/20 duration-[2000ms]" />
-        <div className="relative flex h-24 w-24 items-center justify-center rounded-[2rem] bg-emerald-50 text-emerald-500 animate-in zoom-in duration-500">
+        {/* Change h-24 w-24 to include shrink-0 */}
+        <div className="relative flex h-24 w-24 shrink-0 items-center justify-center rounded-[2rem] bg-emerald-50 text-emerald-500 animate-in zoom-in duration-500">
           <CheckCircle2 size={48} />
         </div>
       </div>
@@ -39,7 +40,7 @@ export default function ContactSuccess() {
           Keep Browsing
         </Link>
       </div>
-      
+
       {/* Decorative background element to match home page */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
         <div className="absolute -top-[10%] -left-[10%] h-[40%] w-[40%] rounded-full bg-brand/5 blur-[120px]" />
